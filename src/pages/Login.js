@@ -1,9 +1,19 @@
 import { useState } from "react";
-import { FiPhone, FiLock } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
+import { FiPhone, FiLock, FiArrowLeft } from "react-icons/fi";
 
 export default function Login() {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    if (!phone.trim() || !password.trim()) {
+      alert("يرجى ملء جميع الحقول");
+      return;
+    }
+    navigate("/verify-phone");
+  };
 
   return (
     <div className="relative pt-36 pb-20 flex justify-center items-center px-6">
@@ -17,6 +27,16 @@ export default function Login() {
         <source src="/images/Frau(MP4).mp4" type="video/mp4" />
       </video>
       <div className="w-full max-w-md bg-gray-50 shadow-lg border border-gray-200 rounded-xl p-8">
+
+        {/* Back Button */}
+        <div className="flex justify-end mb-4">
+          <Link
+            to="/"
+            className="flex items-center gap-2 text-[#0F0F0F] hover:text-[#C8A06A] transition"
+          >
+            <FiArrowLeft className="text-xl" />
+          </Link>
+        </div>
 
         <h1 className="text-3xl font-bold text-center text-[#0F0F0F] mb-3">
           تسجيل الدخول
@@ -64,12 +84,17 @@ export default function Login() {
         </div>
 
         {/* Submit Button */}
-        <a
-          href="/verify-phone"
-          className="block w-full text-center bg-[#0F0F0F] text-white py-4 rounded-md text-xl hover:bg-[#222] transition"
+        <button
+          onClick={handleSubmit}
+          disabled={!phone.trim() || !password.trim()}
+          className={`block w-full text-center py-4 rounded-md text-xl transition ${
+            !phone.trim() || !password.trim()
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-[#0F0F0F] hover:bg-[#222]"
+          } text-white`}
         >
           تسجيل الدخول
-        </a>
+        </button>
 
         {/* Create Account */}
         <p className="text-center text-gray-600 mt-8">

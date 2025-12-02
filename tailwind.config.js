@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Tajawal", "sans-serif"],
+        ruqah: ["Ruqaa", "serif"],
       },
       colors: {
         brand: {

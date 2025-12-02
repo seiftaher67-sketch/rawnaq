@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
 
 export default function VerifyPhone() {
   const [otp, setOtp] = useState(["", "", "", ""]);
-  const [timer, setTimer] = useState(60);
+  const [timer, setTimer] = useState(49);
 
   useEffect(() => {
     const countdown = setInterval(() => {
@@ -11,6 +13,11 @@ export default function VerifyPhone() {
 
     return () => clearInterval(countdown);
   }, []);
+
+  const handleResend = () => {
+    setTimer(60);
+    // Add logic to resend the OTP here, e.g., API call
+  };
 
   const handleInput = (value, index) => {
     if (value.length > 1) return;
@@ -31,6 +38,16 @@ export default function VerifyPhone() {
         <source src="/images/Frau(MP4).mp4" type="video/mp4" />
       </video>
       <div className="w-full max-w-md bg-gray-50 shadow-lg border border-gray-200 rounded-xl p-8">
+
+        {/* Back Button */}
+        <div className="flex justify-end mb-4">
+          <Link
+            to="/login"
+            className="flex items-center gap-2 text-[#0F0F0F] hover:text-[#C8A06A] transition"
+          >
+            <FiArrowLeft className="text-xl" />
+          </Link>
+        </div>
 
         <h1 className="text-3xl font-bold text-center text-[#0F0F0F] mb-3">
           تأكيد رقم الهاتف
@@ -62,11 +79,22 @@ export default function VerifyPhone() {
         </a>
 
         {/* Resend */}
-        <p className="text-center text-gray-600 mt-8">
-          إعادة إرسال الرمز بعد{" "}
-          <span className="font-semibold text-[#C8A06A]">{timer}</span>{" "}
-          ثانية
-        </p>
+        <div className="text-center mt-8">
+          {timer > 0 ? (
+            <p className="text-gray-600">
+              إعادة إرسال الرمز بعد{" "}
+              <span className="font-semibold text-[#C8A06A]">{timer}</span>{" "}
+              ثانية
+            </p>
+          ) : (
+            <button
+              onClick={handleResend}
+              className="text-[#C8A06A] font-semibold hover:underline cursor-pointer bg-transparent border-none"
+            >
+              إعادة إرسال الرمز
+            </button>
+          )}
+        </div>
 
       </div>
     </div>

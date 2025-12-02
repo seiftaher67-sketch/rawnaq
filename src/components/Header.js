@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   FiHeart,
   FiShoppingCart,
@@ -10,6 +10,7 @@ import {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   const links = [
     { name: "الرئيسية", href: "/" },
@@ -34,7 +35,11 @@ export default function Header() {
             <li key={link.name}>
               <Link
                 to={link.href}
-                className="hover:text-[#C8A06A] transition-colors"
+                className={`transition-colors ${
+                  location.pathname === link.href
+                    ? "text-[#A73533] active:text-[#8B2A2A]"
+                    : "active:text-[#333333]"
+                }`}
               >
                 {link.name}
               </Link>
@@ -45,13 +50,13 @@ export default function Header() {
         {/* DESKTOP ICONS */}
         <div className="hidden md:flex items-center gap-6 text-2xl text-[#0F0F0F]">
           <Link to="/favorites">
-            <FiHeart className="cursor-pointer hover:text-[#C8A06A] transition" />
+            <FiHeart className="cursor-pointer transition" />
           </Link>
           <Link to="/cart">
-            <FiShoppingCart className="cursor-pointer hover:text-[#C8A06A] transition" />
+            <FiShoppingCart className="cursor-pointer transition" />
           </Link>
           <Link to="/login">
-            <FiUser className="cursor-pointer hover:text-[#C8A06A] transition" />
+            <FiUser className="cursor-pointer transition" />
           </Link>
         </div>
 
@@ -77,7 +82,11 @@ export default function Header() {
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="hover:text-[#C8A06A] transition-colors"
+                      className={`transition-colors ${
+                        location.pathname === link.href
+                          ? "text-[#A73533] active:text-[#8B2A2A]"
+                          : "active:text-[#333333]"
+                      }`}
                       onClick={() => setOpen(false)}
                     >
                       {link.name}

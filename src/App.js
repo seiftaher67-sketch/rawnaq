@@ -19,6 +19,7 @@ import Favorites from './pages/Favorites';
 import WashingGuide from './pages/WashingGuide';
 import ReturnPolicy from './pages/ReturnPolicy';
 import OrderSuccess from './pages/OrderSuccess';
+import Register from './pages/Register';
 import VerifyPhone from './pages/VerifyPhone';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -37,6 +38,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/otp" element={<OTP />} />
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/my-orders" element={<MyOrders />} />
