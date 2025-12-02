@@ -1,10 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logooo from '../logooo.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center mb-8">
+          <img
+            src={logooo}
+            alt="راونق"
+            className="mx-auto h-40 w-auto filter brightness-0 invert drop-shadow-lg"
+            style={{ marginTop: '-35px' }}
+          />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">روابط مهمة</h3>

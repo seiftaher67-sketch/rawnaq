@@ -21,7 +21,7 @@ export default function Header() {
   ];
 
   return (
-    <nav className="bg-gray-200 fixed top-5 left-5 right-5 z-50 border-b border-gray-300 shadow-sm rounded-full">
+    <nav className="bg-gray-200 fixed top-1 left-5 right-5 z-50 border-b border-gray-300 shadow-sm rounded-full">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* LOGO */}
