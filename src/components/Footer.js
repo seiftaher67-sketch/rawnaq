@@ -22,30 +22,30 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8 text-right">
           {/* Right Column - روابط مهمة */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">روابط مهمة</h3>
+            <h3 style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }} className="mb-6">روابط مهمة</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/" className="hover:text-brand-gold transition-colors">الرئيسية</Link></li>
-              <li><Link to="/offers" className="hover:text-brand-gold transition-colors">أحدث العروض</Link></li>
-              <li><Link to="/washing-guide" className="hover:text-brand-gold transition-colors">تعليمات الغسيل والعناية بالملابس</Link></li>
-              <li><Link to="/return-policy" className="hover:text-brand-gold transition-colors">سياسة الاسترجاع والاستبدال والاسترجاع</Link></li>
+              <li><Link to="/" className="hover:text-brand-gold transition-colors" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>الرئيسية</Link></li>
+              <li><Link to="/offers" className="hover:text-brand-gold transition-colors" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>أحدث العروض</Link></li>
+              <li><Link to="/washing-guide" className="hover:text-brand-gold transition-colors" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>تعليمات الغسيل والعناية بالملابس</Link></li>
+              <li><Link to="/return-policy" className="hover:text-brand-gold transition-colors" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>سياسة الاسترجاع والاستبدال والاسترجاع</Link></li>
             </ul>
           </div>
 
           {/* Middle Column - تواصل معنا */}
           <div className="-ml-8">
-            <p className="text-lg font-semibold mb-6">تواصل معنا</p>
+            <h3 style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }} className="mb-6">تواصل معنا</h3>
             <div className="space-y-2 text-sm font-semibold">
-              <p><FiMapPin className="inline mr-2" size={16} /> ش الأمير نواف بن عبدالعزيز - مرکز مزاين</p>
-              <p>✉️ atlascompany@gmail.com</p>
-              <p><FiPhone className="inline mr-2 text-white" size={16} />  6551235523 96+</p>
+              <p style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}><FiMapPin className="inline mr-2" size={16} /> ش الأمير نواف بن عبدالعزيز - مرکز مزاين</p>
+              <p style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>✉️ atlascompany@gmail.com</p>
+              <p style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}><FiPhone className="inline mr-2 text-white" size={16} />  6551235523 96+</p>
             </div>
           </div>
 
           {/* Left Column - مواقع التواصل و طرق الدفع */}
           <div>
             <div className="flex gap-24 items-start justify-between mb-6">
-              <h3 className="text-lg font-semibold">مواقع التواصل</h3>
-              <h3 className="text-lg font-semibold">طرق الدفع</h3>
+              <h3 style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>مواقع التواصل</h3>
+              <h3 style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>طرق الدفع</h3>
             </div>
             <div className="flex gap-24 items-center justify-between">
               <div className="flex gap-3">
@@ -82,7 +82,7 @@ const Footer = () => {
               className="h-8 w-8 rounded-full object-cover"
             />
           </a>
-          <p className="text-gray-400 text-xs">حقوق النشر 2024-2025 أطلس البيانات. جميع الحقوق محفوظة.</p>
+          <p className="text-gray-400 text-xs" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>حقوق النشر 2024-2025 أطلس البيانات. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>
