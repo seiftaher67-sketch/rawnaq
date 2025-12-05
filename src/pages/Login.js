@@ -17,15 +17,11 @@ export default function Login() {
 
   return (
     <div className="relative pt-36 pb-20 flex justify-center items-center px-6">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      <img
+        src="/images/bg.png"
+        alt="Background"
         className="absolute top-0 left-0 w-full h-full object-cover -z-20"
-      >
-        <source src="/images/Frau(MP4).mp4" type="video/mp4" />
-      </video>
+      />
       <div className="w-full max-w-md bg-gray-50 shadow-lg border border-gray-200 rounded-xl p-8">
 
         {/* Back Button */}

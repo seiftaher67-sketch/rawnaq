@@ -23,10 +23,12 @@ import Register from './pages/Register';
 import VerifyPhone from './pages/VerifyPhone';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
        <Header />
         <Routes>

@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
         )}
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+        <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>
           {product.name}
         </h3>
         <div className="flex items-center justify-between mb-3">
@@ -35,6 +35,7 @@ const ProductCard = ({ product }) => {
         <Link
           to={`/product/${product.id}`}
           className="w-full bg-pink-600 text-white py-2 px-4 rounded-md hover:bg-pink-700 transition-colors text-center block font-medium"
+          style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}
         >
           اشتري الآن
         </Link>

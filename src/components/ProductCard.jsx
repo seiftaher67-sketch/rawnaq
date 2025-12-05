@@ -46,7 +46,7 @@ export default function ProductCard({
         {/* Name + Price */}
         <div>
           <div className="flex items-start justify-between mb-3">
-            <h3 className="text-lg font-semibold text-[#0F0F0F] flex-1">{name}</h3>
+            <h3 className="text-lg font-semibold text-[#0F0F0F] flex-1" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>{name}</h3>
             <span className="text-lg font-bold text-[#C8A06A] mr-2 flex-shrink-0">
               {price} ر.س
             </span>
@@ -70,6 +70,7 @@ export default function ProductCard({
             <button
               onClick={() => id && navigate(`/product/${id}`)}
               className="flex-1 py-3 bg-[#C8A06A] text-white rounded-md text-lg font-semibold hover:bg-[#B58F5D] transition"
+              style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}
             >
               اشترِي الآن
             </button>

@@ -57,7 +57,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-2xl p-6 border border-gray-light transition-transform duration-300 hover:border-gray-medium group"
+              className="bg-white rounded-2xl p-6 border border-gray-light transition-all duration-300 hover:border-gray-medium hover:shadow-md group group-hover:text-gray-800"
             >
               {/* Review Text */}
               <p className="text-brand-softBlack text-xs leading-relaxed mb-4 line-clamp-5 text-right italic font-medium">

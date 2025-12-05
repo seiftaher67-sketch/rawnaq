@@ -1,4 +1,3 @@
-- [x] Edit src/components/Testimonials.js to apply custom CSS styles to the h2 element containing the Arabic text.
-- [x] Replace Tailwind classes with inline styles: font-family: Amiri; font-weight: 400; font-style: Regular; font-size: 36px; leading-trim: NONE; line-height: 100%; letter-spacing: 0%; text-align: center;
-- [x] Apply styles to the star rating div: transform: rotate(0deg); opacity: 1; position: relative; top: 20px; left: 27px; gap: 5px; justifyContent: 'center'; (removed width and height as per user request).
-- [ ] Verify the changes in the browser.
+- [x] Update fontSize in ProductCard.js from '16px' to '18px'
+- [x] Update fontSize in ProductCard.jsx from '16px' to '18px'
+- [ ] Verify the changes in the application

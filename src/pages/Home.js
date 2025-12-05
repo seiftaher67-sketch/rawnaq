@@ -2,12 +2,17 @@ import React from 'react';
 import { useState } from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
-import CategorySection from '../components/CategorySection';
 import ProductCarousel from '../components/ProductCarousel';
 import Testimonials from '../components/Testimonials';
 import im1 from '../im1.jpeg';
+import CategorySection from '../components/CategorySection';
 
 const Home = () => {
+  const marqueeText = "شحن مجاني لجميع الطلبات داخل السعودية لفترة محدودة";
+  const spanStyle = { fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' };
+  const spans = Array.from({length: 200}, (_, i) => (
+    <span key={i} className="inline-block px-16 text-center text-base font-semibold" style={spanStyle}>{marqueeText}</span>
+  ));
   const [activeCard, setActiveCard] = useState(null);
 
   const handleCardClick = (cardId) => {
@@ -29,24 +34,13 @@ const Home = () => {
             width: max-content;
           }
           @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
           }
         `}} />
         <div className="overflow-hidden whitespace-nowrap">
           <div className="inline-block animate-marquee">
-            <span className="inline-block px-16 text-center text-base font-semibold">شحن مجاني على جميع الطلبات فوق 100 ريال</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">توصيل سريع في 24-48 ساعة</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">ضمان استرجاع المبلغ خلال 30 يوم</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">شحن مجاني على جميع الطلبات فوق 100 ريال</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">توصيل سريع في 24-48 ساعة</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">ضمان استرجاع المبلغ خلال 30 يوم</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">شحن مجاني على جميع الطلبات فوق 100 ريال</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">توصيل سريع في 24-48 ساعة</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">ضمان استرجاع المبلغ خلال 30 يوم</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">شحن مجاني على جميع الطلبات فوق 100 ريال</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">توصيل سريع في 24-48 ساعة</span>
-            <span className="inline-block px-16 text-center text-base font-semibold">ضمان استرجاع المبلغ خلال 30 يوم</span>
+            {spans}{spans}
           </div>
         </div>
       </div>
