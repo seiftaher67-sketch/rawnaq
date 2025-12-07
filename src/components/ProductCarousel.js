@@ -106,7 +106,7 @@ const ProductCarousel = () => {
                 className="flex-1 bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-soft transition-shadow flex flex-col"
               >
                 {/* Product Image Container */}
-                <div className="relative bg-gray-100 h-80 flex-grow overflow-hidden">
+                <div className="relative bg-gray-100 h-[28rem] flex-grow overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}

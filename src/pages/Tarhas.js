@@ -2,12 +2,14 @@ import ProductCard from "../components/ProductCard.jsx";
 
 export default function Tarhas() {
   const tarhasList = [
-    { id: 1, name: "طرحة شيفون ناعمة", price: 49, image: "/images/1.png" },
-    { id: 2, name: "طرحة قطن ممتاز", price: 59, image: "/images/1.png" },
-    { id: 3, name: "طرحة سوفت راقية", price: 45, image: "/images/1.png" },
-    { id: 4, name: "طرحة خليجية فاخرة", price: 79, image: "/images/1.png" },
-    { id: 5, name: "طرحة سوبر ديلاكس", price: 69, image: "/images/1.png" },
-    { id: 6, name: "طرحة سادة يومية", price: 39, image: "/images/1.png" },
+    { id: 1, name: "طرحة شيفون ناعمة", price: 49, image: "/images/t11.jpg" },
+    { id: 2, name: "طرحة قطن ممتاز", price: 59, image: "/images/t2.jpg" },
+    { id: 3, name: "طرحة سوفت راقية", price: 45, image: "/images/t3.jpg" },
+    { id: 4, name: "طرحة خليجية فاخرة", price: 79, image: "/images/t11.jpg" },
+    { id: 5, name: "طرحة سوبر ديلاكس", price: 69, image: "/images/t11.jpg" },
+    { id: 6, name: "طرحة سادة يومية", price: 39, image: "/images/t2.jpg" },
+    { id: 7, name: "طرحة فاخرة", price: 89, image: "/images/t3.jpg" },
+    { id: 8, name: "طرحة عصرية", price: 55, image: "/images/t11.jpg" },
   ];
 
   return (
@@ -76,7 +78,7 @@ export default function Tarhas() {
 </div>
       {/* Products Grid */}
       <div className="container mx-auto px-6">
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
           {tarhasList.map((product) => (
             <ProductCard
               key={product.id}

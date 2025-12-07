@@ -6,7 +6,7 @@ const CategorySection = () => {
     {
       name: 'النقابات',
       path: '/niqabs',
-      image: '/images/1.png',
+      image: '/images/n1.jpg',
       description: '  نقابات فاخرة بتصاميم راقية تكمل إطلالتك المحتشمة بأناقة '
     },
     {
@@ -18,7 +18,7 @@ const CategorySection = () => {
     {
       name: 'الطرح',
       path: '/tarhas',
-      image: '/images/3.png',
+      image: '/images/t2.jpg',
       description: 'طرح فاخرة تنسدل برقي لتكتمل أناقتك في كل مناسبة'
     }
   ];

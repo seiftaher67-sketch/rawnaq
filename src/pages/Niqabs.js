@@ -2,12 +2,14 @@ import ProductCard from "../components/ProductCard.jsx";
 
 export default function Niqabs() {
   const niqabsList = [
-    { id: 1, name: "نقاب خليجي فاخر", price: 39, image: "/images/1.png" },
-    { id: 2, name: "نقاب سوفت مريح", price: 49, image: "/images/2.png" },
-    { id: 3, name: "نقاب قطني ناعم", price: 35, image: "/images/3.png" },
-    { id: 4, name: "نقاب بفتحة للعين", price: 45, image: "/images/4.png" },
-    { id: 5, name: "نقاب خفيف يومي", price: 29, image: "/images/5.png" },
-    { id: 6, name: "نقاب كويتي ممتاز", price: 55, image: "/images/7.png" },
+    { id: 1, name: "نقاب خليجي فاخر", price: 39, image: "/images/n1.jpg" },
+    { id: 2, name: "نقاب سوفت مريح", price: 49, image: "/images/n1.jpg" },
+    { id: 3, name: "نقاب قطني ناعم", price: 35, image: "/images/n1.jpg" },
+    { id: 4, name: "نقاب بفتحة للعين", price: 45, image: "/images/n1.jpg" },
+    { id: 5, name: "نقاب خفيف يومي", price: 29, image: "/images/n1.jpg" },
+    { id: 6, name: "نقاب كويتي ممتاز", price: 55, image: "/images/n1.jpg" },
+    { id: 7, name: "نقاب فاخر", price: 65, image: "/images/n1.jpg" },
+    { id: 8, name: "نقاب عصري", price: 42, image: "/images/n1.jpg" },
   ];
 
   return (
@@ -78,7 +80,7 @@ export default function Niqabs() {
 
       {/* Products Grid */}
       <div className="container mx-auto px-6">
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
           {niqabsList.map((product) => (
             <ProductCard
               key={product.id}

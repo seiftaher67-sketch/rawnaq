@@ -51,7 +51,7 @@ const Home = () => {
           <div className="flex flex-col md:flex-row gap-3 justify-center">
             {/* Card 2 - Left (Narrower) - صورة قريبة */}
             <div
-              className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer transition-all duration-300 h-[600px] md:w-1/3"
+              className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer transition-all duration-300 h-[28rem] md:w-1/3"
               onClick={() => handleCardClick('card2')}
             >
               <img
@@ -71,14 +71,13 @@ const Home = () => {
 
             {/* Card 1 - Right (Wider) - صورة المرأة في الصحراء */}
             <div
-              className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer transition-all duration-300 h-[600px] md:w-1/2"
+              className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer transition-all duration-300 h-[28rem] md:w-1/2"
               onClick={() => handleCardClick('card1')}
             >
               <img
                 src={im1}
                 alt="عرض خاص 2"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: 'center 40%' }}
+                className="w-full h-full object-contain"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white px-4">
