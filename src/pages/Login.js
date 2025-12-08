@@ -1,18 +1,25 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiPhone, FiLock, FiArrowLeft } from "react-icons/fi";
+import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
-  const handleSubmit = () => {
+  const handleLogin = () => {
     if (!phone.trim() || !password.trim()) {
       alert("يرجى ملء جميع الحقول");
       return;
     }
-    navigate("/verify-phone");
+    const success = login(phone, password);
+    if (success) {
+      navigate("/"); // بعد النجاح
+    } else {
+      alert("بيانات خاطئة — استخدمي: 0555555555 / 123456");
+    }
   };
 
   return (
@@ -81,7 +88,7 @@ export default function Login() {
 
         {/* Submit Button */}
         <button
-          onClick={handleSubmit}
+          onClick={handleLogin}
           disabled={!phone.trim() || !password.trim()}
           className={`block w-full text-center py-4 rounded-md text-xl transition ${
             !phone.trim() || !password.trim()

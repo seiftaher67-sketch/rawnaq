@@ -7,21 +7,21 @@ const favoritesData = [
     name: "عباية كريب فاخرة",
     price: 180,
     oldPrice: 240,
-    image: "/images/1.png",
+    image: "/images/a1.jpg",
   },
   {
     id: 2,
     name: "عباية سعودية فاخرة",
     price: 220,
     oldPrice: 300,
-    image: "/images/1.png",
+    image: "/images/a2.jpg",
   },
   {
     id: 3,
     name: "عباية يومية أنيقة",
     price: 150,
     oldPrice: 199,
-    image: "/images/1.png",
+    image: "/images/a3.jpg",
   },
 ];
 

@@ -1,31 +1,27 @@
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useState, useContext } from "react";
 
 const AuthContext = createContext();
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
-
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); // null = not logged in
 
-  const login = (userData) => {
-    setUser(userData);
+  // Fake login
+  const login = (phone, password) => {
+    if (phone === "0555555555" && password === "123456") {
+      setUser({ name: "مستخدم تجريبي", phone });
+      return true;
+    }
+    return false;
   };
 
-  const logout = () => {
-    setUser(null);
-  };
-
-  const value = {
-    user,
-    login,
-    logout,
-  };
+  const logout = () => setUser(null);
 
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
+
+// hook
+export const useAuth = () => useContext(AuthContext);

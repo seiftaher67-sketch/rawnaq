@@ -1,1 +1,12 @@
-- [x] Update image paths in src/components/Testimonials.js to use t2.jpg, t3.jpg, and t11.jpg
+- [ ] Update imports and remove increaseQty/decreaseQty functions
+- [ ] Update thumbnails array
+- [ ] Change grid to 4 columns and adjust orders
+- [ ] Update thumbnails section styling
+- [ ] Update main image height and heart button position
+- [ ] Update product title
+- [ ] Update price display
+- [ ] Remove size chart link
+- [ ] Update colors array
+- [ ] Update quantity section styling
+- [ ] Update buttons styling
+- [ ] Update description text and bullets

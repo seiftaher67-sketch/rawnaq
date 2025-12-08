@@ -7,10 +7,13 @@ import {
   FiMenu,
   FiX,
 } from "react-icons/fi";
+import { useAuth } from "../context/AuthContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, logout } = useAuth();
 
   const links = [
     { name: "الرئيسية", href: "/" },
@@ -55,9 +58,53 @@ export default function Header() {
           <Link to="/cart">
             <FiShoppingCart className="cursor-pointer transition" />
           </Link>
-          <Link to="/login">
-            <FiUser className="cursor-pointer transition" />
-          </Link>
+          {!user ? (
+            <Link to="/login">
+              <FiUser className="cursor-pointer transition" />
+            </Link>
+          ) : (
+            <div className="relative">
+              <button
+                className="p-3 rounded-full bg-gray-100 hover:bg-red-700 transition"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <FiUser className="text-2xl" />
+              </button>
+
+              {/* Profile Menu */}
+              {menuOpen && (
+                <div className="absolute left-0 mt-2 w-52 bg-black border border-gray-200 shadow-lg rounded-xl py-3 text-right">
+                  
+                 {/*<p className="px-4 mb-2 text-white">مرحباً، {user.name}</p>} 
+                 */} <Link
+                    to="/edit-data"
+                    className="text-white block px-4 py-2 hover:bg-gray-600"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    تعديل البيانات
+                  </Link>
+
+                  <Link
+                    to="/order-history"
+                    className="text-white block px-4 py-2 hover:bg-gray-600"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    سجل الطلبات
+                  </Link>
+
+                  <button
+                    onClick={() => {
+                      logout();
+                      setMenuOpen(false);
+                    }}
+                    className="block w-full text-right px-4 py-2 hover:bg-gray-600 text-red-600"
+                  >
+                    تسجيل الخروج
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* MOBILE MENU BUTTON */}
@@ -102,9 +149,54 @@ export default function Header() {
                 <Link to="/cart">
                   <FiShoppingCart />
                 </Link>
-                <Link to="/login">
-                  <FiUser />
-                </Link>
+                {!user ? (
+                  <Link to="/login">
+                    <FiUser />
+                  </Link>
+                ) : (
+                  <div className="relative">
+                    <button
+                      className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition"
+                      onClick={() => setMenuOpen(!menuOpen)}
+                    >
+                      <FiUser className="text-2xl" />
+                    </button>
+      
+                    {/* Profile Menu */}
+                    {menuOpen && (
+                      <div className="absolute left-0 mt-2 w-52 bg-white border border-gray-200 shadow-lg rounded-xl py-3 text-right">
+                        
+                        <p className="px-4 mb-2 text-gray-700">مرحباً، {user.name}</p>
+      
+                        <Link
+                          to="/edit-data"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          تعديل البيانات
+                        </Link>
+      
+                        <Link
+                          to="/order-history"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          سجل الطلبات
+                        </Link>
+      
+                        <button
+                          onClick={() => {
+                            logout();
+                            setMenuOpen(false);
+                          }}
+                          className="block w-full text-right px-4 py-2 hover:bg-gray-100 text-red-600"
+                        >
+                          تسجيل الخروج
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
