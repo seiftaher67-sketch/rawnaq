@@ -1,12 +1,3 @@
-- [ ] Update imports and remove increaseQty/decreaseQty functions
-- [ ] Update thumbnails array
-- [ ] Change grid to 4 columns and adjust orders
-- [ ] Update thumbnails section styling
-- [ ] Update main image height and heart button position
-- [ ] Update product title
-- [ ] Update price display
-- [ ] Remove size chart link
-- [ ] Update colors array
-- [ ] Update quantity section styling
-- [ ] Update buttons styling
-- [ ] Update description text and bullets
+- [x] Update fontWeight from 400 to 600 in all instruction paragraphs in WashingGuide.js
+- [x] Change font color to '#000000' in all instruction paragraphs in ReturnPolicy.js to match WashingGuide.js
+- [ ] Update fontWeight from 400 to 600 in all instruction paragraphs in ReturnPolicy.js

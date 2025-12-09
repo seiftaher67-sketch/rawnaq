@@ -108,13 +108,10 @@ export default function Offers() {
 
       {/* Page Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-[#0F0F0F] mb-4">
-          العروض والخصومات الحالية
+        <h1 style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '64px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }} className="text-[#0F0F0F] mb-4">
+          العروض
         </h1>
 
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          اكتشفي أحدث المجموعات بأسعار مميزة وخصومات حصرية لفترة محدودة
-        </p>
       </div>
 
       {/* Products Grid */}
