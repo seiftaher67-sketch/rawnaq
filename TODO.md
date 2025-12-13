@@ -1,5 +1,5 @@
-- [x] Calculate maxIndex as Math.max(0, products.length - productsPerPage)
-- [x] Update handleNext to set currentIndex to Math.min(currentIndex + productsPerPage, maxIndex)
-- [x] Update handlePrevious to set currentIndex to Math.max(currentIndex - productsPerPage, 0)
-- [x] Updated handleNext and handlePrevious functions in ProductCarousel.js
-- [x] Tested the carousel on different screen sizes to verify smooth scrolling and no empty spaces
+# TODO for Modifying Marquee Section in Home.js
+
+- [x] Create an array of default promotional sentences in Arabic
+- [x] Update the spans generation to map over the array and repeat it multiple times for continuous scrolling
+- [ ] Test the scrolling marquee by running the app

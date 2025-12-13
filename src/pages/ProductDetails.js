@@ -34,7 +34,7 @@ export default function ProductDetails() {
   return (
     <div className="pt-32 pb-24 container mx-auto px-6" dir="rtl">
       {/* GRID LAYOUT */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-20 auto-rows-max md:auto-rows-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-20  overflow-y-auto auto-rows-max md:auto-rows-stretch">
 
         {/* LEFT – THUMBNAILS */}
         <div className="md:col-span-1 flex flex-col h-full">
@@ -59,14 +59,14 @@ export default function ProductDetails() {
         </div>
 
         {/* CENTER – MAIN IMAGE */}
-        <div className="md:col-span-6 flex flex-col h-full">
-          <div className="relative flex-1">
+        <div className="md:col-span-5 flex flex-col h-full">
+          <div className="relative flex-1 ">
             <button
               onClick={() => setIsFavorite(!isFavorite)}
-              className="absolute top-4 left-4 bg-white p-3 rounded-full shadow-lg z-10"
+              className="absolute top-4 left-4 bg-white p-2 rounded-full shadow-lg z-10"
             >
               <FiHeart
-                className={`text-3xl transition ${isFavorite ? "text-red-500 fill-red-500" : "text-black"
+                className={`text-2xl transition ${isFavorite ? "text-red-500 fill-red-500" : "text-black"
                   }`}
               />
             </button>
@@ -82,41 +82,41 @@ export default function ProductDetails() {
         <div className="md:col-span-5 flex flex-col justify-start h-full">
 
           {/* Title */}
-          <h1 className="text-4xl font-bold mb-4 text-black">{product.name}</h1>
+          <h1 className="text-2xl font-bold mb-2 text-black">{product.name}</h1>
 
           {/* Rating */}
-          <div className="flex items-center gap-2 mb-6">
-            <div className="text-[#C8A06A] text-xl">
+          <div className="flex items-center gap-1 mb-3">
+            <div className="text-[#C8A06A] text-lg">
               {"★".repeat(product.rating)}
             </div>
           </div>
 
           {/* Price */}
-          <div className="mb-8 pb-6">
-            <div className="flex items-center gap-4">
-              <span className="text-lg text-gray-500 line-through">{product.originalPrice}</span>
-              <span className="text-3xl font-bold text-[#C8A06A]">{product.price}</span>
+          <div className="mb-4 pb-3">
+            <div className="flex items-center gap-2">
+              <span className="text-base text-gray-500 line-through">{product.originalPrice}</span>
+              <span className="text-2xl font-bold text-[#C8A06A]">{product.price}</span>
             </div>
           </div>
 
           {/* Size Guide Link */}
-          <div className="mb-8">
+          <div className="mb-4">
             <a href="#" className="text-gray-600 underline text-sm">جدول المقاسات</a>
           </div>
 
           {/* Sizes Label */}
-          <div className="mb-4">
-            <h3 className="font-semibold text-lg text-black">المقاسات</h3>
+          <div className="mb-2">
+            <h3 className="font-semibold text-base text-black">المقاسات</h3>
           </div>
 
           {/* Size */}
-          <div className="mb-8">
-            <div className="flex gap-3 flex-wrap">
+          <div className="mb-4">
+            <div className="flex gap-2 flex-wrap">
               {["XL", "L", "M", "S"].map((s) => (
                 <button
                   key={s}
                   onClick={() => setSize(s)}
-                  className={`px-5 py-2 rounded-full border-2 text-sm font-semibold transition ${size === s
+                  className={`px-4 py-1 rounded-full border-2 text-sm font-semibold transition ${size === s
                     ? "bg-black text-white border-black"
                     : "border-gray-400 text-black hover:border-black"
                     }`}
@@ -128,13 +128,13 @@ export default function ProductDetails() {
           </div>
 
           {/* Colors Label */}
-          <div className="mb-4">
-            <h3 className="font-semibold text-lg text-black">الألوان</h3>
+          <div className="mb-2">
+            <h3 className="font-semibold text-base text-black">الألوان</h3>
           </div>
 
           {/* Colors */}
-          <div className="mb-8">
-            <div className="flex gap-4">
+          <div className="mb-4">
+            <div className="flex gap-2">
               {[
                 { value: "black", class: "bg-black" },
                 { value: "gray", class: "bg-gray-400" },
@@ -144,7 +144,7 @@ export default function ProductDetails() {
                 <button
                   key={c.value}
                   onClick={() => setColor(c.value)}
-                  className={`w-12 h-12 rounded-full border-4 ${c.class} transition ${color === c.value
+                  className={`w-10 h-10 rounded-full border-4 ${c.class} transition ${color === c.value
                     ? "border-black"
                     : "border-gray-300"
                     }`}
@@ -154,31 +154,30 @@ export default function ProductDetails() {
           </div>
 
           {/* Quantity Label */}
-          <div className="mb-4">
-            <h3 className="font-semibold text-lg text-black">الكمية</h3>
+          <div className="mb-2">
+            <h3 className="font-semibold text-base text-black">الكمية</h3>
           </div>
 
-          {/* Quantity */}
-          <div className="mb-10">
-            <div className="flex items-center gap-6 border-2 border-gray-300 rounded-full w-fit px-6 py-3">
+          <div className="mb-5">
+            <div className="flex items-center gap-3 border-2 border-gray-300 rounded-full w-fit px-4 py-2">
               <button onClick={() => qty > 1 && setQty(qty - 1)}>
-                <FiMinus className="text-xl" />
+                <FiMinus className="text-lg" />
               </button>
-              <span className="text-lg font-semibold">{qty}</span>
+              <span className="text-base font-semibold">{qty}</span>
               <button onClick={() => setQty(qty + 1)}>
-                <FiPlus className="text-xl" />
+                <FiPlus className="text-lg" />
               </button>
             </div>
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col gap-4">
-            <button className="w-full bg-black text-white py-4 rounded-full text-lg font-bold hover:bg-gray-900 transition">
+          <div className="flex flex-col gap-2">
+            <button className="w-full bg-black text-white py-3 rounded-full text-base font-bold hover:bg-gray-900 transition">
               اشتري الآن
             </button>
 
-            <button className="w-full flex items-center justify-center gap-2 border-2 border-black py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition">
-              <FiShoppingCart className="text-2xl" />
+            <button className="w-full flex items-center justify-center gap-2 border-2 border-black py-3 rounded-full text-base font-semibold hover:bg-gray-100 transition">
+              <FiShoppingCart className="text-xl" />
               أضف إلى السلة
             </button>
           </div>

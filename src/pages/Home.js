@@ -8,9 +8,13 @@ import im1 from '../im1.jpeg';
 import CategorySection from '../components/CategorySection';
 
 const Home = () => {
-  const marqueeText = "شحن مجاني لجميع الطلبات داخل السعودية لفترة محدودة";
-  const spans = Array.from({length: 200}, (_, i) => (
-    <span key={i} className="inline-block px-8 text-center font-calibri text-base font-normal leading-none tracking-normal">{marqueeText}</span>
+  const marqueeTexts = [
+    "شحن مجاني لجميع الطلبات داخل السعودية لفترة محدودة",
+    "خصم 30% على العبايات الفاخرة",
+    "عروض موسمية على الإكسسوارات"
+  ];
+  const spans = Array.from({length: 100}, (_, i) => (
+    <span key={i} className="inline-block px-8 text-center font-calibri text-base font-normal leading-none tracking-normal">{marqueeTexts[i % marqueeTexts.length]}</span>
   ));
   const [activeCard, setActiveCard] = useState(null);
 
