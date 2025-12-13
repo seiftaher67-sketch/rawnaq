@@ -33,12 +33,12 @@ export default function Header() {
         </Link>
 
         {/* DESKTOP LINKS */}
-        <ul className="hidden md:flex items-center gap-10 text-[#0F0F0F]">
+        <ul className="hidden md:flex items-center gap-4 lg:gap-8 text-[#0F0F0F]">
           {links.map((link) => (
             <li key={link.name}>
               <Link
                 to={link.href}
-                className={`transition-colors font-calibri font-bold text-2xl leading-none tracking-normal text-center ${location.pathname === link.href
+                className={`transition-colors font-calibri font-bold text-lg lg:text-xl leading-none tracking-normal text-center ${location.pathname === link.href
                   ? "text-[#A73533] active:text-[#8B2A2A]"
                   : "active:text-[#333333]"
                   }`}
@@ -50,7 +50,7 @@ export default function Header() {
         </ul>
 
         {/* DESKTOP ICONS */}
-        <div className="hidden md:flex items-center gap-6 text-2xl text-[#0F0F0F]">
+        <div className="hidden md:flex items-center gap-4 lg:gap-6 text-xl lg:text-2xl text-[#0F0F0F]">
           <Link to="/favorites">
             <FiHeart className="cursor-pointer transition" />
           </Link>

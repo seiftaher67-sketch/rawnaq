@@ -18,17 +18,17 @@ const HeroSection = () => {
           <div className="flex-grow flex items-center justify-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center">
-                <h1 className="text-8xl font-bold mb-6 font-amiri leading-none tracking-normal text-center">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 font-amiri leading-none tracking-normal text-center">
                    أناقتك تبدا من هنا
                 </h1>
-                <p className="text-2xl mt-[52px] mb-4 opacity-90 leading-none font-amiri font-normal tracking-normal text-center">
+                <p className="text-lg md:text-2xl mt-8 md:mt-[52px] mb-6 opacity-90 leading-none font-amiri font-normal tracking-normal text-center">
                   اكتشفي تشكيلتنا الراقية من العبايات والنقابات والطرح المصممة بعناية لتمنحك احتشامًا يليق بكِ،
                 </p>
-                <p className="text-2xl mt-[-10px] mb-8 opacity-90 leading-none font-amiri font-normal tracking-normal text-center">
+                <p className="text-lg md:text-2xl mt-4 mb-8 opacity-90 leading-none font-amiri font-normal tracking-normal text-center">
                    وخامات فاخرة تجمع بين الراحة والأناقة في كل مناسبة
                 </p>
                 <Link to="/offers">
-                    <button className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 hover:scale-110 hover:-translate-y-1 hover:font-bold transition-all duration-300 shadow-lg">
+                    <button className="bg-white text-black px-10 py-5 rounded-full font-semibold text-xl hover:bg-gray-100 hover:scale-110 hover:-translate-y-1 hover:font-bold transition-all duration-300 shadow-lg">
                     تسوقي الآن
                     </button>
                 </Link>

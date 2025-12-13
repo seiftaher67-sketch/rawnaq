@@ -1,3 +1,5 @@
-- [ ] Import useNavigate from react-router-dom in ProductCarousel.js
-- [ ] Add useNavigate hook in ProductCarousel component
-- [ ] Add onClick handler to "اشتري الآن" button to navigate to `/product/${product.id}`
+- [x] Calculate maxIndex as Math.max(0, products.length - productsPerPage)
+- [x] Update handleNext to set currentIndex to Math.min(currentIndex + productsPerPage, maxIndex)
+- [x] Update handlePrevious to set currentIndex to Math.max(currentIndex - productsPerPage, 0)
+- [x] Updated handleNext and handlePrevious functions in ProductCarousel.js
+- [x] Tested the carousel on different screen sizes to verify smooth scrolling and no empty spaces

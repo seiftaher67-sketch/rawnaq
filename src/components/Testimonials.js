@@ -41,7 +41,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-16 mb-20" style={{backgroundColor: '#c3e2e5a9'}}>
+    <section className="py-16 mb-20 bg-gray-300">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-6">
