@@ -34,10 +34,10 @@ export default function ProductDetails() {
   return (
     <div className="pt-32 pb-24 container mx-auto px-6" dir="rtl">
       {/* GRID LAYOUT */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-20  overflow-y-auto auto-rows-max md:auto-rows-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-20 md:h-[600px]">
 
         {/* LEFT – THUMBNAILS */}
-        <div className="md:col-span-1 flex flex-col h-full">
+        <div className="md:col-span-1 flex flex-col md:h-[600px]">
           <div className="flex flex-col gap-3 overflow-y-auto">
             {thumbnails.map((img, index) => (
               <button
@@ -59,8 +59,8 @@ export default function ProductDetails() {
         </div>
 
         {/* CENTER – MAIN IMAGE */}
-        <div className="md:col-span-5 flex flex-col h-full">
-          <div className="relative flex-1 ">
+        <div className="md:col-span-5 flex flex-col md:h-[600px]">
+          <div className="relative w-full h-full min-h-[400px]">
             <button
               onClick={() => setIsFavorite(!isFavorite)}
               className="absolute top-4 left-4 bg-white p-2 rounded-full shadow-lg z-10"
@@ -79,7 +79,7 @@ export default function ProductDetails() {
         </div>
 
         {/* RIGHT – PRODUCT INFO */}
-        <div className="md:col-span-5 flex flex-col justify-start h-full">
+        <div className="md:col-span-5 flex flex-col justify-start md:h-[600px] overflow-y-auto">
 
           {/* Title */}
           <h1 className="text-2xl font-bold mb-2 text-black">{product.name}</h1>
@@ -219,28 +219,100 @@ export default function ProductDetails() {
       {/* REVIEWS SECTION */}
       <div className="max-w-3xl mx-auto mt-20 border-t pt-16 border-gray-200">
 
-        <h2 className="text-3xl font-bold mb-10 text-black">تقييمات ومراجعات المنتج</h2>
+        <h2
+          style={{
+            fontFamily: 'Calibri',
+            fontWeight: 700,
+            fontStyle: 'normal',
+            fontSize: '40px',
+            lineHeight: '100%',
+            letterSpacing: '0%',
+            textAlign: 'right',
+            color: '#0F0F0F',
+            marginBottom: '40px'
+          }}
+        >
+          تقييمات ومراجعات المنتج
+        </h2>
 
         {/* Review Item */}
-        <div className="space-y-10">
+        <div className="space-y-6">
 
           {product.reviews.map((review, index) => (
-            <div key={index} className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <div key={index} className="pb-6 border-b border-gray-200 last:border-b-0">
 
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-xl font-bold">{review.name}</h3>
+              {/* Header with Avatar, Name, Stars and Date */}
+              <div className="flex gap-3 items-start mb-3 justify-between">
 
-                <div className="text-[#C8A06A] text-lg">
-                  {"★".repeat(review.rating)}
-                  <span className="text-gray-300">
-                    {"★".repeat(5 - review.rating)}
-                  </span>
+                {/* Left Section - Avatar and Name/Stars */}
+                <div className="flex gap-3 items-start flex-1">
+                  {/* Avatar */}
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gray-300 rounded-full" />
+                  </div>
+
+                  {/* Name and Stars */}
+                  <div>
+                    <h3
+                      style={{
+                        fontFamily: 'Calibri',
+                        fontWeight: 400,
+                        fontStyle: 'normal',
+                        fontSize: '24px',
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        textAlign: 'right',
+                        color: '#0F0F0F',
+                        marginBottom: '6px'
+                      }}
+                    >
+                      {review.name}
+                    </h3>
+                    <div className="text-[#C8A06A] text-xl">
+                      {"★".repeat(review.rating)}
+                      <span className="text-gray-300">
+                        {"★".repeat(5 - review.rating)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Section - Date */}
+                <div className="flex-shrink-0 text-left">
+                  <p
+                    style={{
+                      fontFamily: 'Calibri',
+                      fontWeight: 400,
+                      fontStyle: 'normal',
+                      fontSize: '16px',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      textAlign: 'right',
+                      color: '#707070'
+                    }}
+                  >
+                    {review.date}
+                  </p>
                 </div>
               </div>
 
-              <p className="text-sm text-gray-500 mb-4">{review.date}</p>
-
-              <p className="text-gray-700 leading-relaxed text-lg">{review.text}</p>
+              {/* Review Text */}
+              <p
+                style={{
+                  fontFamily: 'Calibri',
+                  fontWeight: 400,
+                  fontStyle: 'normal',
+                  fontSize: '20px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  textAlign: 'right',
+                  color: '#0F0F0F',
+                  marginRight: '50px'
+                }}
+                className="mt-2"
+              >
+                {review.text}
+              </p>
             </div>
           ))}
 
