@@ -126,7 +126,10 @@ const ProductCarousel = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-calibri font-normal leading-none tracking-normal text-center sm:text-right flex-1 mb-4 sm:mb-0">
             عروض محدودة لفترة قصيرة
           </h2>
-          <button className="bg-brand-gold text-brand-black px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold hover:bg-brand-black hover:text-brand-gold transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105">
+          <button
+            onClick={() => navigate('/offers')}
+            className="bg-brand-gold text-brand-black px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold hover:bg-brand-black hover:text-brand-gold transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
             عرض جميع العروض
           </button>
         </div>
@@ -207,6 +210,15 @@ const ProductCarousel = () => {
                       <button
                         onClick={() => navigate(`/product/${product.id}`)}
                         className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs"
+                        style={{
+                          fontFamily: 'Calibri',
+                          fontWeight: 700,
+                          fontStyle: 'Bold',
+                          fontSize: '16px',
+                          leadingTrim: 'NONE',
+                          lineHeight: '100%',
+                          letterSpacing: '0%'
+                        }}
                       >
                         اشتري الآن
                       </button>

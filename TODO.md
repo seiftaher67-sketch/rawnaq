@@ -1,5 +1,3 @@
-# TODO for Modifying Marquee Section in Home.js
-
-- [x] Create an array of default promotional sentences in Arabic
-- [x] Update the spans generation to map over the array and repeat it multiple times for continuous scrolling
-- [ ] Test the scrolling marquee by running the app
+- [x]y Modify the input divs for name, phone, and address to use flex row layout with label on right and input on left, aligning them horizontally.
+- [x] Adjust the card input section to align the input fields horizontally if needed, ensuring all inputs' beginnings are parallel.
+- [x] Test the layout to ensure proper alignment in RTL direction.

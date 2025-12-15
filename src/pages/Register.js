@@ -48,17 +48,17 @@ export default function Register() {
           </Link>
         </div>
 
-        <h1 className="text-3xl font-bold text-center text-[#0F0F0F] mb-3">
+        <h1 className="text-3xl font-bold text-center text-[#0F0F0F] mb-3" style={{fontFamily: 'Calibri'}}>
           إنشاء حساب جديد
         </h1>
 
-        <p className="text-gray-600 text-center mb-10">
+        <p className="text-gray-600 text-center mb-10" style={{fontFamily: 'Calibri'}}>
           مرحباً بك، من فضلك قم بإدخال البيانات لإنشاء حساب جديد
         </p>
 
         {/* Name Input */}
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-medium">الاسم الكامل</label>
+          <label className="block mb-2 text-lg font-medium" style={{fontFamily: 'Calibri'}}>الاسم الكامل</label>
           <div className="flex items-center gap-3 bg-white border border-gray-300 rounded-md px-4 py-3">
             <FiUser className="text-gray-500 text-xl" />
             <input
@@ -73,7 +73,7 @@ export default function Register() {
 
         {/* Phone Input */}
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-medium">رقم الجوال</label>
+          <label className="block mb-2 text-lg font-medium" style={{fontFamily: 'Calibri'}}>رقم الجوال</label>
           <div className="flex items-center gap-3 bg-white border border-gray-300 rounded-md px-4 py-3">
             <FiPhone className="text-gray-500 text-xl" />
             <input
@@ -88,7 +88,7 @@ export default function Register() {
 
         {/* Password Input */}
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-medium">كلمة المرور</label>
+          <label className="block mb-2 text-lg font-medium" style={{fontFamily: 'Calibri'}}>كلمة المرور</label>
           <div className="flex items-center gap-3 bg-white border border-gray-300 rounded-md px-4 py-3">
             <FiLock className="text-gray-500 text-xl" />
             <input
@@ -103,7 +103,7 @@ export default function Register() {
 
         {/* Confirm Password Input */}
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-medium">تأكيد كلمة المرور</label>
+          <label className="block mb-2 text-lg font-medium" style={{fontFamily: 'Calibri'}}>تأكيد كلمة المرور</label>
           <div className="flex items-center gap-3 bg-white border border-gray-300 rounded-md px-4 py-3">
             <FiLock className="text-gray-500 text-xl" />
             <input
@@ -125,12 +125,13 @@ export default function Register() {
               ? "bg-[#0F0F0F] text-white hover:bg-[#222]"
               : "bg-gray-400 text-gray-200 cursor-not-allowed"
           }`}
+          style={{fontFamily: 'Calibri'}}
         >
           إنشاء الحساب
         </button>
 
         {/* Back to Login */}
-        <p className="text-center text-gray-600 mt-8">
+        <p className="text-center text-gray-600 mt-8" style={{fontFamily: 'Calibri'}}>
           لديك حساب بالفعل؟{" "}
           <a href="/login" className="text-[#C8A06A] font-semibold hover:underline">
             تسجيل الدخول

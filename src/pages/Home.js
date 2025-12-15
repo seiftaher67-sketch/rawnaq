@@ -10,13 +10,9 @@ import CategorySection from '../components/CategorySection';
 
 const Home = () => {
   const navigate = useNavigate();
-  const marqueeTexts = [
-    "شحن مجاني لجميع الطلبات داخل السعودية لفترة محدودة",
-    "خصم 30% على العبايات الفاخرة",
-    "عروض موسمية على الإكسسوارات"
-  ];
-  const spans = Array.from({ length: 100 }, (_, i) => (
-    <span key={i} className="inline-block px-8 text-center font-calibri text-base font-normal leading-none tracking-normal">{marqueeTexts[i % marqueeTexts.length]}</span>
+  const marqueeText = "شحن مجاني لجميع الطلبات داخل السعودية لفترة محدودة";
+  const spans = Array.from({ length: 50 }, (_, i) => (
+    <span key={i} className="inline-block px-16 text-center" style={{fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '16px', lineHeight: '100%', letterSpacing: '0%'}}>{marqueeText}</span>
   ));
 
   const handleCardClick = (productId) => {
@@ -34,18 +30,24 @@ const Home = () => {
         <style dangerouslySetInnerHTML={{
           __html: `
           .animate-marquee {
-            animation: marquee 80s linear infinite;
+            animation: marquee 50s linear infinite;
             display: inline-block;
             width: max-content;
           }
           @keyframes marquee {
             0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
+            100% { transform: translateX(-33.33%); }
           }
         `}} />
         <div className="overflow-hidden whitespace-nowrap">
           <div className="inline-block animate-marquee">
-            {spans}{spans}
+            {spans}
+          </div>
+          <div className="inline-block animate-marquee">
+            {spans}
+          </div>
+          <div className="inline-block animate-marquee">
+            {spans}
           </div>
         </div>
       </div>

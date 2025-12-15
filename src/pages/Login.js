@@ -41,17 +41,17 @@ export default function Login() {
           </Link>
         </div>
 
-        <h1 className="text-3xl font-bold text-center text-[#0F0F0F] mb-3">
+        <h1 className="text-3xl font-bold text-center text-[#0F0F0F] mb-3" style={{fontFamily: 'Calibri'}}>
           تسجيل الدخول
         </h1>
 
-        <p className="text-gray-600 text-center mb-10">
+        <p className="text-gray-600 text-center mb-10" style={{fontFamily: 'Calibri'}}>
           مرحباً بك، من فضلك قم بتسجيل الدخول للمتابعة
         </p>
 
         {/* Phone Input */}
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-medium">رقم الجوال</label>
+          <label className="block mb-2 text-lg font-medium" style={{fontFamily: 'Calibri'}}>رقم الجوال</label>
           <div className="flex items-center gap-3 bg-white border border-gray-300 rounded-md px-4 py-3">
             <FiPhone className="text-gray-500 text-xl" />
             <input
@@ -66,7 +66,7 @@ export default function Login() {
 
         {/* Password Input */}
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-medium">كلمة المرور</label>
+          <label className="block mb-2 text-lg font-medium" style={{fontFamily: 'Calibri'}}>كلمة المرور</label>
           <div className="flex items-center gap-3 bg-white border border-gray-300 rounded-md px-4 py-3">
             <FiLock className="text-gray-500 text-xl" />
             <input
@@ -81,7 +81,7 @@ export default function Login() {
 
         {/* Forget Password */}
         <div className="text-right mb-6">
-          <a href="#" className="text-[#C8A06A] hover:underline">
+          <a href="#" className="text-[#C8A06A] hover:underline" style={{fontFamily: 'Calibri'}}>
             نسيت كلمة المرور؟
           </a>
         </div>
@@ -95,12 +95,13 @@ export default function Login() {
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-[#0F0F0F] hover:bg-[#222]"
           } text-white`}
+          style={{fontFamily: 'Calibri'}}
         >
           تسجيل الدخول
         </button>
 
         {/* Create Account */}
-        <p className="text-center text-gray-600 mt-8">
+        <p className="text-center text-gray-600 mt-8" style={{fontFamily: 'Calibri'}}>
           ليس لديك حساب؟{" "}
           <a href="/register" className="text-[#C8A06A] font-semibold hover:underline">
             إنشاء حساب جديد

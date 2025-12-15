@@ -31,8 +31,8 @@ export default function Favorites() {
   return (
     <>
       <div className="pt-36 pb-20 container mx-auto px-6">
-        <h1 className="text-4xl font-bold text-center text-[#0F0F0F] mb-12">
-          قائمة المفضلة
+        <h1 className="text-center text-[#0F0F0F] mb-12" style={{fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '64px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center'}}>
+          المفضلة
         </h1>
 
         {favoritesData.length > 0 ? (

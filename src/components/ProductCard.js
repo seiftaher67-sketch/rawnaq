@@ -48,6 +48,15 @@ const ProductCard = ({ product }) => {
           <Link
             to={`/product/${product.id}`}
             className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs text-center"
+            style={{
+              fontFamily: 'Calibri',
+              fontWeight: 700,
+              fontStyle: 'Bold',
+              fontSize: '16px',
+              leadingTrim: 'NONE',
+              lineHeight: '100%',
+              letterSpacing: '0%'
+            }}
           >
             اشتري الآن
           </Link>

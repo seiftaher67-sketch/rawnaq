@@ -14,6 +14,7 @@ export default function ProductDetails() {
   const [color, setColor] = useState("black");
   const [mainImage, setMainImage] = useState(product?.image || "/images/a1.jpg");
   const [isFavorite, setIsFavorite] = useState(false);
+  const [hoveredThumbnail, setHoveredThumbnail] = useState(null);
 
   if (!product) {
     return (
@@ -43,6 +44,8 @@ export default function ProductDetails() {
               <button
                 key={index}
                 onClick={() => setMainImage(img)}
+                onMouseEnter={() => setHoveredThumbnail(index)}
+                onMouseLeave={() => setHoveredThumbnail(null)}
                 className={`relative w-20 h-20 rounded-lg overflow-hidden border-2 transition flex-shrink-0 ${mainImage === img
                   ? "border-brand-gold"
                   : "border-gray-light hover:border-gray-medium"
@@ -51,7 +54,8 @@ export default function ProductDetails() {
                 <img
                   src={img}
                   alt={`Product view ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-all duration-300"
+                  style={{filter: hoveredThumbnail === index ? 'brightness(0.6)' : 'brightness(1)'}}
                 />
               </button>
             ))}
@@ -79,34 +83,46 @@ export default function ProductDetails() {
         </div>
 
         {/* RIGHT – PRODUCT INFO */}
-        <div className="md:col-span-5 flex flex-col justify-start md:h-[600px] overflow-y-auto">
+        <div className="md:col-span-5 flex flex-col justify-start">
 
           {/* Title */}
-          <h1 className="text-2xl font-bold mb-2 text-black">{product.name}</h1>
+          <h1
+            className="text-2xl font-bold mb-2 text-black"
+            style={{
+              fontFamily: 'Calibri',
+              fontWeight: 700,
+              fontStyle: 'Bold',
+              fontSize: '28px',
+              lineHeight: '100%',
+              letterSpacing: '0%'
+            }}
+          >
+            {product.name}
+          </h1>
 
           {/* Rating */}
-          <div className="flex items-center gap-1 mb-3">
-            <div className="text-[#C8A06A] text-lg">
+          <div className="flex items-center gap-1 mb-3 justify-center">
+            <div className="text-[#C8A06A] text-xl" style={{fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px'}}>
               {"★".repeat(product.rating)}
             </div>
           </div>
 
           {/* Price */}
           <div className="mb-4 pb-3">
-            <div className="flex items-center gap-2">
-              <span className="text-base text-gray-500 line-through">{product.originalPrice}</span>
-              <span className="text-2xl font-bold text-[#C8A06A]">{product.price}</span>
+            <div className="flex items-center gap-2 justify-center">
+              <span className="text-base text-gray-500 line-through" style={{fontFamily: 'Calibri', fontWeight: 400, fontSize: '16px'}}>{product.originalPrice}</span>
+              <span className="text-2xl font-bold" style={{color: '#8B1538', fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', lineHeight: '100%', letterSpacing: '0%'}}>{product.price}</span>
             </div>
           </div>
 
           {/* Size Guide Link */}
           <div className="mb-4">
-            <a href="#" className="text-gray-600 underline text-sm">جدول المقاسات</a>
+            <a href="#" className="text-gray-600 underline" style={{fontFamily: 'Calibri', fontWeight: 400, fontSize: '16px'}}>جدول المقاسات</a>
           </div>
 
           {/* Sizes Label */}
           <div className="mb-2">
-            <h3 className="font-semibold text-base text-black">المقاسات</h3>
+            <h3 className="font-semibold text-black" style={{fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px'}}>المقاسات</h3>
           </div>
 
           {/* Size */}
@@ -116,10 +132,11 @@ export default function ProductDetails() {
                 <button
                   key={s}
                   onClick={() => setSize(s)}
-                  className={`px-4 py-1 rounded-full border-2 text-sm font-semibold transition ${size === s
+                  className={`px-5 py-2 rounded-full border-2 font-semibold transition ${size === s
                     ? "bg-black text-white border-black"
                     : "border-gray-400 text-black hover:border-black"
                     }`}
+                  style={{fontFamily: 'Calibri', fontWeight: 600, fontSize: '16px'}}
                 >
                   {s}
                 </button>
@@ -129,7 +146,7 @@ export default function ProductDetails() {
 
           {/* Colors Label */}
           <div className="mb-2">
-            <h3 className="font-semibold text-base text-black">الألوان</h3>
+            <h3 className="font-semibold text-black" style={{fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px'}}>الألوان</h3>
           </div>
 
           {/* Colors */}
@@ -144,7 +161,7 @@ export default function ProductDetails() {
                 <button
                   key={c.value}
                   onClick={() => setColor(c.value)}
-                  className={`w-10 h-10 rounded-full border-4 ${c.class} transition ${color === c.value
+                  className={`w-14 h-14 rounded-full border-4 ${c.class} transition ${color === c.value
                     ? "border-black"
                     : "border-gray-300"
                     }`}
@@ -155,29 +172,29 @@ export default function ProductDetails() {
 
           {/* Quantity Label */}
           <div className="mb-2">
-            <h3 className="font-semibold text-base text-black">الكمية</h3>
+            <h3 className="font-semibold text-black" style={{fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px'}}>الكمية</h3>
           </div>
 
           <div className="mb-5">
-            <div className="flex items-center gap-3 border-2 border-gray-300 rounded-full w-fit px-4 py-2">
+            <div className="flex items-center gap-4 border-2 border-gray-300 rounded-full w-fit px-6 py-3">
               <button onClick={() => qty > 1 && setQty(qty - 1)}>
-                <FiMinus className="text-lg" />
+                <FiMinus className="text-xl" />
               </button>
-              <span className="text-base font-semibold">{qty}</span>
+              <span className="font-semibold" style={{fontFamily: 'Calibri', fontWeight: 600, fontSize: '18px'}}>{qty}</span>
               <button onClick={() => setQty(qty + 1)}>
-                <FiPlus className="text-lg" />
+                <FiPlus className="text-xl" />
               </button>
             </div>
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col gap-2">
-            <button className="w-full bg-black text-white py-3 rounded-full text-base font-bold hover:bg-gray-900 transition">
+          <div className="flex flex-col gap-2 max-w-lg mx-auto mt-8">
+            <button className="w-full bg-black text-white py-3 px-12 rounded-full font-bold hover:bg-gray-900 transition transform hover:scale-105 hover:shadow-lg" style={{fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '16px', lineHeight: '100%', letterSpacing: '0%'}}>
               اشتري الآن
             </button>
 
-            <button className="w-full flex items-center justify-center gap-2 border-2 border-black py-3 rounded-full text-base font-semibold hover:bg-gray-100 transition">
-              <FiShoppingCart className="text-xl" />
+            <button className="w-full flex items-center justify-center gap-2 border-2 border-black py-3 px-12 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 hover:shadow-lg" style={{fontFamily: 'Calibri', fontWeight: 700, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%'}}>
+              <FiShoppingCart className="text-lg" />
               أضف إلى السلة
             </button>
           </div>

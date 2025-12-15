@@ -82,7 +82,17 @@ const LimitedTimeOffers = () => {
                 </div>
               </div>
               <div className="flex gap-2 mt-auto">
-                <button className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs">اشتري الآن</button>
+                <button className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs"
+                  style={{
+                    fontFamily: 'Calibri',
+                    fontWeight: 700,
+                    fontStyle: 'Bold',
+                    fontSize: '16px',
+                    leadingTrim: 'NONE',
+                    lineHeight: '100%',
+                    letterSpacing: '0%'
+                  }}
+                >اشتري الآن</button>
                 <button className="bg-gray-light border border-gray-200 rounded-full p-2 hover:bg-gray-light transition-colors flex-shrink-0">
                   <FiShoppingCart size={18} className="text-brand-black" />
                 </button>
@@ -105,7 +115,17 @@ const LimitedTimeOffers = () => {
                 </div>
               </div>
               <div className="flex gap-2 mt-auto">
-                <button className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs">اشتري الآن</button>
+                <button className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs"
+                  style={{
+                    fontFamily: 'Calibri',
+                    fontWeight: 700,
+                    fontStyle: 'Bold',
+                    fontSize: '16px',
+                    leadingTrim: 'NONE',
+                    lineHeight: '100%',
+                    letterSpacing: '0%'
+                  }}
+                >اشتري الآن</button>
                 <button className="bg-gray-light border border-gray-200 rounded-full p-2 hover:bg-gray-light transition-colors flex-shrink-0">
                   <FiShoppingCart size={18} className="text-brand-black" />
                 </button>
@@ -128,7 +148,17 @@ const LimitedTimeOffers = () => {
                 </div>
               </div>
               <div className="flex gap-2 mt-auto">
-                <button className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs">اشتري الآن</button>
+                <button className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs"
+                  style={{
+                    fontFamily: 'Calibri',
+                    fontWeight: 700,
+                    fontStyle: 'Bold',
+                    fontSize: '16px',
+                    leadingTrim: 'NONE',
+                    lineHeight: '100%',
+                    letterSpacing: '0%'
+                  }}
+                >اشتري الآن</button>
                 <button className="bg-gray-light border border-gray-200 rounded-full p-2 hover:bg-gray-light transition-colors flex-shrink-0">
                   <FiShoppingCart size={18} className="text-brand-black" />
                 </button>
@@ -151,7 +181,17 @@ const LimitedTimeOffers = () => {
                 </div>
               </div>
               <div className="flex gap-2 mt-auto">
-                <button className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs">اشتري الآن</button>
+                <button className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs"
+                  style={{
+                    fontFamily: 'Calibri',
+                    fontWeight: 700,
+                    fontStyle: 'Bold',
+                    fontSize: '16px',
+                    leadingTrim: 'NONE',
+                    lineHeight: '100%',
+                    letterSpacing: '0%'
+                  }}
+                >اشتري الآن</button>
                 <button className="bg-gray-light border border-gray-200 rounded-full p-2 hover:bg-gray-light transition-colors flex-shrink-0">
                   <FiShoppingCart size={18} className="text-brand-black" />
                 </button>

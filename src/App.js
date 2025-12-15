@@ -33,7 +33,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="App">
-       <Header />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/abayas" element={<Abayas />} />
@@ -57,7 +57,7 @@ function App() {
           <Route path="/order-history" element={<PrivateRoute><OrderHistoryPage /></PrivateRoute>} />
         </Routes>
 
-       <Footer />
+        <Footer />
       </div>
     </Router>
   );

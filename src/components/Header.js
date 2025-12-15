@@ -74,10 +74,10 @@ export default function Header() {
               {menuOpen && (
                 <div className="absolute left-0 mt-2 w-52 bg-black border border-gray-200 shadow-lg rounded-xl py-3 text-right">
 
-                  {/*<p className="px-4 mb-2 text-white">مرحباً، {user.name}</p>} 
-                 */} <Link
+                  <Link
                     to="/edit-data"
                     className="text-white block px-4 py-2 hover:bg-gray-600"
+                    style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
                     onClick={() => setMenuOpen(false)}
                   >
                     تعديل البيانات
@@ -86,6 +86,7 @@ export default function Header() {
                   <Link
                     to="/order-history"
                     className="text-white block px-4 py-2 hover:bg-gray-600"
+                    style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
                     onClick={() => setMenuOpen(false)}
                   >
                     سجل الطلبات
@@ -97,6 +98,7 @@ export default function Header() {
                       setMenuOpen(false);
                     }}
                     className="block w-full text-right px-4 py-2 hover:bg-gray-600 text-red-600"
+                    style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
                   >
                     تسجيل الخروج
                   </button>
@@ -129,8 +131,8 @@ export default function Header() {
                     <Link
                       to={link.href}
                       className={`transition-colors font-calibri font-bold text-2xl leading-none tracking-normal text-center ${location.pathname === link.href
-                          ? "text-[#A73533] active:text-[#8B2A2A]"
-                          : "active:text-[#333333]"
+                        ? "text-[#A73533] active:text-[#8B2A2A]"
+                        : "active:text-[#333333]"
                         }`}
                       onClick={() => setOpen(false)}
                     >
@@ -169,6 +171,7 @@ export default function Header() {
                         <Link
                           to="/edit-data"
                           className="block px-4 py-2 hover:bg-gray-100"
+                          style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
                           onClick={() => setMenuOpen(false)}
                         >
                           تعديل البيانات
@@ -177,6 +180,7 @@ export default function Header() {
                         <Link
                           to="/order-history"
                           className="block px-4 py-2 hover:bg-gray-100"
+                          style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
                           onClick={() => setMenuOpen(false)}
                         >
                           سجل الطلبات
@@ -188,6 +192,7 @@ export default function Header() {
                             setMenuOpen(false);
                           }}
                           className="block w-full text-right px-4 py-2 hover:bg-gray-100 text-red-600"
+                          style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
                         >
                           تسجيل الخروج
                         </button>
