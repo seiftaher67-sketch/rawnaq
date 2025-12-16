@@ -11,6 +11,8 @@ export default function ProductCard({
   showOldPrice = false,
   variant = "default",
   discount = 0,
+  buttonText = "اشتري الآن",
+  showCartBtn = true,
 }) {
   const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false);
@@ -89,7 +91,7 @@ export default function ProductCard({
                 letterSpacing: '0%'
               }}
             >
-              اشتري الآن
+              {buttonText}
             </button>
             <button className="bg-gray-light border border-gray-200 rounded-full p-2 hover:bg-gray-light transition-colors flex-shrink-0">
               <FiShoppingCart size={18} className="text-brand-black" />

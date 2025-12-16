@@ -1,3 +1,4 @@
-- [x]y Modify the input divs for name, phone, and address to use flex row layout with label on right and input on left, aligning them horizontally.
-- [x] Adjust the card input section to align the input fields horizontally if needed, ensuring all inputs' beginnings are parallel.
-- [x] Test the layout to ensure proper alignment in RTL direction.
+- [x] Update MyOrders.js to use ProductCard component instead of custom order-item divs
+- [x] Replace empty image src with "/images/n1.jpg"
+- [x] Ensure the layout matches Abayas.js exactly (grid layout, ProductCard usage)
+- [x] Test the changes to verify the page renders correctly

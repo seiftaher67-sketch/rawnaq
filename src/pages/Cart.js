@@ -207,7 +207,7 @@ const Cart = () => {
             <div className="bg-gray-100 rounded-xl border border-gray-300 p-8 flex flex-col justify-center">
               <div className="space-y-4 text-right">
                 <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
-                  <span className="text-gray-700">مبيع إجمالي</span>
+                  <span className="text-gray-700">المبلغ الإجمالي</span>
                   <span className="text-gray-700">
                     {subtotal}
                     <span className="mr-1">ريال</span>
@@ -221,7 +221,7 @@ const Cart = () => {
                   </span>
                 </div>
                 <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
-                  <span className="text-gray-800">المبيع كامل</span>
+                  <span className="text-gray-800">المبلغ كامل</span>
                   <span className="text-gray-800">
                     {total}
                     <span className="mr-1">ريال</span>
@@ -256,7 +256,19 @@ const Cart = () => {
               <div className="space-y-4">
                 {/* Full Name */}
                 <div>
-                  <label className="block text-right text-gray-700 font-semibold mb-2">
+                  <label
+                    className="block text-right text-gray-700 font-semibold mb-2"
+                    style={{
+                      fontFamily: 'Calibri',
+                      fontWeight: 400,
+                      fontStyle: 'Regular',
+                      fontSize: '24px',
+                      leadingTrim: 'NONE',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      textAlign: 'right'
+                    }}
+                  >
                     الاسم الكامل
                   </label>
                   <input
@@ -271,7 +283,19 @@ const Cart = () => {
 
                 {/* Phone */}
                 <div>
-                  <label className="block text-right text-gray-700 font-semibold mb-2">
+                  <label
+                    className="block text-right text-gray-700 font-semibold mb-2"
+                    style={{
+                      fontFamily: 'Calibri',
+                      fontWeight: 400,
+                      fontStyle: 'Regular',
+                      fontSize: '24px',
+                      leadingTrim: 'NONE',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      textAlign: 'right'
+                    }}
+                  >
                     رقم الجوال
                   </label>
                   <input
@@ -286,7 +310,19 @@ const Cart = () => {
 
                 {/* Address */}
                 <div>
-                  <label className="block text-right text-gray-700 font-semibold mb-2">
+                  <label
+                    className="block text-right text-gray-700 font-semibold mb-2"
+                    style={{
+                      fontFamily: 'Calibri',
+                      fontWeight: 400,
+                      fontStyle: 'Regular',
+                      fontSize: '24px',
+                      leadingTrim: 'NONE',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      textAlign: 'right'
+                    }}
+                  >
                     العنوان
                   </label>
                   <input
@@ -301,7 +337,19 @@ const Cart = () => {
 
                 {/* Apartment Number */}
                 <div>
-                  <label className="block text-right text-gray-700 font-semibold mb-2">
+                  <label
+                    className="block text-right text-gray-700 font-semibold mb-2"
+                    style={{
+                      fontFamily: 'Calibri',
+                      fontWeight: 400,
+                      fontStyle: 'Regular',
+                      fontSize: '24px',
+                      leadingTrim: 'NONE',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      textAlign: 'right'
+                    }}
+                  >
                     رقم الشقة
                   </label>
                   <input
@@ -311,20 +359,42 @@ const Cart = () => {
                     onChange={(e) => setFormData({ ...formData, apartment: e.target.value })}
                     className="w-full p-3 border border-gray-300 rounded-lg text-right"
                     dir="rtl"
+                    style={{
+                      fontFamily: 'Calibri',
+                      fontWeight: 400,
+                      fontStyle: 'Regular',
+                      fontSize: '24px',
+                      leadingTrim: 'NONE',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      textAlign: 'right'
+                    }}
                   />
-                </div>
 
-                {/* Save Data Checkbox */}
-                <div className="flex items-center justify-end gap-3 mt-6">
-                  <label className="text-right text-gray-700">
-                    احفظ هذه المعلومات للمرة القادمة
-                  </label>
-                  <input
-                    type="checkbox"
-                    checked={formData.saveData}
-                    onChange={(e) => setFormData({ ...formData, saveData: e.target.checked })}
-                    className="w-5 h-5 rounded border border-gray-300 cursor-pointer"
-                  />
+                  {/* Save Data Checkbox */}
+                  <div className="flex items-center justify-end gap-3 mt-4">
+                    <label
+                      className="text-right text-gray-700"
+                      style={{
+                        fontFamily: 'Calibri',
+                        fontWeight: 400,
+                        fontStyle: 'Regular',
+                        fontSize: '20px',
+                        leadingTrim: 'NONE',
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        textAlign: 'right'
+                      }}
+                    >
+                      احفظ هذه المعلومات للمرة القادمة
+                    </label>
+                    <input
+                      type="checkbox"
+                      checked={formData.saveData}
+                      onChange={(e) => setFormData({ ...formData, saveData: e.target.checked })}
+                      className="w-5 h-5 rounded border border-gray-300 cursor-pointer"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -348,7 +418,7 @@ const Cart = () => {
         <div className="mt-16 px-4 flex justify-center">
           <div style={{ maxWidth: 'calc(100% - 200px)' }} className="w-full">
             {/* Payment Header */}
-            <div className="mb-8">
+            <div style={{ marginBottom: '-20px' }}>
               <h2
                 className="mb-1"
                 style={{
@@ -369,98 +439,68 @@ const Cart = () => {
                 style={{
                   fontFamily: 'Calibri',
                   fontWeight: 400,
-                  fontSize: '16px',
+                  fontSize: '24px',
                   lineHeight: '100%',
                   letterSpacing: '0%',
                   textAlign: 'right',
                   color: '#999999'
                 }}
               >
-                جميع المعاملات آمنة وموثوقة
+                جميع المعاملات آمنة ومشفرة
               </p>
             </div>
 
             {/* Top Row - Discount, Shipping, Apply Button */}
-            <div className="flex flex-row-reverse gap-4 mb-6">
-              <input
-                type="text"
-                placeholder="كود الخصم"
-                className="flex-1 p-3 border border-gray-300 rounded text-right text-sm bg-white"
-                style={{ fontFamily: 'Calibri', fontWeight: 400 }}
-                dir="rtl"
-              />
+            <div className="flex flex-row-reverse mb-6" style={{ gap: '28px', justifyContent: 'center' }}>
               <input
                 type="text"
                 placeholder="معاريف التوصيل"
-                className="flex-1 p-3 border border-gray-300 rounded text-right text-sm bg-white"
-                style={{ fontFamily: 'Calibri', fontWeight: 400 }}
+                readOnly
+                style={{ fontFamily: 'Calibri', fontWeight: 400, width: '100%', height: '61px', padding: '16px', border: '1px solid #ccc', borderRadius: '8px', textAlign: 'right', backgroundColor: '#fff' }}
                 dir="rtl"
               />
+
               <button
-                className="bg-gray-500 text-white px-8 py-3 rounded font-semibold hover:bg-gray-600 transition-colors text-sm whitespace-nowrap"
-                style={{ fontFamily: 'Calibri', fontWeight: 400 }}
+                style={{ fontFamily: 'Calibri', fontWeight: 400, width: '159px', height: '61px', padding: '16px', border: '1px solid #999', borderRadius: '8px', backgroundColor: '#888', color: '#fff', cursor: 'pointer', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#666'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#888'}
               >
                 تطبيق
               </button>
               <input
                 type="text"
-                placeholder="20 ر.س"
-                className="w-24 p-3 border border-gray-300 rounded text-right text-sm bg-white"
-                style={{ fontFamily: 'Calibri', fontWeight: 400 }}
+                placeholder="كود الخصم"
+                style={{ fontFamily: 'Calibri', fontWeight: 400, width: '100%', height: '61px', padding: '16px', border: '1px solid #ccc', borderRadius: '8px', textAlign: 'right', backgroundColor: '#fff' }}
                 dir="rtl"
               />
             </div>
 
             {/* Payment Details Section */}
-            <div className="border border-gray-300 rounded p-6 bg-gray-50 mb-8">
-              <div className="grid grid-cols-2 gap-8">
-                {/* Right Column - Card Details */}
-                <div>
-                  <label
-                    className="flex items-center justify-end gap-2 mb-3"
-                    style={{
-                      fontFamily: 'Calibri',
-                      fontWeight: 400,
-                      fontSize: '18px',
-                      lineHeight: '100%',
-                      letterSpacing: '0%',
-                      textAlign: 'right',
-                      color: '#333333'
-                    }}
-                  >
-                    <span>رقم البطاقة</span>
-                    <span className="text-lg">🔒</span>
-                  </label>
+            <div className="border border-gray-300 rounded p-6 bg-gray-50 mb-8" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {/* Card Number - Full Width */}
+                <input
+                  type="text"
+                  placeholder="🔒 رقم البطاقة"
+                  style={{ fontFamily: 'Calibri', fontWeight: 400, width: '100%', height: '61px', padding: '16px', border: '1px solid #ccc', borderRadius: '8px', textAlign: 'right', backgroundColor: '#fff', boxSizing: 'border-box', fontSize: '16px' }}
+                  dir="rtl"
+                />
+
+                {/* CVV and Expiry in Grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                  {/* CVV */}
                   <input
                     type="text"
                     placeholder="CVV"
-                    className="w-full p-3 border border-gray-300 rounded text-right text-sm bg-white"
-                    style={{ fontFamily: 'Calibri', fontWeight: 400 }}
+                    style={{ fontFamily: 'Calibri', fontWeight: 400, width: '100%', height: '61px', padding: '16px', border: '1px solid #ccc', borderRadius: '8px', textAlign: 'right', backgroundColor: '#fff', boxSizing: 'border-box', fontSize: '16px' }}
                     dir="rtl"
                   />
-                </div>
 
-                {/* Left Column - Expiry */}
-                <div>
-                  <label
-                    className="block mb-3"
-                    style={{
-                      fontFamily: 'Calibri',
-                      fontWeight: 400,
-                      fontSize: '18px',
-                      lineHeight: '100%',
-                      letterSpacing: '0%',
-                      textAlign: 'right',
-                      color: '#333333'
-                    }}
-                  >
-                    موعد انتهاء الصلاحية
-                  </label>
+                  {/* Expiry Date */}
                   <input
                     type="text"
-                    placeholder=""
-                    className="w-full p-3 border border-gray-300 rounded text-right text-sm bg-white"
-                    style={{ fontFamily: 'Calibri', fontWeight: 400 }}
+                    placeholder="موعد انتهاء الصلاحية"
+                    style={{ fontFamily: 'Calibri', fontWeight: 400, width: '100%', height: '61px', padding: '16px', border: '1px solid #ccc', borderRadius: '8px', textAlign: 'right', backgroundColor: '#fff', boxSizing: 'border-box', fontSize: '16px' }}
                     dir="rtl"
                   />
                 </div>
@@ -470,61 +510,61 @@ const Cart = () => {
         </div>
 
         {/* Installment Payment Section */}
-        <div className="mt-16 px-4 pb-20 flex justify-center">
+        <div className="mt-6 px-4 pb-20 flex justify-center">
           <div style={{ maxWidth: 'calc(100% - 200px)' }} className="w-full">
-            {/* Installment Header */}
-            <div className="mb-6">
-              <h2
-                style={{
-                  fontFamily: 'Calibri',
-                  fontWeight: 400,
-                  fontStyle: 'Regular',
-                  fontSize: '64px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  textAlign: 'right',
-                  color: '#0F0F0F'
-                }}
-              >
-                الدفع بالتقسيط
-              </h2>
-            </div>
+            <div className="border border-gray-300 rounded p-6 bg-gray-50 mb-8">
+              {/* Installment Header */}
+              <div className="mb-6" style={{ textAlign: 'right' }}>
+                <h2
+                  style={{
+                    fontFamily: 'Calibri',
+                    fontWeight: 400,
+                    fontStyle: 'Regular',
+                    fontSize: '40px',
+                    lineHeight: '100%',
+                    letterSpacing: '0%',
+                    textAlign: 'right',
+                    color: '#0F0F0F'
+                  }}
+                >
+                  الدفع بالتقسيط
+                </h2>
+              </div>
 
-            {/* Payment Methods */}
-            <div className="flex flex-row-reverse gap-6 mb-10">
-              {/* Tabby Button */}
-              <button
-                className="flex-1 border border-gray-400 rounded-lg p-4 hover:bg-gray-100 transition-colors flex items-center justify-center"
-                style={{ fontFamily: 'Calibri', fontWeight: 400 }}
-              >
-                <span style={{ fontSize: '24px', fontWeight: 400, color: '#333333' }}>tabby</span>
-              </button>
+              {/* Payment Methods */}
+              <div className="flex flex-row-reverse gap-3 justify-center mb-6">
+                {/* Tabby Button */}
+                <button
+                  style={{ fontFamily: 'Calibri', fontWeight: 400, backgroundColor: '#CCCCCC', border: '1px solid #999999', borderRadius: '8px', width: '531px', height: '71px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                >
+                  <img src="/images/tabby.png" alt="tabby" style={{ height: '40px', width: 'auto', display: 'block' }} />
+                </button>
 
-              {/* Tamara Button */}
-              <button
-                className="flex-1 border border-gray-400 rounded-lg p-4 hover:bg-gray-100 transition-colors flex items-center justify-center"
-                style={{ fontFamily: 'Calibri', fontWeight: 400 }}
-              >
-                <span style={{ fontSize: '24px', fontWeight: 400, color: '#333333' }}>tamara</span>
-              </button>
-            </div>
-
-            {/* Confirm Order Button */}
-            <div className="flex justify-center">
-              <button
-                className="bg-blue-500 hover:bg-blue-600 transition-colors text-white py-4 px-16 rounded-full text-lg"
-                style={{
-                  fontFamily: 'Calibri',
-                  fontWeight: 400,
-                  fontSize: '20px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%'
-                }}
-              >
-                تأكيد الطلب
-              </button>
+                {/* Tamara Button */}
+                <button
+                  style={{ fontFamily: 'Calibri', fontWeight: 400, backgroundColor: '#CCCCCC', border: '1px solid #999999', borderRadius: '8px', width: '531px', height: '71px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                >
+                  <img src="/images/tamara.png" alt="tamara" style={{ height: '40px', width: 'auto', display: 'block' }} />
+                </button>
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Confirm Order Button Section - Bottom of Page */}
+        <div className="mt-2 px-4 pb-20 flex justify-center">
+          <button
+            className="bg-blue-500 hover:bg-blue-600 transition-colors text-white py-4 px-16 rounded-full text-lg"
+            style={{
+              fontFamily: 'Calibri',
+              fontWeight: 400,
+              fontSize: '20px',
+              lineHeight: '100%',
+              letterSpacing: '0%'
+            }}
+          >
+            تأكيد الطلب
+          </button>
         </div>
       </div>
     </div>

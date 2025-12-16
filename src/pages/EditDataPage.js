@@ -87,12 +87,12 @@ export default function EditDataPage() {
   });
 
   return (
-    <div className="pt-32 pb-24 container mx-auto px-6" dir="rtl" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
+    <div className="pt-20 pb-24 container mx-auto px-6" dir="rtl" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
 
       {/* Card */}
       <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm max-w-4xl mx-auto">
 
-        <h1 className="text-4xl font-extrabold mb-32 text-black text-right">
+        <h1 className="text-4xl font-extrabold mt-4 mb-16 text-black text-right ml-4">
           تعديل البيانات
         </h1>
 
