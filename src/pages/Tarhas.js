@@ -77,16 +77,12 @@ export default function Tarhas() {
         </div>
       </div>
       {/* Products Grid */}
-      <div className="container mx-auto px-6">
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+      <div className="container mx-auto px-10">
+        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {tarhasList.map((product) => (
             <ProductCard
               key={product.id}
-              id={product.id}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              variant="default"
+              product={product}
             />
           ))}
         </div>

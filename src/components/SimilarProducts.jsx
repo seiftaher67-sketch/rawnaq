@@ -21,8 +21,8 @@ export default function SimilarProducts({ products = [] }) {
     <div className="mt-24">
       <h2 style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '64px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }} className="mb-10 text-[#0F0F0F]">قد يعجبك أيضاً</h2>
 
-      <div className="container mx-auto px-6">
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto px-10">
+        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((p, i) => (
             <div key={p.id || p._id || p.name || i}>
               <ProductCard

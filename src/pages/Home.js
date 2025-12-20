@@ -24,7 +24,7 @@ const Home = () => {
 
       {/* Shipping Info Marquee */}
       <div
-        className="bg-gray-medium text-white py-4 overflow-hidden"
+        className="bg-gray-500 text-white py-4 overflow-hidden"
         dir="rtl"
       >
         <div className="flex w-[200%] hover:[&>*]:[animation-play-state:paused]">

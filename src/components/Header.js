@@ -6,6 +6,9 @@ import {
   FiUser,
   FiMenu,
   FiX,
+  FiEdit2,
+  FiPackage,
+  FiLogOut,
 } from "react-icons/fi";
 import { useAuth } from "../context/AuthContext";
 
@@ -72,24 +75,24 @@ export default function Header() {
 
               {/* Profile Menu */}
               {menuOpen && (
-                <div className="absolute left-0 mt-2 w-52 bg-black border border-gray-200 shadow-lg rounded-xl py-3 text-right">
-
+                <div className="absolute left-0 mt-3 w-56 bg-gradient-to-br from-gray-900 to-black border border-red-500/30 shadow-2xl rounded-2xl py-2 text-right overflow-hidden">
+                  
                   <Link
                     to="/edit-data"
-                    className="text-white block px-4 py-2 hover:bg-gray-600"
-                    style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
+                    className="text-white flex items-center justify-start gap-3 px-4 py-2.5 hover:bg-red-600/20 transition-all duration-200 border-b border-gray-700/50 group"
                     onClick={() => setMenuOpen(false)}
                   >
-                    تعديل البيانات
+                    <FiEdit2 className="text-white group-hover:text-red-400 transition-colors" />
+                    <span className="text-sm font-medium">تعديل البيانات</span>
                   </Link>
 
                   <Link
                     to="/order-history"
-                    className="text-white block px-4 py-2 hover:bg-gray-600"
-                    style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
+                    className="text-white flex items-center justify-start gap-3 px-4 py-2.5 hover:bg-red-600/20 transition-all duration-200 border-b border-gray-700/50 group"
                     onClick={() => setMenuOpen(false)}
                   >
-                    سجل الطلبات
+                    <FiPackage className="text-white group-hover:text-blue-400 transition-colors" />
+                    <span className="text-sm font-medium">سجل الطلبات</span>
                   </Link>
 
                   <button
@@ -97,10 +100,10 @@ export default function Header() {
                       logout();
                       setMenuOpen(false);
                     }}
-                    className="block w-full text-right px-4 py-2 hover:bg-gray-600 text-red-600"
-                    style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
+                    className="w-full text-right px-4 py-2.5 hover:bg-red-600/30 transition-all duration-200 group flex items-center justify-start gap-3"
                   >
-                    تسجيل الخروج
+                    <FiLogOut className="text-red-500 group-hover:text-red-400 transition-colors" />
+                    <span className="text-sm font-medium text-red-500 group-hover:text-red-400">تسجيل الخروج</span>
                   </button>
                 </div>
               )}
@@ -164,26 +167,28 @@ export default function Header() {
 
                     {/* Profile Menu */}
                     {menuOpen && (
-                      <div className="absolute left-0 mt-2 w-52 bg-white border border-gray-200 shadow-lg rounded-xl py-3 text-right">
-
-                        <p className="px-4 mb-2 text-gray-700">مرحباً، {user.name}</p>
+                      <div className="absolute left-0 mt-3 w-56 bg-gradient-to-br from-gray-900 to-black border border-red-500/30 shadow-2xl rounded-2xl py-2 text-right overflow-hidden">
+                        
+                        <p className="px-4 py-2.5 text-sm font-semibold bg-red-600/10 border-b border-gray-700/50 text-red-500">
+                          مرحباً، {user.name}
+                        </p>
 
                         <Link
                           to="/edit-data"
-                          className="block px-4 py-2 hover:bg-gray-100"
-                          style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
+                          className="text-gray-100 flex items-center justify-between px-4 py-2.5 hover:bg-red-600/20 transition-all duration-200 border-b border-gray-700/50 group"
                           onClick={() => setMenuOpen(false)}
                         >
-                          تعديل البيانات
+                          <FiEdit2 className="text-red-500 group-hover:text-red-400 transition-colors" />
+                          <span className="text-sm font-medium">تعديل البيانات</span>
                         </Link>
 
                         <Link
                           to="/order-history"
-                          className="block px-4 py-2 hover:bg-gray-100"
-                          style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
+                          className="text-gray-100 flex items-center justify-between px-4 py-2.5 hover:bg-red-600/20 transition-all duration-200 border-b border-gray-700/50 group"
                           onClick={() => setMenuOpen(false)}
                         >
-                          سجل الطلبات
+                          <FiPackage className="text-blue-500 group-hover:text-blue-400 transition-colors" />
+                          <span className="text-sm font-medium">سجل الطلبات</span>
                         </Link>
 
                         <button
@@ -191,10 +196,10 @@ export default function Header() {
                             logout();
                             setMenuOpen(false);
                           }}
-                          className="block w-full text-right px-4 py-2 hover:bg-gray-100 text-red-600"
-                          style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}
+                          className="w-full text-right px-4 py-2.5 hover:bg-red-600/30 transition-all duration-200 group flex items-center justify-between"
                         >
-                          تسجيل الخروج
+                          <FiLogOut className="text-red-500 group-hover:text-red-400 transition-colors" />
+                          <span className="text-sm font-medium text-red-500 group-hover:text-red-400">تسجيل الخروج</span>
                         </button>
                       </div>
                     )}

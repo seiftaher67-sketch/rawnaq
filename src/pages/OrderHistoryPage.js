@@ -6,26 +6,26 @@ export default function OrderHistoryPage() {
     {
       name: "نقاب كريب",
       image: "/images/a1.jpg",
-      priceOld: "30 ر.س",
-      priceNew: "25 ر.س",
+      priceOld: "30 ",
+      priceNew: "25 ",
     },
     {
       name: "عباية كتان",
       image: "/images/a2.jpg",
-      priceOld: "30 ر.س",
-      priceNew: "25 ر.س",
+      priceOld: "30 ",
+      priceNew: "25 ",
     },
     {
       name: "طرحة قطن",
       image: "/images/a4.jpg",
-      priceOld: "30 ر.س",
-      priceNew: "25 ر.س",
+      priceOld: "30 ",
+      priceNew: "25 ",
     },
     {
       name: "نقاب كريب",
       image: "/images/a3.jpg",
-      priceOld: "30 ر.س",
-      priceNew: "25 ر.س",
+      priceOld: "30 ",
+      priceNew: "25 ",
     },
   ];
 
@@ -37,8 +37,8 @@ export default function OrderHistoryPage() {
       </h1>
 
       {/* Products Grid - reuse ProductCard like Abayas page */}
-      <div className="container mx-auto px-6">
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+      <div className="container mx-auto px-10">
+        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {orders.map((o, i) => (
             <ProductCard
               key={i}

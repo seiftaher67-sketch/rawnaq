@@ -1,103 +1,98 @@
-import { FiHeart, FiShoppingCart } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FiHeart, FiShoppingCart } from 'react-icons/fi';
+import { useFavorites } from '../context/FavoritesContext';
 
 export default function ProductCard({
+  product, // Prefer passing the whole product object
   id,
-  image = "/1.png",
-  name = "اسم المنتج",
-  price = 0,
+  image,
+  name,
+  price,
   oldPrice,
-  showOldPrice = false,
-  variant = "default",
-  discount = 0,
-  buttonText = "اشتري الآن",
-  showCartBtn = true,
+  discount,
 }) {
   const navigate = useNavigate();
-  const [isFavorite, setIsFavorite] = useState(false);
+  const { isFavorite, toggleFavorite } = useFavorites();
 
-  const showBuyBtn = variant !== "compact";
-  const showHeart = variant !== "compact";
+  // Consolidate product data. If a full 'product' object is passed, use it.
+  // Otherwise, use individual props. This provides flexibility.
+  const productData = product || { id, image, name, price, oldPrice, discount };
 
+  const handleToggleFavorite = () => {
+    toggleFavorite(productData);
+  };
+  
+  // The card styling from the Home page carousel
   return (
-    <div className="flex-1 bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-soft transition-shadow flex flex-col">
-
-      {/* Product Image Container */}
-      <div className="relative bg-gray-100 h-[28rem] flex-grow overflow-hidden">
+    <div
+      className="
+        flex-none
+        w-[350px] h-[489px]
+        snap-start
+        bg-white rounded-3xl border border-gray-200
+        overflow-hidden hover:shadow-soft transition
+        flex flex-col
+      "
+    >
+      {/* Image */}
+      <div className="relative h-[20rem] bg-gray-100">
         <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover object-center"
+          src={productData.image}
+          alt={productData.name}
+          className="w-full h-full object-cover"
         />
 
-        {/* Heart Icon - Top Left */}
-        {showHeart && (
-          <button
-            onClick={() => setIsFavorite(!isFavorite)}
-            className="absolute top-3 left-3 bg-white rounded-full p-2 shadow-soft hover:bg-gray-light transition-colors"
-          >
-            <FiHeart
-              size={20}
-              className={isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-dark'}
-            />
-          </button>
-        )}
+        <button
+          onClick={handleToggleFavorite}
+          className="absolute top-3 left-3 bg-white p-2 rounded-full shadow"
+        >
+          <FiHeart
+            size={20}
+            className={
+              isFavorite(productData.id)
+                ? 'text-red-500 fill-red-500'
+                : 'text-gray-600'
+            }
+          />
+        </button>
 
-        {/* Discount Badge - Top Right */}
-        {discount > 0 && (
-          <div className="absolute top-3 right-3 bg-state-error text-white px-3 py-1 rounded font-bold text-sm">
-            {discount}%
-          </div>
+        {productData.discount && (
+          <span className="absolute top-3 right-3 bg-state-error text-white px-3 py-1 rounded text-sm font-bold">
+            {productData.discount}%
+          </span>
         )}
       </div>
 
-      {/* Product Info */}
-      <div className="p-3 flex flex-col">
-        {/* Name and Price Row */}
-        <div className="flex justify-between items-center mb-3">
-          {/* Product Name - Left */}
-          <h3 className="font-sans text-lg font-bold text-left opacity-60" style={{ color: '#000000' }}>
-            {name}
-          </h3>
-
-          {/* Price Section - Right */}
-          <div className="flex flex-col text-right">
-            {/* Current Price */}
-            <p className="font-bold text-xl" style={{ color: '#8B1538' }}>
-              {price} <span className="text-sm">ريال</span>
+      {/* Info */}
+      <div className="p-4 flex flex-col flex-grow">
+        <div className="flex justify-between mb-3 items-start">
+          <h3 className="font-calibri font-normal text-2xl leading-none tracking-normal w-2/3">{productData.name}</h3>
+          <div className="text-right">
+            <p className="font-bold text-xl text-[#8B1538] flex items-baseline justify-end">
+              {productData.price}
+              <span className="font-calibri font-bold text-2xl leading-none tracking-normal mr-1"> ريال</span>
             </p>
-            {/* Original Price - Strikethrough */}
-            {showOldPrice && (
-              <p className="text-sm" style={{ color: '#999999', textDecoration: 'line-through' }}>
-                {oldPrice} <span className="text-xs">ريال</span>
+            {productData.oldPrice && (
+              <p className="text-sm line-through text-gray-400 flex items-baseline justify-end">
+                {productData.oldPrice}
+                <span className="font-calibri font-bold text-base leading-none tracking-normal mr-1"> ريال</span>
               </p>
             )}
           </div>
         </div>
 
-        {/* Action Buttons */}
-        {showBuyBtn && (
-          <div className="flex gap-2 mt-auto">
-            <button
-              onClick={() => id && navigate(`/product/${id}`)}
-              className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs"
-              style={{
-                fontFamily: 'Calibri',
-                fontWeight: 700,
-                fontStyle: 'Bold',
-                fontSize: '16px',
-                lineHeight: '100%',
-                letterSpacing: '0%'
-              }}
-            >
-              {buttonText}
-            </button>
-            <button className="bg-gray-light border border-gray-200 rounded-full p-2 hover:bg-gray-light transition-colors flex-shrink-0">
-              <FiShoppingCart size={18} className="text-brand-black" />
-            </button>
-          </div>
-        )}
+        <div className="flex gap-2 mt-auto">
+          <button
+            onClick={() => navigate(`/product/${productData.id}`)}
+            className="flex-1 bg-brand-black text-white py-2 rounded-full font-bold hover:bg-brand-softBlack transition"
+          >
+            اشتري الآن
+          </button>
+          <button className="p-3 border rounded-full">
+            <FiShoppingCart size={18} />
+          </button>
+        </div>
       </div>
     </div>
   );

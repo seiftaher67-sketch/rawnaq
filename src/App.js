@@ -28,37 +28,41 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import PrivateRoute from './components/PrivateRoute';
 
+import { FavoritesProvider } from './context/FavoritesContext';
+
 function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/abayas" element={<Abayas />} />
-          <Route path="/tarhas" element={<Tarhas />} />
-          <Route path="/niqabs" element={<Niqabs />} />
-          <Route path="/offers" element={<Offers />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/otp" element={<OTP />} />
-          <Route path="/edit-profile" element={<PrivateRoute><EditProfile /></PrivateRoute>} />
-          <Route path="/my-orders" element={<PrivateRoute><MyOrders /></PrivateRoute>} />
-          <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
-          <Route path="/washing-guide" element={<WashingGuide />} />
-          <Route path="/return-policy" element={<ReturnPolicy />} />
-          <Route path="/order-success" element={<OrderSuccess />} />
-          <Route path="/verify-phone" element={<VerifyPhone />} />
-          <Route path="/edit-data" element={<PrivateRoute><EditDataPage /></PrivateRoute>} />
-          <Route path="/order-history" element={<PrivateRoute><OrderHistoryPage /></PrivateRoute>} />
-        </Routes>
+      <FavoritesProvider>
+        <ScrollToTop />
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/abayas" element={<Abayas />} />
+            <Route path="/tarhas" element={<Tarhas />} />
+            <Route path="/niqabs" element={<Niqabs />} />
+            <Route path="/offers" element={<Offers />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/otp" element={<OTP />} />
+            <Route path="/edit-profile" element={<PrivateRoute><EditProfile /></PrivateRoute>} />
+            <Route path="/my-orders" element={<PrivateRoute><MyOrders /></PrivateRoute>} />
+            <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
+            <Route path="/washing-guide" element={<WashingGuide />} />
+            <Route path="/return-policy" element={<ReturnPolicy />} />
+            <Route path="/order-success" element={<OrderSuccess />} />
+            <Route path="/verify-phone" element={<VerifyPhone />} />
+            <Route path="/edit-data" element={<PrivateRoute><EditDataPage /></PrivateRoute>} />
+            <Route path="/order-history" element={<PrivateRoute><OrderHistoryPage /></PrivateRoute>} />
+          </Routes>
 
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </FavoritesProvider>
     </Router>
   );
 }

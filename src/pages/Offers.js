@@ -170,8 +170,8 @@ export default function Offers() {
       </div>
 
       {/* Products Grid */}
-      <div className="container mx-auto px-6">
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto px-10">
+        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {offersData.map((product) => (
             <div key={product.id}>
               <ProductCard
