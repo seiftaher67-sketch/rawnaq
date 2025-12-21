@@ -137,6 +137,7 @@ const ProductCarousel = () => {
                     <button
                       onClick={() => navigate(`/product/${product.id}`)}
                       className="flex-1 bg-brand-black text-white py-2 rounded-full font-bold hover:bg-brand-softBlack transition"
+                      style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}
                     >
                       اشتري الآن
                     </button>

@@ -175,7 +175,6 @@ const Cart = () => {
                         fontWeight: 700,
                         fontStyle: 'Bold',
                         fontSize: '16px',
-                        leadingTrim: 'NONE',
                         lineHeight: '100%',
                         letterSpacing: '0%'
                       }}

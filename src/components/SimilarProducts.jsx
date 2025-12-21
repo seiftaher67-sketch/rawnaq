@@ -9,10 +9,10 @@ export default function SimilarProducts({ products = [] }) {
     "/images/a4.jpg",
   ];
 
-  // Force the four similar items to use a1..a4 images so all are visible
-  const items = products.slice(0, 4).map((p, i) => ({ ...p, _imgIndex: i, image: defaultImgs[i] }));
+  // Force the three similar items to use a1..a3 images so all are visible
+  const items = products.slice(0, 3).map((p, i) => ({ ...p, _imgIndex: i, image: defaultImgs[i] }));
 
-  while (items.length < 4) {
+  while (items.length < 3) {
     const idx = items.length;
     items.push({ id: `placeholder-${idx}`, name: "منتج مشابه", price: "", oldPrice: "", image: defaultImgs[idx], _imgIndex: idx });
   }

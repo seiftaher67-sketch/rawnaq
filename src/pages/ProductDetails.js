@@ -55,7 +55,7 @@ export default function ProductDetails() {
                   src={img}
                   alt={`Product view ${index + 1}`}
                   className="w-full h-full object-cover transition-all duration-300"
-                  style={{filter: hoveredThumbnail === index ? 'brightness(0.6)' : 'brightness(1)'}}
+                  style={{ filter: hoveredThumbnail === index ? 'brightness(0.6)' : 'brightness(1)' }}
                 />
               </button>
             ))}
@@ -102,7 +102,7 @@ export default function ProductDetails() {
 
           {/* Rating */}
           <div className="flex items-center gap-1 mb-3 justify-center">
-            <div className="text-[#C8A06A] text-xl" style={{fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px'}}>
+            <div className="text-[#C8A06A] text-xl" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px' }}>
               {"★".repeat(product.rating)}
             </div>
           </div>
@@ -110,19 +110,19 @@ export default function ProductDetails() {
           {/* Price */}
           <div className="mb-4 pb-3">
             <div className="flex items-center gap-2 justify-center">
-              <span className="text-base text-gray-500 line-through" style={{fontFamily: 'Calibri', fontWeight: 400, fontSize: '16px'}}>{product.originalPrice}</span>
-              <span className="text-2xl font-bold" style={{color: '#8B1538', fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', lineHeight: '100%', letterSpacing: '0%'}}>{product.price}</span>
+              <span className="text-base text-gray-500 line-through" style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '16px' }}>{product.originalPrice}</span>
+              <span className="text-2xl font-bold" style={{ color: '#8B1538', fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', lineHeight: '100%', letterSpacing: '0%' }}>{product.price}</span>
             </div>
           </div>
 
           {/* Size Guide Link */}
           <div className="mb-4">
-            <a href="#" className="text-gray-600 underline" style={{fontFamily: 'Calibri', fontWeight: 400, fontSize: '16px'}}>جدول المقاسات</a>
+            <a href="#" className="text-gray-600 underline" style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '16px' }}>جدول المقاسات</a>
           </div>
 
           {/* Sizes Label */}
           <div className="mb-2">
-            <h3 className="font-semibold text-black" style={{fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px'}}>المقاسات</h3>
+            <h3 className="font-semibold text-black" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px' }}>المقاسات</h3>
           </div>
 
           {/* Size */}
@@ -136,7 +136,7 @@ export default function ProductDetails() {
                     ? "bg-black text-white border-black"
                     : "border-gray-400 text-black hover:border-black"
                     }`}
-                  style={{fontFamily: 'Calibri', fontWeight: 600, fontSize: '16px'}}
+                  style={{ fontFamily: 'Calibri', fontWeight: 600, fontSize: '16px' }}
                 >
                   {s}
                 </button>
@@ -146,7 +146,7 @@ export default function ProductDetails() {
 
           {/* Colors Label */}
           <div className="mb-2">
-            <h3 className="font-semibold text-black" style={{fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px'}}>الألوان</h3>
+            <h3 className="font-semibold text-black" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px' }}>الألوان</h3>
           </div>
 
           {/* Colors */}
@@ -172,7 +172,7 @@ export default function ProductDetails() {
 
           {/* Quantity Label */}
           <div className="mb-2">
-            <h3 className="font-semibold text-black" style={{fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px'}}>الكمية</h3>
+            <h3 className="font-semibold text-black" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px' }}>الكمية</h3>
           </div>
 
           <div className="mb-5">
@@ -180,7 +180,7 @@ export default function ProductDetails() {
               <button onClick={() => qty > 1 && setQty(qty - 1)}>
                 <FiMinus className="text-xl" />
               </button>
-              <span className="font-semibold" style={{fontFamily: 'Calibri', fontWeight: 600, fontSize: '18px'}}>{qty}</span>
+              <span className="font-semibold" style={{ fontFamily: 'Calibri', fontWeight: 600, fontSize: '18px' }}>{qty}</span>
               <button onClick={() => setQty(qty + 1)}>
                 <FiPlus className="text-xl" />
               </button>
@@ -189,11 +189,11 @@ export default function ProductDetails() {
 
           {/* Buttons */}
           <div className="flex flex-col gap-2 max-w-lg mx-auto mt-8">
-            <button className="w-full bg-black text-white py-3 px-12 rounded-full font-bold hover:bg-gray-900 transition transform hover:scale-105 hover:shadow-lg" style={{fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '16px', lineHeight: '100%', letterSpacing: '0%'}}>
+            <button className="w-full bg-black text-white py-3 px-12 rounded-full font-bold hover:bg-gray-900 transition transform hover:scale-105 hover:shadow-lg" style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
               اشتري الآن
             </button>
 
-            <button className="w-full flex items-center justify-center gap-2 border-2 border-black py-3 px-12 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 hover:shadow-lg" style={{fontFamily: 'Calibri', fontWeight: 700, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%'}}>
+            <button className="w-full flex items-center justify-center gap-2 border-2 border-black py-3 px-12 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 hover:shadow-lg" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
               <FiShoppingCart className="text-lg" />
               أضف إلى السلة
             </button>
@@ -202,7 +202,7 @@ export default function ProductDetails() {
       </div>
 
       {/* DESCRIPTION (same as page 48) */}
-      <div className="max-w-3xl mx-auto border-t pt-16 border-gray-200">
+      <div className="max-w-3xl mx-auto border-t pt-16 border-gray-200" style={{ marginRight: '30px' }}>
         <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '40px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>تفاصيل المنتج</h2>
 
         <p className="mb-6" style={{
@@ -233,114 +233,286 @@ export default function ProductDetails() {
 
       </div>
 
-      {/* REVIEWS SECTION */}
-      <div className="max-w-3xl mx-auto mt-20 border-t pt-16 border-gray-200">
+      {/* SIZES SECTION */}
+      <div className="max-w-3xl ml-auto mt-20 border-t pt-16 border-gray-200" style={{ marginRight: '30px' }}>
+        <p style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '40px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>تفصيل حسب المقاس</p>
+        <br></br>
+        <p style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '32px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>أدخلي مقاساتك واحصلي على عباءة مصممة خصيصًا لك , يرجى إدخال المقاسات بالسنتيمتر</p>
+        <br></br>
+        <div style={{
+          width: '304px',
+          height: '59px',
+          gap: '10px',
+          angle: '0deg',
+          opacity: 1,
+          borderRadius: '16px',
+          padding: '10px',
+          border: '2px solid #950000',
+          backgroundColor: '#950000'
+        }}>
 
-        <h2
-          style={{
+          <button style={{
+            width: '100%',
+            height: '100%',
             fontFamily: 'Calibri',
-            fontWeight: 700,
+            fontWeight: 400,
             fontStyle: 'normal',
-            fontSize: '40px',
+            fontSize: '32px',
             lineHeight: '100%',
             letterSpacing: '0%',
             textAlign: 'right',
-            color: '#0F0F0F',
-            marginBottom: '40px'
-          }}
-        >
-          تقييمات ومراجعات المنتج
-        </h2>
-
-        {/* Review Item */}
-        <div className="space-y-6">
-
-          {product.reviews.map((review, index) => (
-            <div key={index} className="pb-6 border-b border-gray-200 last:border-b-0">
-
-              {/* Header with Avatar, Name, Stars and Date */}
-              <div className="flex gap-3 items-start mb-3 justify-between">
-
-                {/* Left Section - Avatar and Name/Stars */}
-                <div className="flex gap-3 items-start flex-1">
-                  {/* Avatar */}
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gray-300 rounded-full" />
-                  </div>
-
-                  {/* Name and Stars */}
-                  <div>
-                    <h3
-                      style={{
-                        fontFamily: 'Calibri',
-                        fontWeight: 400,
-                        fontStyle: 'normal',
-                        fontSize: '24px',
-                        lineHeight: '100%',
-                        letterSpacing: '0%',
-                        textAlign: 'right',
-                        color: '#0F0F0F',
-                        marginBottom: '6px'
-                      }}
-                    >
-                      {review.name}
-                    </h3>
-                    <div className="text-[#C8A06A] text-xl">
-                      {"★".repeat(review.rating)}
-                      <span className="text-gray-300">
-                        {"★".repeat(5 - review.rating)}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Section - Date */}
-                <div className="flex-shrink-0 text-left">
-                  <p
-                    style={{
-                      fontFamily: 'Calibri',
-                      fontWeight: 400,
-                      fontStyle: 'normal',
-                      fontSize: '16px',
-                      lineHeight: '100%',
-                      letterSpacing: '0%',
-                      textAlign: 'right',
-                      color: '#707070'
-                    }}
-                  >
-                    {review.date}
-                  </p>
-                </div>
+            color: 'white',
+            backgroundColor: 'transparent',
+            border: 'none',
+            cursor: 'pointer'
+          }}>
+            طريقة أخذ المقاسات
+          </button>
+        </div>
+        <div>
+          <form className="flex flex-col gap-4 mt-4">
+            <div className="flex gap-4">
+              <div className="flex flex-col">
+                <label className="text-right mb-1" style={{ fontFamily: 'Calibri', fontSize: '16px', color: '#0F0F0F' }}>الطول (سم)</label>
+                <input
+                  type="text"
+                  placeholder="170cm"
+                  className="text-right"
+                  style={{
+                    width: '600px',
+                    height: '40px',
+                    gap: '10px',
+                    transform: 'rotate(0deg)',
+                    opacity: 1,
+                    borderRadius: '8px',
+                    padding: '8px',
+                    borderWidth: '1px',
+                    border: '1px solid #d1d5db',
+                    fontFamily: 'Calibri',
+                    fontSize: '16px'
+                  }}
+                />
               </div>
-
-              {/* Review Text */}
-              <p
-                style={{
-                  fontFamily: 'Calibri',
-                  fontWeight: 400,
-                  fontStyle: 'normal',
-                  fontSize: '20px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%',
-                  textAlign: 'right',
-                  color: '#0F0F0F',
-                  marginRight: '50px'
-                }}
-                className="mt-2"
-              >
-                {review.text}
-              </p>
+              <div className="flex flex-col">
+                <label className="text-right mb-1" style={{ fontFamily: 'Calibri', fontSize: '16px', color: '#0F0F0F' }}>محيط الارداف (سم)</label>
+                <input
+                  type="text"
+                  placeholder="100cm"
+                  className="text-right"
+                  style={{
+                    width: '600px',
+                    height: '40px',
+                    gap: '10px',
+                    transform: 'rotate(0deg)',
+                    opacity: 1,
+                    borderRadius: '8px',
+                    padding: '8px',
+                    borderWidth: '1px',
+                    border: '1px solid #d1d5db',
+                    fontFamily: 'Calibri',
+                    fontSize: '16px'
+                  }}
+                />
+              </div>
             </div>
-          ))}
-
+            <div className="flex gap-4">
+              <div className="flex flex-col">
+                <label className="text-right mb-1" style={{ fontFamily: 'Calibri', fontSize: '16px', color: '#0F0F0F' }}>محيط الصدر (سم)</label>
+                <input
+                  type="text"
+                  placeholder="90cm"
+                  className="text-right"
+                  style={{
+                    width: '600px',
+                    height: '40px',
+                    gap: '10px',
+                    transform: 'rotate(0deg)',
+                    opacity: 1,
+                    borderRadius: '8px',
+                    padding: '8px',
+                    borderWidth: '1px',
+                    border: '1px solid #d1d5db',
+                    fontFamily: 'Calibri',
+                    fontSize: '16px'
+                  }}
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-right mb-1" style={{ fontFamily: 'Calibri', fontSize: '16px', color: '#0F0F0F' }}>عرض الكتف (سم)</label>
+                <input
+                  type="text"
+                  placeholder="40cm"
+                  className="text-right"
+                  style={{
+                    width: '600px',
+                    height: '40px',
+                    gap: '10px',
+                    transform: 'rotate(0deg)',
+                    opacity: 1,
+                    borderRadius: '8px',
+                    padding: '8px',
+                    borderWidth: '1px',
+                    border: '1px solid #d1d5db',
+                    fontFamily: 'Calibri',
+                    fontSize: '16px'
+                  }}
+                />
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex flex-col">
+                <label className="text-right mb-1" style={{ fontFamily: 'Calibri', fontSize: '16px', color: '#0F0F0F' }}>محيط الخصر (سم)</label>
+                <input
+                  type="text"
+                  placeholder="80cm"
+                  className="text-right"
+                  style={{
+                    width: '600px',
+                    height: '40px',
+                    gap: '10px',
+                    transform: 'rotate(0deg)',
+                    opacity: 1,
+                    borderRadius: '8px',
+                    padding: '8px',
+                    borderWidth: '1px',
+                    border: '1px solid #d1d5db',
+                    fontFamily: 'Calibri',
+                    fontSize: '16px',
+                    outline: 'none'
+                  }}
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-right mb-1" style={{ fontFamily: 'Calibri', fontSize: '16px', color: '#0F0F0F' }}>طول الكم (سم)</label>
+                <input
+                  type="text"
+                  placeholder="60cm"
+                  className="text-right"
+                  style={{
+                    width: '600px',
+                    height: '40px',
+                    gap: '10px',
+                    transform: 'rotate(0deg)',
+                    opacity: 1,
+                    borderRadius: '8px',
+                    padding: '8px',
+                    borderWidth: '1px',
+                    border: '1px solid #d1d5db',
+                    fontFamily: 'Calibri',
+                    fontSize: '16px',
+                    outline: 'none'
+                  }}
+                />
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex flex-col">
+                <label className="text-right mb-1" style={{ fontFamily: 'Calibri', fontSize: '16px', color: '#0F0F0F' }}>طول العباءة (سم)</label>
+                <input
+                  type="text"
+                  placeholder="150cm"
+                  className="text-right"
+                  style={{
+                    width: '600px',
+                    height: '40px',
+                    gap: '10px',
+                    transform: 'rotate(0deg)',
+                    opacity: 1,
+                    borderRadius: '8px',
+                    padding: '8px',
+                    borderWidth: '1px',
+                    border: '1px solid #d1d5db',
+                    fontFamily: 'Calibri',
+                    fontSize: '16px',
+                    outline: 'none'
+                  }}
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-right mb-1" style={{ fontFamily: 'Calibri', fontSize: '16px', color: '#0F0F0F' }}>محيط الذراع (سم)</label>
+                <input
+                  type="text"
+                  placeholder="30cm"
+                  className="text-right"
+                  style={{
+                    width: '600px',
+                    height: '40px',
+                    gap: '10px',
+                    transform: 'rotate(0deg)',
+                    opacity: 1,
+                    borderRadius: '8px',
+                    padding: '8px',
+                    borderWidth: '1px',
+                    border: '1px solid #d1d5db',
+                    fontFamily: 'Calibri',
+                    fontSize: '16px',
+                    outline: 'none'
+                  }}
+                />
+              </div>
+            </div>
+          </form>
         </div>
 
       </div>
+
+      {/* CUSTOM NOTES SECTION */}
+      <div className="max-w-3xl ml-auto mt-8" style={{ marginRight: '30px' }}>
+        <p className="mb-1" style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>ملاحظات اضافيه</p>
+        <textarea
+          placeholder="هل لديك أي طلبات خاصة؟ (طول إضافي، اتساع أكبر، تعديل معين…)"
+          className="w-[1216px] h-32 p-4 border border-gray-300 rounded-lg text-right focus:shadow-none"
+          style={{ fontFamily: 'Calibri', fontSize: '16px', boxShadow: 'none', resize: 'none', outline: 'none' }}
+        />
+        <button
+          className="mt-4 text-white rounded-full font-bold transition transform hover:scale-105 hover:shadow-lg"
+          style={{
+            width: '1113px',
+            height: '88px',
+            gap: '8px',
+            angle: '0deg',
+            opacity: 1,
+            borderRadius: '50px',
+            padding: '8px',
+            backgroundColor: '#4697FF',
+            fontFamily: 'Calibri',
+            fontWeight: 700,
+            fontStyle: 'Bold',
+            fontSize: '36px',
+            leadingTrim: 'NONE',
+            lineHeight: '100%',
+            letterSpacing: '0%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center'
+          }}
+          onMouseEnter={(e) => e.target.style.backgroundColor = '#3a87e6'}
+          onMouseLeave={(e) => e.target.style.backgroundColor = '#4697FF'}
+        >
+          تأكيد الطلب
+        </button>
+        <p style={{
+          fontFamily: 'Calibri',
+          fontWeight: 400,
+          fontStyle: 'Regular',
+          fontSize: '24px',
+          leadingTrim: 'NONE',
+          lineHeight: '100%',
+          letterSpacing: '0%',
+          textAlign: 'right',
+          marginTop: '16px',
+          color: '#666'
+        }}>
+          المنتجات المفصلة حسب الطلب لا يمكن إرجاعها إلا في حالة وجود عيب.
+        </p>
+      </div>
+
 
       {/* SIMILAR PRODUCTS */}
       <SimilarProducts
         products={product.similarProducts}
       />
-    </div>
+    </div >
   );
 }
