@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import ProductCard from "../components/ProductCard.jsx";
-import { FiClock } from 'react-icons/fi';
 
 export default function Offers() {
   const [selectedProductType, setSelectedProductType] = useState('');
@@ -124,10 +123,11 @@ export default function Offers() {
 
           {/* Product Type */}
           <div className="relative w-full md:w-1/2">
-            <select 
+            <select
               value={selectedProductType}
               onChange={(e) => setSelectedProductType(e.target.value)}
               className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white"
+              style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}
             >
               <option value="">نوع المنتج</option>
               <option value="عباية">عباية</option>
@@ -141,10 +141,11 @@ export default function Offers() {
 
           {/* Fabric Type */}
           <div className="relative w-full md:w-1/2">
-            <select 
+            <select
               value={selectedFabric}
               onChange={(e) => setSelectedFabric(e.target.value)}
               className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white"
+              style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}
             >
               <option value="">نوع القماش</option>
               <option value="قطن">قطن</option>
@@ -186,32 +187,6 @@ export default function Offers() {
               />
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* Digital Countdown Timer */}
-      <div className="text-center mt-12">
-        <div className="flex items-center justify-center mb-4">
-          <FiClock className="text-red-600 mr-2" size={24} />
-          <p className="text-gray-600 text-lg font-semibold">العرض ينتهي خلال:</p>
-        </div>
-        <div className="flex justify-center space-x-6">
-          <div className="bg-gradient-to-br from-red-100 to-red-200 backdrop-blur-md text-red-900 border-2 border-red-400 px-8 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 animate-pulse">
-            <span className="text-4xl font-extrabold block">02</span>
-            <span className="text-sm font-medium">أيام</span>
-          </div>
-          <div className="bg-gradient-to-br from-red-100 to-red-200 backdrop-blur-md text-red-900 border-2 border-red-400 px-8 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 animate-pulse">
-            <span className="text-4xl font-extrabold block">14</span>
-            <span className="text-sm font-medium">ساعات</span>
-          </div>
-          <div className="bg-gradient-to-br from-red-100 to-red-200 backdrop-blur-md text-red-900 border-2 border-red-400 px-8 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 animate-pulse">
-            <span className="text-4xl font-extrabold block">30</span>
-            <span className="text-sm font-medium">دقائق</span>
-          </div>
-          <div className="bg-gradient-to-br from-red-100 to-red-200 backdrop-blur-md text-red-900 border-2 border-red-400 px-8 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 animate-pulse">
-            <span className="text-4xl font-extrabold block">45</span>
-            <span className="text-sm font-medium">ثواني</span>
-          </div>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
-- [x] Fix ProductCarousel to be infinite
-  - [x] Duplicate products array
-  - [x] Use duplicatedProducts in map
-  - [x] Update handleNext and handlePrevious to move by productsPerPage
-  - [x] Add reset logic for infinite scrolling
+# TODO: Remove Focus Outline from Buttons in Cart Page
+
+## Steps to Complete:
+- [x] Add `focus:outline-none` to Tailwind CSS className for buttons using Tailwind classes (Previous, Next, Buy Now, Shopping Cart Icon, Confirm Order)
+- [x] Add `outline: 'none'` to inline styles for buttons using inline styles (Apply, Tabby, Tamara)
+- [x] Changes implemented - ready for testing

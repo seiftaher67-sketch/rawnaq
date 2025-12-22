@@ -1,44 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
 import card1 from '../card1.jpg';
 import card2 from '../card2.jpg';
 import card3 from '../card3.jpg';
 
 const LimitedTimeOffers = () => {
-  const [timeLeft, setTimeLeft] = useState({ days: 2, hours: 14, minutes: 30, seconds: 45 });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prevTime => {
-        let { days, hours, minutes, seconds } = prevTime;
-        if (seconds > 0) {
-          seconds--;
-        } else if (minutes > 0) {
-          minutes--;
-          seconds = 59;
-        } else if (hours > 0) {
-          hours--;
-          minutes = 59;
-          seconds = 59;
-        } else if (days > 0) {
-          days--;
-          hours = 23;
-          minutes = 59;
-          seconds = 59;
-        } else {
-          clearInterval(timer);
-          return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-        }
-        return { days, hours, minutes, seconds };
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   const marqueeText = "شحن مجاني لجميع الطلبات داخل السعودية لفترة محدودة";
   const spanStyle = { fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' };
-  const spans = Array.from({length: 20}, (_, i) => (
+  const spans = Array.from({ length: 20 }, (_, i) => (
     <span key={i} className="inline-block px-16 text-center text-base font-semibold" style={spanStyle}>{marqueeText}</span>
   ));
 
@@ -46,7 +16,8 @@ const LimitedTimeOffers = () => {
     <div className="bg-gray-50 py-12 px-4">
       {/* Shipping Info Marquee */}
       <div className="bg-gray-600 text-white py-4 mb-8">
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           .animate-marquee {
             animation: marquee 80s linear infinite;
             display: inline-block;
@@ -196,24 +167,6 @@ const LimitedTimeOffers = () => {
                   <FiShoppingCart size={18} className="text-brand-black" />
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-        {/* Countdown Timer */}
-        <div className="text-center mt-8">
-          <p className="text-gray-600 mb-2">العرض ينتهي خلال:</p>
-          <div className="flex justify-center space-x-4">
-            <div className="bg-red-500 text-white px-4 py-2 rounded">
-              <span className="text-2xl font-bold">{timeLeft.days.toString().padStart(2, '0')}</span><br/>أيام
-            </div>
-            <div className="bg-red-500 text-white px-4 py-2 rounded">
-              <span className="text-2xl font-bold">{timeLeft.hours.toString().padStart(2, '0')}</span><br/>ساعات
-            </div>
-            <div className="bg-red-500 text-white px-4 py-2 rounded">
-              <span className="text-2xl font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</span><br/>دقائق
-            </div>
-            <div className="bg-red-500 text-white px-4 py-2 rounded">
-              <span className="text-2xl font-bold">{timeLeft.seconds.toString().padStart(2, '0')}</span><br/>ثواني
             </div>
           </div>
         </div>

@@ -1,17 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight, FiHeart, FiShoppingCart } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [favorites, setFavorites] = useState({});
-  const [formData, setFormData] = useState({
-    fullName: "",
-    phone: "",
-    address: "",
-    apartment: "",
-    saveData: false,
+  const [formData, setFormData] = useState(() => {
+    const saved = localStorage.getItem('cartFormData');
+    return saved ? JSON.parse(saved) : {
+      fullName: "",
+      phone: "",
+      address: "",
+      apartment: "",
+      saveData: false,
+    };
   });
+
+  const [selected, setSelected] = useState({ 1: true, 2: true, 3: true, 4: true });
+
+  useEffect(() => {
+    if (formData.saveData) {
+      localStorage.setItem('cartFormData', JSON.stringify(formData));
+    } else {
+      localStorage.removeItem('cartFormData');
+    }
+  }, [formData]);
 
   const products = [
     {
@@ -55,6 +70,13 @@ const Cart = () => {
     });
   };
 
+  const toggleSelected = (id) => {
+    setSelected({
+      ...selected,
+      [id]: !selected[id],
+    });
+  };
+
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? products.length - 1 : prevIndex - 1
@@ -76,7 +98,7 @@ const Cart = () => {
   };
 
   const visibleProducts = getVisibleProducts();
-  const subtotal = products.reduce((sum, item) => sum + item.price, 0);
+  const subtotal = products.filter(p => selected[p.id]).reduce((sum, item) => sum + item.price, 0);
   const shipping = 20;
   const total = subtotal + shipping;
 
@@ -107,7 +129,7 @@ const Cart = () => {
           {/* Previous Button */}
           <button
             onClick={handlePrevious}
-            className="bg-brand-black text-white rounded-full p-3 hover:bg-brand-softBlack transition-colors flex-shrink-0"
+            className="bg-brand-black text-white rounded-full p-3 hover:bg-brand-softBlack transition-colors flex-shrink-0 focus:outline-none focus:ring-0"
             aria-label="السابق"
           >
             <FiChevronLeft size={24} />
@@ -131,7 +153,7 @@ const Cart = () => {
                   {/* Heart Icon - Top Left */}
                   <button
                     onClick={() => toggleFavorite(product.id)}
-                    className="absolute top-3 left-3 bg-white rounded-full p-2 shadow-soft hover:bg-gray-light transition-colors"
+                    className="absolute top-3 left-3 bg-white rounded-full p-2 shadow-soft hover:bg-gray-light transition-colors focus:outline-none focus:ring-0"
                   >
                     <FiHeart
                       size={20}
@@ -169,7 +191,9 @@ const Cart = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-2 mt-auto">
-                    <button className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs"
+                    <button
+                      onClick={() => navigate(`/product/${product.id}`)}
+                      className="flex-1 bg-brand-black text-white py-2 px-3 rounded-full font-semibold hover:bg-brand-softBlack transition-colors text-xs focus:outline-none focus:ring-0"
                       style={{
                         fontFamily: 'Calibri',
                         fontWeight: 700,
@@ -181,8 +205,14 @@ const Cart = () => {
                     >
                       اشتري الآن
                     </button>
-                    <button className="bg-gray-light border border-gray-200 rounded-full p-2 hover:bg-gray-light transition-colors flex-shrink-0">
-                      <FiShoppingCart size={18} className="text-brand-black" />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleSelected(product.id);
+                      }}
+                      className="bg-gray-light rounded-full p-2 hover:bg-gray-light transition-colors flex-shrink-0 focus:outline-none focus:ring-0"
+                    >
+                      <FiShoppingCart size={18} className={selected[product.id] ? "text-green-500" : "text-brand-black"} />
                     </button>
                   </div>
                 </div>
@@ -193,7 +223,7 @@ const Cart = () => {
           {/* Next Button */}
           <button
             onClick={handleNext}
-            className="bg-brand-black text-white rounded-full p-3 hover:bg-brand-softBlack transition-colors flex-shrink-0"
+            className="bg-brand-black text-white rounded-full p-3 hover:bg-brand-softBlack transition-colors flex-shrink-0 focus:outline-none focus:ring-0"
             aria-label="التالي"
           >
             <FiChevronRight size={24} />
@@ -433,6 +463,7 @@ const Cart = () => {
               >
                 الدفع
               </h2>
+              <br></br>
               <p
                 className="text-right"
                 style={{
@@ -453,14 +484,14 @@ const Cart = () => {
             <div className="flex flex-row-reverse mb-6" style={{ gap: '28px', justifyContent: 'center' }}>
               <input
                 type="text"
-                placeholder="معاريف التوصيل"
+                placeholder="مصاريف التوصيل"
                 readOnly
                 style={{ fontFamily: 'Calibri', fontWeight: 400, width: '100%', height: '61px', padding: '16px', border: '1px solid #ccc', borderRadius: '8px', textAlign: 'right', backgroundColor: '#fff' }}
                 dir="rtl"
               />
 
               <button
-                style={{ fontFamily: 'Calibri', fontWeight: 400, width: '159px', height: '61px', padding: '16px', border: '1px solid #999', borderRadius: '8px', backgroundColor: '#888', color: '#fff', cursor: 'pointer', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}
+                style={{ fontFamily: 'Calibri', fontWeight: 400, width: '159px', height: '61px', padding: '16px', border: '1px solid #999', borderRadius: '8px', backgroundColor: '#888', color: '#fff', cursor: 'pointer', boxShadow: '0 4px 8px rgba(0,0,0,0.2)', outline: 'none' }}
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#666'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#888'}
               >
@@ -534,14 +565,14 @@ const Cart = () => {
               <div className="flex flex-row-reverse gap-3 justify-center mb-6">
                 {/* Tabby Button */}
                 <button
-                  style={{ fontFamily: 'Calibri', fontWeight: 400, backgroundColor: '#CCCCCC', border: '1px solid #999999', borderRadius: '8px', width: '531px', height: '71px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ fontFamily: 'Calibri', fontWeight: 400, backgroundColor: '#CCCCCC', border: '1px solid #999999', borderRadius: '8px', width: '531px', height: '71px', display: 'flex', alignItems: 'center', justifyContent: 'center', outline: 'none' }}
                 >
                   <img src="/images/tabby.png" alt="tabby" style={{ height: '40px', width: 'auto', display: 'block' }} />
                 </button>
 
                 {/* Tamara Button */}
                 <button
-                  style={{ fontFamily: 'Calibri', fontWeight: 400, backgroundColor: '#CCCCCC', border: '1px solid #999999', borderRadius: '8px', width: '531px', height: '71px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ fontFamily: 'Calibri', fontWeight: 400, backgroundColor: '#CCCCCC', border: '1px solid #999999', borderRadius: '8px', width: '531px', height: '71px', display: 'flex', alignItems: 'center', justifyContent: 'center', outline: 'none' }}
                 >
                   <img src="/images/tamara.png" alt="tamara" style={{ height: '40px', width: 'auto', display: 'block' }} />
                 </button>
@@ -553,7 +584,7 @@ const Cart = () => {
         {/* Confirm Order Button Section - Bottom of Page */}
         <div className="mt-2 px-4 pb-20 flex justify-center">
           <button
-            className="bg-blue-500 hover:bg-blue-600 transition-colors text-white py-4 px-16 rounded-full text-lg"
+            className="bg-blue-500 hover:bg-blue-600 transition-colors text-white py-4 px-48 rounded-full text-lg focus:outline-none focus:ring-0"
             style={{
               fontFamily: 'Calibri',
               fontWeight: 400,

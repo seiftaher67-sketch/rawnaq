@@ -87,15 +87,15 @@ export default function EditDataPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-28 pb-20" dir="rtl">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-28 pb-20 font-calibri" dir="rtl" style={{ fontWeight: 400, fontStyle: 'normal', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
       <div className="container mx-auto px-4 lg:px-6 max-w-6xl">
 
         {/* Header Section */}
         <div className="mb-10">
-          <h1 className="text-4xl lg:text-5xl font-bold text-black mb-2 text-right">
+          <h1 className="text-4xl lg:text-5xl font-bold text-black mb-2 text-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '64px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
             تعديل البيانات الشخصية
           </h1>
-          <p className="text-gray-600 text-right text-lg">قم بتحديث معلومات حسابك وبيانات الشحن</p>
+          <p className="text-gray-600 text-right text-lg" style={{ fontWeight: 400, fontStyle: 'normal', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>قم بتحديث معلومات حسابك وبيانات الشحن</p>
         </div>
 
         {/* Main Content Grid */}
@@ -107,42 +107,41 @@ export default function EditDataPage() {
             {/* Personal Info Card */}
             <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm hover:shadow-md transition-all duration-300">
               <h2 className="text-2xl font-bold text-black mb-6 text-right flex items-center gap-3 justify-start">
-                
-                <div className="w-2 h-8 bg-gradient-to-b from-red-500 to-red-600 rounded-full"></div>
+
                 <span>المعلومات الشخصية</span>
               </h2>
 
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3 text-right">الاسم الكامل</label>
+                  <label className="block text-base font-semibold text-gray-700 mb-3 text-right">الاسم الكامل</label>
                   <input
                     type="text"
                     placeholder="ادخل اسمك الكامل"
                     value={form.name}
                     onChange={(e) => handleChange("name", e.target.value)}
-                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-right placeholder:text-gray-400"
+                    className="w-full px-5 py-3 border border-gray-300 rounded-xl outline-none transition-all text-right placeholder:text-sm"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3 text-right">رقم الجوال</label>
+                  <label className="block text-base font-semibold text-gray-700 mb-3 text-right">رقم الجوال</label>
                   <input
                     type="text"
                     placeholder="أدخل رقم جوالك"
                     value={form.phone}
                     onChange={(e) => handleChange("phone", e.target.value)}
-                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-right placeholder:text-gray-400"
+                    className="w-full px-5 py-3 border border-gray-300 rounded-xl outline-none transition-all text-right placeholder:text-sm"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3 text-right">العنوان</label>
+                  <label className="block text-base font-semibold text-gray-700 mb-3 text-right">العنوان</label>
                   <textarea
-                    placeholder="رقم المبني، رقم الشقة، الحي"
+                    placeholder="رقم المبني، رقم الشقة "
                     value={form.address}
                     onChange={(e) => handleChange("address", e.target.value)}
                     rows="3"
-                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-right placeholder:text-gray-400 resize-none"
+                    className="w-full px-5 py-3 border border-gray-300 rounded-xl outline-none transition-all text-right placeholder:text-sm resize-none"
                   />
                 </div>
               </div>
@@ -151,42 +150,41 @@ export default function EditDataPage() {
             {/* Payment Info Card */}
             <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm hover:shadow-md transition-all duration-300">
               <h2 className="text-2xl font-bold text-black mb-6 text-right flex items-center gap-3 justify-start">
-                
-                <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full"></div>
+
                 <span>بيانات البطاقة</span>
               </h2>
 
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3 text-right">رقم البطاقة</label>
+                  <label className="block text-base font-semibold text-gray-700 mb-3 text-right">رقم البطاقة</label>
                   <input
                     type="text"
                     placeholder="0000 0000 0000 0000"
                     value={form.cardNumber}
                     onChange={(e) => handleChange("cardNumber", e.target.value)}
-                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all text-right placeholder:text-gray-400 font-mono"
+                    className="w-full px-5 py-3 border border-gray-300 rounded-xl outline-none transition-all text-right placeholder:text-sm font-mono"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3 text-right">CVV</label>
+                    <label className="block text-base font-semibold text-gray-700 mb-3 text-right">CVV</label>
                     <input
                       type="text"
                       placeholder="000"
                       value={form.cvv}
                       onChange={(e) => handleChange("cvv", e.target.value)}
-                      className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all text-right placeholder:text-gray-400"
+                      className="w-full px-5 py-3 border border-gray-300 rounded-xl outline-none transition-all text-right placeholder:text-sm"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3 text-right">تاريخ الانتهاء</label>
+                    <label className="block text-base font-semibold text-gray-700 mb-3 text-right">تاريخ الانتهاء</label>
                     <input
                       type="text"
                       placeholder="MM/YY"
                       value={form.expiry}
                       onChange={(e) => handleChange("expiry", e.target.value)}
-                      className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all text-right placeholder:text-gray-400"
+                      className="w-full px-5 py-3 border border-gray-300 rounded-xl outline-none transition-all text-right placeholder:text-sm"
                     />
                   </div>
                 </div>
@@ -194,7 +192,7 @@ export default function EditDataPage() {
             </div>
 
             {/* Save Button */}
-            <button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-4 px-6 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
+            <button className="w-full bg-[#C8A06A] text-white py-3 px-12 rounded-full font-bold hover:bg-[#B58F5D] transition hover:shadow-lg" style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
               حفظ جميع التعديلات
             </button>
 

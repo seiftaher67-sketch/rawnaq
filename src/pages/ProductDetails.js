@@ -9,7 +9,7 @@ export default function ProductDetails() {
   const { id } = useParams();
   const product = getProductById(id);
 
-  const [qty, setQty] = useState(1);
+  const [qty, setQty] = useState(2);
   const [size, setSize] = useState("M");
   const [color, setColor] = useState("black");
   const [mainImage, setMainImage] = useState(product?.image || "/images/a1.jpg");
@@ -455,9 +455,8 @@ export default function ProductDetails() {
         </div>
 
       </div>
-
       {/* CUSTOM NOTES SECTION */}
-      <div className="max-w-3xl ml-auto mt-8" style={{ marginRight: '30px' }}>
+      <div className="max-w-3xl mx-auto mt-8" style={{ marginRight: '30px' }}>
         <p className="mb-1" style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>ملاحظات اضافيه</p>
         <textarea
           placeholder="هل لديك أي طلبات خاصة؟ (طول إضافي، اتساع أكبر، تعديل معين…)"
@@ -465,30 +464,14 @@ export default function ProductDetails() {
           style={{ fontFamily: 'Calibri', fontSize: '16px', boxShadow: 'none', resize: 'none', outline: 'none' }}
         />
         <button
-          className="mt-4 text-white rounded-full font-bold transition transform hover:scale-105 hover:shadow-lg"
+          className="mt-4 bg-blue-500 hover:bg-blue-600 transition-colors text-white py-6 px-48 rounded-full text-xl mx-auto block"
           style={{
-            width: '1113px',
-            height: '88px',
-            gap: '8px',
-            angle: '0deg',
-            opacity: 1,
-            borderRadius: '50px',
-            padding: '8px',
-            backgroundColor: '#4697FF',
             fontFamily: 'Calibri',
-            fontWeight: 700,
-            fontStyle: 'Bold',
-            fontSize: '36px',
-            leadingTrim: 'NONE',
+            fontWeight: 400,
+            fontSize: '24px',
             lineHeight: '100%',
-            letterSpacing: '0%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center'
+            letterSpacing: '0%'
           }}
-          onMouseEnter={(e) => e.target.style.backgroundColor = '#3a87e6'}
-          onMouseLeave={(e) => e.target.style.backgroundColor = '#4697FF'}
         >
           تأكيد الطلب
         </button>

@@ -10,9 +10,9 @@ const EditProfile = () => {
         <div className="profile-container">
           <aside className="sidebar">
             <ul>
-              <li>تعديل البيانات</li>
-              <li>سجل طلباتي</li>
-              <li>تسجيل الخروج</li>
+              <li className="font-calibri">تعديل البيانات</li>
+              <li className="font-calibri">سجل طلباتي</li>
+              <li className="font-calibri">تسجيل الخروج</li>
             </ul>
           </aside>
           <div className="profile-content">
