@@ -282,6 +282,70 @@ export const products = [
         id: 4
       }
     ]
+  },
+  {
+    id: 5,
+    name: "عباية قطنية ناعمة",
+    price: 180,
+    originalPrice: 220,
+    image: "/images/a3.jpg",
+    thumbnails: ["/images/a3.jpg", "/images/a3.jpg", "/images/a3.jpg", "/images/a3.jpg", "/images/a3.jpg"],
+    rating: 5,
+    description: "عباية قطنية ناعمة ومريحة للاستخدام اليومي.",
+    features: [
+      "خامة قطنية ناعمة",
+      "سهلة العناية",
+      "مناسبة للاستخدام اليومي"
+    ],
+    reviews: [
+      {
+        name: "مريم أحمد",
+        rating: 5,
+        date: "1 يناير 2024",
+        text: "مريحة جداً وخامة ناعمة."
+      }
+    ],
+    similarProducts: [
+      {
+        name: "عباية كريب فاخرة",
+        image: "/images/1.png",
+        oldPrice: 300,
+        price: 250,
+        id: 1
+      }
+    ]
+  },
+  {
+    id: 6,
+    name: "عباية حرير فاخرة",
+    price: 299,
+    originalPrice: 350,
+    image: "/images/a4.jpg",
+    thumbnails: ["/images/a4.jpg", "/images/a4.jpg", "/images/a4.jpg", "/images/a4.jpg", "/images/a4.jpg"],
+    rating: 5,
+    description: "عباية حرير فاخرة للمناسبات الخاصة.",
+    features: [
+      "خامة حرير فاخرة",
+      "تصميم راقي",
+      "مناسبة للمناسبات"
+    ],
+    reviews: [
+      {
+        name: "لينا محمد",
+        rating: 5,
+        date: "3 يناير 2024",
+        text: "فاخرة جداً وجميلة."
+      }
+    ],
+    similarProducts: [
+      {
+        name: "عباية كريب فاخرة",
+        image: "/images/1.png",
+        oldPrice: 300,
+        price: 250,
+        id: 1
+      }
+    ]
   }
 ];
 

@@ -1,6 +1,8 @@
 import ProductCard from "../components/ProductCard.jsx";
+import { useNavigate } from 'react-router-dom';
 
 export default function OrderHistoryPage() {
+  const navigate = useNavigate();
 
   const orders = [
     {
@@ -27,6 +29,18 @@ export default function OrderHistoryPage() {
       priceOld: "30 ",
       priceNew: "25 ",
     },
+    {
+      name: "عباية صيفية",
+      image: "/images/a1.jpg",
+      priceOld: "40 ",
+      priceNew: "35 ",
+    },
+    {
+      name: "طرحة شيفون",
+      image: "/images/a2.jpg",
+      priceOld: "20 ",
+      priceNew: "15 ",
+    },
   ];
 
   return (
@@ -50,6 +64,22 @@ export default function OrderHistoryPage() {
               showOldPrice={true}
             />
           ))}
+        </div>
+
+        <div className="mt-12 mb-6 flex justify-center">
+          <button
+            onClick={() => navigate('/track-order')}
+            className="bg-blue-500 hover:bg-blue-600 transition-colors text-white py-4 px-60 rounded-full text-lg focus:outline-none focus:ring-0"
+            style={{
+              fontFamily: 'Calibri',
+              fontWeight: 400,
+              fontSize: '20px',
+              lineHeight: '100%',
+              letterSpacing: '0%'
+            }}
+          >
+            تتبع طلباتك
+          </button>
         </div>
       </div>
 
