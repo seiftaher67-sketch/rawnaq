@@ -24,6 +24,7 @@ import VerifyPhone from './pages/VerifyPhone';
 import EditDataPage from './pages/EditDataPage';
 import OrderHistoryPage from './pages/OrderHistoryPage';
 import TrackOrder from './pages/TrackOrder';
+import ReturnRequest from './pages/ReturnRequest';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -60,6 +61,7 @@ function App() {
             <Route path="/edit-data" element={<PrivateRoute><EditDataPage /></PrivateRoute>} />
             <Route path="/order-history" element={<PrivateRoute><OrderHistoryPage /></PrivateRoute>} />
             <Route path="/track-order" element={<PrivateRoute><TrackOrder /></PrivateRoute>} />
+            <Route path="/return-request" element={<PrivateRoute><ReturnRequest /></PrivateRoute>} />
           </Routes>
 
           <Footer />

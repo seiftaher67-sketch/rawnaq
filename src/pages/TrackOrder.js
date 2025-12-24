@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function TrackOrder() {
+    const navigate = useNavigate();
     const order = {
         number: 'ORD-2025-124578',
         date: '15 ديسمبر 2025',
@@ -20,8 +22,8 @@ export default function TrackOrder() {
             expected: '11-2-2026'
         },
         items: [
-            { id: 1, name: 'عباءة سوداء أليفية مع تطريز', price: 250, qty: 1, image: '/images/a3.jpg' },
-            { id: 2, name: 'عباءة سوداء أليفية مع تطريز', price: 250, qty: 1, image: '/images/a3.jpg' }
+            { id: 1, name: 'عباءة سوداء أنيقة مع تطريز', price: 250, qty: 1, size: 'M', color: 'أسود', image: '/images/a3.jpg' },
+            { id: 2, name: 'عباءة سوداء أنيقة مع تطريز', price: 250, qty: 1, size: 'M', color: 'أسود', image: '/images/a3.jpg' }
         ],
         totals: { subtotal: 500, shipping: 20, total: 520 }
     };
@@ -58,35 +60,34 @@ export default function TrackOrder() {
                     style={{
                         maxWidth: '2000px',
                         width: '100%',
-                        minHeight: '132px',
+                        height: '148px',
                         transform: 'rotate(0deg)',
                         opacity: 1,
-                        borderRadius: '16px',
-                        paddingTop: '32px',
-                        paddingRight: '32px',
-                        paddingLeft: '32px',
-                        paddingBottom: '32px',
+                        borderRadius: '14px',
+                        paddingTop: '16px',
+                        paddingRight: '16px',
+                        paddingLeft: '36px',
                         background: 'linear-gradient(180deg, #BFBFBF 0%, #7F7F7F 100%)',
                         color: '#FFFFFF',
                         boxSizing: 'border-box'
                     }}
                 >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
-                        <div style={{ textAlign: 'right', flex: '0 0 48%' }}>
-                            <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)' }}>رقم الطلب</div>
-                            <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'normal', fontSize: '24px', lineHeight: '24px' }}>{order.number}</div>
+                        <div style={{ textAlign: 'right', flex: '0 0 48%', marginRight: '20px' }}>
+                            <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>رقم الطلب</div>
+                            <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', marginTop: '8px' }}>{order.number}</div>
+                        </div>
+
+                        <div style={{ textAlign: 'right', flex: '0 0 26%' }}>
+                            <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>تاريخ الطلب</div>
+                            <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', marginTop: '8px' }}>{order.date}</div>
                         </div>
 
                         <div style={{ textAlign: 'center', flex: '0 0 26%' }}>
-                            <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)' }}>تاريخ الطلب</div>
-                            <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'normal', fontSize: '24px', lineHeight: '24px' }}>{order.date}</div>
-                        </div>
-
-                        <div style={{ textAlign: 'left', flex: '0 0 26%' }}>
-                            <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', marginBottom: '8px' }}>الحالة الحالية</div>
-                            <div style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#0B1220', padding: '8px 14px', borderRadius: '999px' }}>
+                            <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>الحالة الحالية</div>
+                            <div style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#0B1220', padding: '8px 14px', borderRadius: '999px', marginTop: '8px' }}>
                                 <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#22c55e', display: 'inline-block', marginInlineEnd: 10 }}></span>
-                                <span style={{ color: '#FFFFFF', fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'normal', fontSize: '24px', lineHeight: '24px' }}>{order.status}</span>
+                                <span style={{ color: '#FFFFFF', fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px' }}>{order.status}</span>
                             </div>
                         </div>
                     </div>
@@ -97,7 +98,7 @@ export default function TrackOrder() {
                         <h3 style={{ fontFamily: 'Cairo', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', leadingTrim: 'none', lineHeight: '24px', letterSpacing: '0px', margin: 0, textAlign: 'left' }}>رحلة الطلب</h3>
                     </div>
                     {/* connector line behind icons - centered vertically */}
-                    <div style={{ position: 'absolute', left: '48px', right: '48px', top: '50%', transform: 'translateY(-50%)', height: '3px', background: '#60A5FA', zIndex: 0 }} />
+                    <div style={{ position: 'absolute', left: '48px', right: '48px', top: '50%', transform: 'translateY(-50%)', height: '3px', background: '#3B82F6', zIndex: 0 }} />
                     <div className="flex items-center justify-center gap-12 text-sm text-gray-600 mb-2 flex-row" style={{ position: 'relative', zIndex: 10 }}>
                         {order.steps.map((s, idx) => (
                             <div key={idx} className="flex-1 text-center">
@@ -122,14 +123,14 @@ export default function TrackOrder() {
                                         <img src="/images/v2.png" alt="v2" className="w-6 h-6 object-cover rounded-full" />
                                     </div>
                                 ) : s.title === 'تم التسليم' ? (
-                                    <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center bg-white border`}>
+                                    <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center bg-gray-400 border`} style={{ opacity: 0.5 }}>
                                         <img src="/images/v1.png" alt="v1" className="w-6 h-6 object-cover rounded-full" />
                                     </div>
                                 ) : (
                                     <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center ${idx === order.steps.length - 1 ? 'bg-blue-500 text-white' : 'bg-white border'}`}>{idx + 1}</div>
                                 )}
-                                <div className="mt-2 font-semibold">{s.title}</div>
-                                <div className="text-xs text-gray-400">{s.date}</div>
+                                <div className="mt-2 font-semibold" style={{ fontFamily: 'Cairo', fontWeight: 700, fontStyle: 'normal', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', textAlign: 'center' }}>{s.title}</div>
+                                <div className="text-xs text-gray-400" style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'normal', fontSize: '14px', leadingTrim: 'NONE', lineHeight: '20px', letterSpacing: '0px', textAlign: 'center' }}>{s.date}</div>
                             </div>
                         ))}
                     </div>
@@ -179,33 +180,51 @@ export default function TrackOrder() {
                                     <img src={it.image} alt="item" className="w-20 h-20 object-cover rounded" />
                                     <div className="text-right">
                                         <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px' }}>{it.name}</div>
-                                        <div className="text-xs text-gray-500" style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>المقاس: {it.qty}</div>
-                                        <div className="text-xs text-gray-500" style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>اللون: {it.qty}</div>
-                                        <div className="text-xs text-gray-500" style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>الكمية: {it.qty}</div>
+                                        <div className="text-xs text-gray-500" style={{ fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'Regular', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '20px', letterSpacing: '0px' }}>المقاس: <span style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'Medium', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '20px', letterSpacing: '0px', color: '#000000' }}>{it.size}</span></div>
+                                        <div className="text-xs text-gray-500" style={{ fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'Regular', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '20px', letterSpacing: '0px' }}>اللون: <span style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'Medium', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '20px', letterSpacing: '0px', color: '#000000' }}>{it.color}</span></div>
+                                        <div className="text-xs text-gray-500" style={{ fontFamily: 'Cairo', fontWeight: 400, fontStyle: 'Regular', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '20px', letterSpacing: '0px' }}>الكمية: <span style={{ fontFamily: 'Cairo', fontWeight: 500, fontStyle: 'Medium', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '20px', letterSpacing: '0px', color: '#000000' }}>{it.qty}</span></div>
                                     </div>
 
                                 </div>
                                 <div className="text-right">
-                                    <div className="font-semibold">{it.price} ر.ق</div>
+                                    <div style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>{it.price} ريال</div>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="bg-white rounded-2xl border p-6 shadow-sm mb-12 text-right">
-                    <div className="grid grid-cols-2 gap-4">
-                        <div>مبلغ إجمالي</div>
-                        <div className="text-left font-semibold">{order.totals.subtotal} ر.ق</div>
-                        <div>مصروفات التوصيل</div>
-                        <div className="text-left">{order.totals.shipping} ر.ق</div>
-                        <div className="font-semibold">المبلغ كامل</div>
-                        <div className="text-left font-semibold">{order.totals.total} ر.ق</div>
+                <div className="bg-gray-100 rounded-xl border border-gray-300 p-8 shadow-sm mb-12 text-right">
+                    <div className="space-y-4 text-right">
+                        <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
+                            <span className="text-gray-700">المبلغ الإجمالي</span>
+                            <span className="text-gray-700">
+                                {order.totals.subtotal}
+                                <span className="mr-1">ريال</span>
+                            </span>
+                        </div>
+                        <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
+                            <span className="text-gray-700">مصاريف التوصيل</span>
+                            <span className="text-gray-700">
+                                {order.totals.shipping}
+                                <span className="mr-1">ريال</span>
+                            </span>
+                        </div>
+                        <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
+                            <span className="text-gray-800">المبلغ كامل</span>
+                            <span className="text-gray-800">
+                                {order.totals.total}
+                                <span className="mr-1">ريال</span>
+                            </span>
+                        </div>
                     </div>
                 </div>
 
                 <div className="flex justify-center">
-                    <button className="bg-blue-300 hover:bg-blue-400 text-white py-4 px-56 rounded-full">الاستبدال متاح بعد التسليم</button>
+                    <button
+                        onClick={() => navigate('/return-request')}
+                        className="bg-blue-300 hover:bg-blue-400 text-white py-4 px-56 rounded-full transition"
+                        style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '20px', letterSpacing: '0px', textAlign: 'center' }}>المرتجعات متاحة بعد التسليم</button>
                 </div>
 
             </div>

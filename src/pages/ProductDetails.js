@@ -15,6 +15,7 @@ export default function ProductDetails() {
   const [mainImage, setMainImage] = useState(product?.image || "/images/a1.jpg");
   const [isFavorite, setIsFavorite] = useState(false);
   const [hoveredThumbnail, setHoveredThumbnail] = useState(null);
+  const [showMeasurementsModal, setShowMeasurementsModal] = useState(false);
 
   if (!product) {
     return (
@@ -251,21 +252,23 @@ export default function ProductDetails() {
           backgroundColor: '#950000'
         }}>
 
-          <button style={{
-            width: '100%',
-            height: '100%',
-            fontFamily: 'Calibri',
-            fontWeight: 400,
-            fontStyle: 'normal',
-            fontSize: '32px',
-            lineHeight: '100%',
-            letterSpacing: '0%',
-            textAlign: 'right',
-            color: 'white',
-            backgroundColor: 'transparent',
-            border: 'none',
-            cursor: 'pointer'
-          }}>
+          <button
+            onClick={() => setShowMeasurementsModal(true)}
+            style={{
+              width: '100%',
+              height: '100%',
+              fontFamily: 'Calibri',
+              fontWeight: 400,
+              fontStyle: 'normal',
+              fontSize: '32px',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+              textAlign: 'right',
+              color: 'white',
+              backgroundColor: 'transparent',
+              border: 'none',
+              cursor: 'pointer'
+            }}>
             طريقة أخذ المقاسات
           </button>
         </div>
@@ -496,6 +499,120 @@ export default function ProductDetails() {
       <SimilarProducts
         products={product.similarProducts}
       />
+
+      {/* Measurements Modal */}
+      {showMeasurementsModal && (
+        <div style={{
+          position: 'fixed',
+          top: '0',
+          left: '0',
+          right: '0',
+          bottom: '0',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 1000,
+          padding: '20px'
+        }}>
+          <div style={{
+            backgroundColor: '#FFFFFF',
+            borderRadius: '50px',
+            padding: '40px',
+            width: '923px',
+            height: '1182px',
+            top: '1216px',
+            left: '258px',
+            angle: '0deg',
+            opacity: 1,
+            boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2)',
+            position: 'absolute',
+            display: 'flex',
+            flexDirection: 'column',
+            overflow: 'auto'
+          }}>
+            {/* Close Button */}
+            <button
+              onClick={() => setShowMeasurementsModal(false)}
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                backgroundColor: 'transparent',
+                border: 'none',
+                fontSize: '28px',
+                cursor: 'pointer',
+                color: '#666'
+              }}
+            >
+              ✕
+            </button>
+
+            {/* Modal Image */}
+            <img
+              src="/images/mm.png"
+              alt="طريقة أخذ المقاسات"
+              style={{
+                width: '400px',
+                height: 'auto',
+                borderRadius: '12px',
+                marginBottom: '20px',
+                objectFit: 'contain'
+              }}
+            />
+
+            {/* Modal Title */}
+            <h3 style={{
+              fontFamily: 'Calibri',
+              fontWeight: 700,
+              fontSize: '32px',
+              textAlign: 'right',
+              color: '#000000',
+              marginTop: '0',
+              marginBottom: '16px'
+            }}>
+              طريقة أخذ المقاسات
+            </h3>
+
+            {/* Modal Description */}
+            <p style={{
+              fontFamily: 'Calibri',
+              fontWeight: 400,
+              fontSize: '18px',
+              textAlign: 'right',
+              color: '#666666',
+              lineHeight: '1.8',
+              margin: '0',
+              marginBottom: '24px'
+            }}>
+              يرجى قياس جسمك وفقًا للخطوط الموضحة في الصورة أعلاه للحصول على أفضل النتائج.
+            </p>
+
+            {/* Close Button */}
+            <button
+              onClick={() => setShowMeasurementsModal(false)}
+              style={{
+                marginTop: 'auto',
+                width: '100%',
+                backgroundColor: '#950000',
+                color: '#FFFFFF',
+                border: 'none',
+                padding: '16px 32px',
+                borderRadius: '12px',
+                fontFamily: 'Calibri',
+                fontWeight: 600,
+                fontSize: '20px',
+                cursor: 'pointer',
+                transition: 'background-color 0.3s ease'
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#7a0000'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#950000'}
+            >
+              إغلاق
+            </button>
+          </div>
+        </div>
+      )}
     </div >
   );
 }
