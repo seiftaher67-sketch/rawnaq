@@ -5,12 +5,11 @@ import { MdCheckCircle } from 'react-icons/md';
 
 export default function ReturnRequest() {
     const navigate = useNavigate();
-    const [selectedItems, setSelectedItems] = useState(new Set([1]));
+    const [selectedItems, setSelectedItems] = useState(new Set([]));
     const [reason, setReason] = useState('');
     const [customReason, setCustomReason] = useState('');
     const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-    // Mock order data - in real app this would come from context/api
     const order = {
         number: 'ORD-2025-124578',
         items: [
@@ -69,7 +68,7 @@ export default function ReturnRequest() {
                             letterSpacing: '0px',
                             backgroundColor: 'transparent',
                             border: 'none',
-                            color: '#3B82F6',
+                            color: '#717182',
                             cursor: 'pointer',
                             transition: 'color 0.3s ease',
                             padding: '0',
@@ -77,8 +76,8 @@ export default function ReturnRequest() {
                             alignItems: 'center',
                             gap: '8px'
                         }}
-                        onMouseEnter={(e) => e.target.style.color = '#2563EB'}
-                        onMouseLeave={(e) => e.target.style.color = '#3B82F6'}
+                        onMouseEnter={(e) => e.target.style.color = '#5A5A5A'}
+                        onMouseLeave={(e) => e.target.style.color = '#717182'}
                     >
                         <FiArrowRight size={32} />
                         العودة إلى الطلب
@@ -105,7 +104,7 @@ export default function ReturnRequest() {
                         color: '#6B7280',
                         textAlign: 'right',
                         margin: '0'
-                    }}>الطلب: {order.number}</p>
+                    }}> رقم الطلب : {order.number}</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -125,24 +124,24 @@ export default function ReturnRequest() {
 
                         <div className="space-y-4">
                             {order.items.map(item => (
-                                <div 
-                                    key={item.id} 
+                                <div
+                                    key={item.id}
                                     className="flex items-center justify-between bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition cursor-pointer border border-gray-200"
                                     onClick={() => toggleItem(item.id)}
                                 >
                                     <div className="flex items-center gap-6 flex-1">
                                         <input
-                                            type="radio"
+                                            type="checkbox"
                                             checked={selectedItems.has(item.id)}
                                             onChange={() => toggleItem(item.id)}
-                                            name="item-selection"
+                                            name={`item-${item.id}`}
                                             className="w-6 h-6 cursor-pointer flex-shrink-0"
                                         />
                                         <img src={item.image} alt="item" className="w-20 h-20 object-cover rounded" />
                                         <div className="text-right flex-1">
-                                            <div style={{ 
-                                                fontFamily: 'Cairo', 
-                                                fontWeight: 600, 
+                                            <div style={{
+                                                fontFamily: 'Cairo',
+                                                fontWeight: 600,
                                                 fontStyle: 'SemiBold',
                                                 fontSize: '20px',
                                                 lineHeight: '100%',
@@ -151,22 +150,75 @@ export default function ReturnRequest() {
                                             }}>
                                                 {item.name}
                                             </div>
-                                            <div className="text-sm text-gray-500" style={{ 
+                                            <div className="text-xs text-gray-500" style={{
                                                 fontFamily: 'Cairo',
                                                 fontWeight: 400,
-                                                fontSize: '14px',
-                                                lineHeight: '100%'
+                                                fontStyle: 'Regular',
+                                                fontSize: '16px',
+                                                leadingTrim: 'NONE',
+                                                lineHeight: '20px',
+                                                letterSpacing: '0px'
                                             }}>
-                                                المقاس: {item.size} | اللون: {item.color}
+                                                المقاس: <span style={{
+                                                    fontFamily: 'Cairo',
+                                                    fontWeight: 500,
+                                                    fontStyle: 'Medium',
+                                                    fontSize: '16px',
+                                                    leadingTrim: 'NONE',
+                                                    lineHeight: '20px',
+                                                    letterSpacing: '0px',
+                                                    color: '#000000'
+                                                }}>{item.size}</span>
+                                            </div>
+                                            <div className="text-xs text-gray-500" style={{
+                                                fontFamily: 'Cairo',
+                                                fontWeight: 400,
+                                                fontStyle: 'Regular',
+                                                fontSize: '16px',
+                                                leadingTrim: 'NONE',
+                                                lineHeight: '20px',
+                                                letterSpacing: '0px'
+                                            }}>
+                                                اللون: <span style={{
+                                                    fontFamily: 'Cairo',
+                                                    fontWeight: 500,
+                                                    fontStyle: 'Medium',
+                                                    fontSize: '16px',
+                                                    leadingTrim: 'NONE',
+                                                    lineHeight: '20px',
+                                                    letterSpacing: '0px',
+                                                    color: '#000000'
+                                                }}>{item.color}</span>
+                                            </div>
+                                            <div className="text-xs text-gray-500" style={{
+                                                fontFamily: 'Cairo',
+                                                fontWeight: 400,
+                                                fontStyle: 'Regular',
+                                                fontSize: '16px',
+                                                leadingTrim: 'NONE',
+                                                lineHeight: '20px',
+                                                letterSpacing: '0px'
+                                            }}>
+                                                الكمية: <span style={{
+                                                    fontFamily: 'Cairo',
+                                                    fontWeight: 500,
+                                                    fontStyle: 'Medium',
+                                                    fontSize: '16px',
+                                                    leadingTrim: 'NONE',
+                                                    lineHeight: '20px',
+                                                    letterSpacing: '0px',
+                                                    color: '#000000'
+                                                }}>{item.qty}</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div style={{ 
-                                        fontFamily: 'Cairo', 
+                                    <div style={{
+                                        fontFamily: 'Calibri',
                                         fontWeight: 700,
                                         fontStyle: 'Bold',
-                                        fontSize: '24px',
+                                        fontSize: '32px',
                                         lineHeight: '100%',
+                                        letterSpacing: '0%',
                                         color: '#000000',
                                         minWidth: '100px',
                                         textAlign: 'left'
@@ -202,8 +254,8 @@ export default function ReturnRequest() {
                                     onChange={(e) => setReason(e.target.value)}
                                     className="w-5 h-5"
                                 />
-                                <span style={{ 
-                                    fontFamily: 'Cairo', 
+                                <span style={{
+                                    fontFamily: 'Cairo',
                                     fontWeight: 500,
                                     fontSize: '18px',
                                     color: '#000000',
@@ -220,8 +272,8 @@ export default function ReturnRequest() {
                                     onChange={(e) => setReason(e.target.value)}
                                     className="w-5 h-5"
                                 />
-                                <span style={{ 
-                                    fontFamily: 'Cairo', 
+                                <span style={{
+                                    fontFamily: 'Cairo',
                                     fontWeight: 500,
                                     fontSize: '18px',
                                     color: '#000000',
@@ -238,8 +290,8 @@ export default function ReturnRequest() {
                                     onChange={(e) => setReason(e.target.value)}
                                     className="w-5 h-5"
                                 />
-                                <span style={{ 
-                                    fontFamily: 'Cairo', 
+                                <span style={{
+                                    fontFamily: 'Cairo',
                                     fontWeight: 500,
                                     fontSize: '18px',
                                     color: '#000000',
@@ -256,8 +308,8 @@ export default function ReturnRequest() {
                                     onChange={(e) => setReason(e.target.value)}
                                     className="w-5 h-5"
                                 />
-                                <span style={{ 
-                                    fontFamily: 'Cairo', 
+                                <span style={{
+                                    fontFamily: 'Cairo',
                                     fontWeight: 500,
                                     fontSize: '18px',
                                     color: '#000000',
@@ -274,8 +326,8 @@ export default function ReturnRequest() {
                                     onChange={(e) => setReason(e.target.value)}
                                     className="w-5 h-5"
                                 />
-                                <span style={{ 
-                                    fontFamily: 'Cairo', 
+                                <span style={{
+                                    fontFamily: 'Cairo',
                                     fontWeight: 500,
                                     fontSize: '18px',
                                     color: '#000000',
@@ -293,7 +345,7 @@ export default function ReturnRequest() {
                                 style={{
                                     marginTop: '24px',
                                     width: '100%',
-                                    height: '200px',
+                                    height: '120px',
                                     fontFamily: 'Cairo',
                                     fontWeight: 400,
                                     fontSize: '16px',

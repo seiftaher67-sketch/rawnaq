@@ -1,1 +1,3 @@
-- [ ] Add a wide button labeled "تتبع طلباتك" (Track Your Orders) to the My Orders page, styled with the same color as the Confirm Order button (bg-[#C8A06A]), placed after the page header.
+# TODO: Make no products pre-selected by default in ReturnRequest page
+
+- [x] Change initial selectedItems state from new Set([1]) to new Set([])

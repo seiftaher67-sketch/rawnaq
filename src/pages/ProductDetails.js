@@ -9,13 +9,14 @@ export default function ProductDetails() {
   const { id } = useParams();
   const product = getProductById(id);
 
-  const [qty, setQty] = useState(2);
-  const [size, setSize] = useState("M");
-  const [color, setColor] = useState("black");
+  const [qty, setQty] = useState(1);
+  const [size, setSize] = useState(null);
+  const [color, setColor] = useState(null);
   const [mainImage, setMainImage] = useState(product?.image || "/images/a1.jpg");
   const [isFavorite, setIsFavorite] = useState(false);
   const [hoveredThumbnail, setHoveredThumbnail] = useState(null);
   const [showMeasurementsModal, setShowMeasurementsModal] = useState(false);
+  const [showImage, setShowImage] = useState(false);
 
   if (!product) {
     return (
@@ -253,7 +254,7 @@ export default function ProductDetails() {
         }}>
 
           <button
-            onClick={() => setShowMeasurementsModal(true)}
+            onClick={() => setShowImage(true)}
             style={{
               width: '100%',
               height: '100%',
@@ -272,6 +273,40 @@ export default function ProductDetails() {
             طريقة أخذ المقاسات
           </button>
         </div>
+
+        {/* Image Display */}
+        {showImage && (
+          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <img
+              src="/images/ss.png"
+              alt="طريقة أخذ المقاسات"
+              style={{
+                width: '400px',
+                height: 'auto',
+                borderRadius: '12px',
+                margin: '20px auto',
+                display: 'block'
+              }}
+            />
+            <button
+              onClick={() => setShowImage(false)}
+              style={{
+                marginTop: '10px',
+                padding: '10px 20px',
+                backgroundColor: '#950000',
+                color: 'white',
+                border: 'none',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                fontFamily: 'Calibri',
+                fontSize: '16px'
+              }}
+            >
+              إغلاق
+            </button>
+          </div>
+        )}
+
         <div>
           <form className="flex flex-col gap-4 mt-4">
             <div className="flex gap-4">
@@ -520,13 +555,10 @@ export default function ProductDetails() {
             borderRadius: '50px',
             padding: '40px',
             width: '923px',
-            height: '1182px',
-            top: '1216px',
-            left: '258px',
+            maxHeight: '80vh',
             angle: '0deg',
             opacity: 1,
             boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2)',
-            position: 'absolute',
             display: 'flex',
             flexDirection: 'column',
             overflow: 'auto'
@@ -550,7 +582,7 @@ export default function ProductDetails() {
 
             {/* Modal Image */}
             <img
-              src="/images/mm.png"
+              src="/images/ss.png"
               alt="طريقة أخذ المقاسات"
               style={{
                 width: '400px',
