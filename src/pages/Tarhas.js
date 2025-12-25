@@ -21,7 +21,7 @@ export default function Tarhas() {
 
       </div>
 
-       {/* Filter Section */}
+      {/* Filter Section */}
       <div className="container mx-auto px-20 mb-12">
         <div className="bg-gray-100 border border-gray-200 rounded-xl p-4 flex flex-col md:flex-row gap-4 md:items-center md:justify-between shadow-sm">
 
@@ -77,8 +77,8 @@ export default function Tarhas() {
         </div>
       </div>
       {/* Products Grid */}
-      <div className="container mx-auto px-10">
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      <div className="container mx-auto px-8">
+        <div className="flex flex-wrap gap-6 justify-center">
           {tarhasList.map((product) => (
             <ProductCard
               key={product.id}

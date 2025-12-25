@@ -56,6 +56,7 @@ const ProductCarousel = () => {
           <button
             onClick={() => navigate('/offers')}
             className="mt-4 sm:mt-0 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-brand-softBlack transition"
+            style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0', textAlign: 'right' }}
           >
             عرض جميع العروض
           </button>

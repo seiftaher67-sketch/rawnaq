@@ -22,7 +22,7 @@ export default function Niqabs() {
 
       </div>
 
-  {/* Filter Section */}
+      {/* Filter Section */}
       <div className="container mx-auto px-20 mb-12">
         <div className="bg-gray-100 border border-gray-200 rounded-xl p-4 flex flex-col md:flex-row gap-4 md:items-center md:justify-between shadow-sm">
 
@@ -80,15 +80,11 @@ export default function Niqabs() {
 
       {/* Products Grid */}
       <div className="container mx-auto px-10">
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div className="flex flex-wrap gap-6 justify-center">
           {niqabsList.map((product) => (
             <ProductCard
               key={product.id}
-              id={product.id}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              variant="default"
+              product={product}
             />
           ))}
         </div>

@@ -26,40 +26,28 @@ const MyOrders = () => {
           {products.map((product) => (
             <ProductCard
               key={product.id}
-              id={product.id}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              oldPrice={product.originalPrice}
-              showOldPrice={true}
-              variant="default"
-              buttonText="إعادة الطلب"
-              showCartBtn={false}
+              product={product}
             />
           ))}
           <ProductCard
             key={7}
-            id={7}
-            image="/images/a1.jpg"
-            name="عباية إضافية 1"
-            price={150}
-            oldPrice={200}
-            showOldPrice={true}
-            variant="default"
-            buttonText="إعادة الطلب"
-            showCartBtn={false}
+            product={{
+              id: 7,
+              image: "/images/a1.jpg",
+              name: "عباية إضافية 1",
+              price: 150,
+              oldPrice: 200
+            }}
           />
           <ProductCard
             key={8}
-            id={8}
-            image="/images/a2.jpg"
-            name="عباية إضافية 2"
-            price={160}
-            oldPrice={210}
-            showOldPrice={true}
-            variant="default"
-            buttonText="إعادة الطلب"
-            showCartBtn={false}
+            product={{
+              id: 8,
+              image: "/images/a2.jpg",
+              name: "عباية إضافية 2",
+              price: 160,
+              oldPrice: 210
+            }}
           />
         </div>
       </div>

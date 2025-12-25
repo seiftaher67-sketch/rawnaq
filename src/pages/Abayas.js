@@ -21,7 +21,7 @@ export default function Abayas() {
 
           {/* Sort */}
           <div className="relative w-full md:w-1/3">
-            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white">
+            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
               <option>الفرز: من السعر الأقل للأعلى</option>
               <option>الفرز: من الأعلى للأقل</option>
               <option>الأحدث</option>
@@ -47,7 +47,7 @@ export default function Abayas() {
 
           {/* Color */}
           <div className="relative w-full md:w-1/3">
-            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white">
+            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
               <option>اللون</option>
               <option>أسود</option>
               <option>بيج</option>
@@ -72,18 +72,12 @@ export default function Abayas() {
       </div>
 
       {/* Products Grid */}
-      <div className="container mx-auto px-10">
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      <div className="container mx-auto px-8">
+        <div className="flex flex-wrap gap-6 justify-center">
           {abayasList.map((product) => (
             <ProductCard
               key={product.id}
-              id={product.id}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              oldPrice={product.originalPrice}
-              showOldPrice={true}
-              variant="default"
+              product={product}
             />
           ))}
         </div>

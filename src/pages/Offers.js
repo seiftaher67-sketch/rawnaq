@@ -172,20 +172,12 @@ export default function Offers() {
 
       {/* Products Grid */}
       <div className="container mx-auto px-10">
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap gap-6 justify-center">
           {offersData.map((product) => (
-            <div key={product.id}>
-              <ProductCard
-                id={product.id}
-                image={product.image}
-                name={product.name}
-                price={product.price}
-                oldPrice={product.oldPrice}
-                showOldPrice={true}
-                variant="offer"
-                discount={product.discount}
-              />
-            </div>
+            <ProductCard
+              key={product.id}
+              product={product}
+            />
           ))}
         </div>
       </div>

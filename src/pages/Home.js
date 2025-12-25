@@ -24,17 +24,18 @@ const Home = () => {
 
       {/* Shipping Info Marquee */}
       <div
-        className="bg-gray-500 text-white py-4 overflow-hidden"
+        className="bg-gray-700 text-white py-4 overflow-hidden"
         dir="rtl"
       >
         <div className="flex w-[200%] hover:[&>*]:[animation-play-state:paused]">
-         
+
           {/* Track  */}
           <div className="flex w-1/2 animate-[marquee-rtl_25s_linear_infinite]">
             {Array.from({ length: 8 }).map((_, i) => (
               <span
                 key={`b-${i}`}
                 className="whitespace-nowrap px-12 text-base"
+                style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '16px', lineHeight: '1', letterSpacing: '0' }}
               >
                 {marqueeText}
               </span>
@@ -60,9 +61,9 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white px-6">
-                  <p className="text-base sm:text-lg font-semibold mb-1 leading-tight italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontStyle: 'italic' }}>تألقى الآن بخصم خاص</p>
-                  <p className="text-7xl sm:text-8xl md:text-9xl lg:text-[5.5rem] font-extrabold mb-2 italic" style={{ textShadow: '4px 4px 10px rgba(0,0,0,0.85)', fontStyle: 'italic', color: '#FFD700' }}>30%</p>
-                  <p className="text-sm sm:text-base leading-relaxed italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontStyle: 'italic' }}>خصومات موسمية على العبايات الفاخرة</p>
+                  <p className="text-base sm:text-lg font-semibold mb-1 leading-tight italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0' }}>تألقى الآن بخصم خاص</p>
+                  <p className="text-7xl sm:text-8xl md:text-9xl lg:text-[5.5rem] font-extrabold mb-2 italic" style={{ textShadow: '4px 4px 10px rgba(0,0,0,0.85)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0', color: '#FFD700' }}>30%</p>
+                  <p className="text-sm sm:text-base leading-relaxed italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0' }}>خصومات موسمية على العبايات الفاخرة</p>
                 </div>
               </div>
             </div>
@@ -80,9 +81,10 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white px-6 max-w-xs sm:max-w-sm">
-                  <p className="text-base sm:text-lg font-semibold mb-1 leading-tight italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontStyle: 'italic' }}>عرض الموسم</p>
-                  <p className="text-base sm:text-lg font-semibold mb-2 leading-tight italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontStyle: 'italic' }}>اختاري التفصيلة التي تليق بك</p>
-                  <p className="text-xs sm:text-sm leading-relaxed italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontStyle: 'italic', color: '#f0f0f0' }}>تسوقي الآن من تشكيلتنا التي تجمع بين اللمسة<br />العصرية والأناقة الكلاسيكية</p>
+                  <p className="text-base sm:text-lg font-semibold mb-1 leading-tight italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0' }}>عرض الموسم</p>
+                  <p className="text-base sm:text-lg font-semibold mb-2 leading-tight italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0' }}>اختاري التفصيلة التي تليق بك</p>
+                  <br></br>
+                  <p className="text-xs sm:text-sm leading-relaxed italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Calibri', fontWeight: 300, fontStyle: 'normal', fontSize: '14px', lineHeight: '1', letterSpacing: '0', textAlign: 'center', width: '300px', height: '44px', transform: 'rotate(0deg)', opacity: 1, color: '#f0f0f0' }}>تسوقي الآن من تشكيلتنا التي تجمع بين اللمسة<br />العصرية والأناقة الكلاسيكية</p>
                 </div>
               </div>
             </div>
@@ -90,19 +92,20 @@ const Home = () => {
         </div>
       </section>
 
- {/* Shipping Info Marquee */}
+      {/* Shipping Info Marquee */}
       <div
-        className="bg-gray-500 text-white py-4 overflow-hidden"
+        className="bg-gray-700 text-white py-4 overflow-hidden"
         dir="rtl"
       >
         <div className="flex w-[200%] hover:[&>*]:[animation-play-state:paused]">
-         
+
           {/* Track  */}
           <div className="flex w-1/2 animate-[marquee-rtl_25s_linear_infinite]">
             {Array.from({ length: 8 }).map((_, i) => (
               <span
                 key={`b-${i}`}
                 className="whitespace-nowrap px-12 text-base"
+                style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '16px', lineHeight: '1', letterSpacing: '0' }}
               >
                 {marqueeText}
               </span>

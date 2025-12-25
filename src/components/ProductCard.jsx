@@ -34,6 +34,14 @@ export default function ProductCard({
         overflow-hidden hover:shadow-soft transition
         flex flex-col
       "
+      style={{
+        width: '350px',
+        height: '489px',
+        transform: 'rotate(0deg)',
+        opacity: 1,
+        borderRadius: '24px',
+        borderWidth: '1px'
+      }}
     >
       {/* Image */}
       <div className="relative h-[20rem] bg-gray-100">
