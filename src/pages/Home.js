@@ -62,7 +62,7 @@ const Home = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white px-6">
                   <p className="text-base sm:text-lg font-semibold mb-1 leading-tight italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0' }}>تألقى الآن بخصم خاص</p>
-                  <p className="text-7xl sm:text-8xl md:text-9xl lg:text-[5.5rem] font-extrabold mb-2 italic" style={{ textShadow: '4px 4px 10px rgba(0,0,0,0.85)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0', color: '#FFD700' }}>30%</p>
+                  <p className="text-7xl sm:text-8xl md:text-9xl lg:text-[5.5rem] font-extrabold mb-2 italic" style={{ textShadow: '4px 4px 10px rgba(0,0,0,0.85)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '64px', lineHeight: '50px', letterSpacing: '0%', color: '#FFD700', leadingTrim: 'NONE' }}>30%</p>
                   <p className="text-sm sm:text-base leading-relaxed italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0' }}>خصومات موسمية على العبايات الفاخرة</p>
                 </div>
               </div>
