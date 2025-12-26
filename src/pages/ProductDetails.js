@@ -41,15 +41,15 @@ export default function ProductDetails() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
         {/* RIGHT – PRODUCT INFO */}
-        <div className="flex flex-col" style={{ minHeight: '708px' }}>
+        <div className="flex flex-col" style={{ minHeight: '708px', marginRight: '240px' }}>
           {/* Title */}
-          <h1 className="text-4xl font-bold mb-2 text-black">
+          <h1 className="text-4xl font-bold mb-2 text-black" style={{ fontFamily: 'Calibri' }}>
             {product.name}
           </h1>
 
           {/* Rating */}
           <div className="flex items-center mb-4">
-            <div className="text-black text-2xl flex">
+            <div className="text-black text-2xl flex" style={{ fontFamily: 'Calibri' }}>
               {"★".repeat(product.rating)}
               {"☆".repeat(5 - product.rating)}
             </div>
@@ -57,16 +57,16 @@ export default function ProductDetails() {
 
           {/* Price */}
           <div className="flex items-baseline gap-3 mb-6">
-            <span className="text-3xl font-bold text-red-700">{product.price} ريال</span>
-            <span className="text-xl text-gray-400 line-through">{product.originalPrice} ريال</span>
+            <span className="text-3xl font-bold text-red-700" style={{ fontFamily: 'Calibri' }}>{product.price} ريال</span>
+            <span className="text-xl text-gray-400 line-through" style={{ fontFamily: 'Calibri' }}>{product.originalPrice} ريال</span>
           </div>
 
           {/* Size Guide Link */}
-          <a href="#" className="text-gray-600 underline mb-6 block">جدول المقاسات</a>
+          <a href="#" className="text-gray-600 underline mb-6 block" style={{ fontFamily: 'Calibri' }}>جدول المقاسات</a>
 
           {/* Sizes */}
           <div className="mb-6">
-            <h3 className="font-semibold text-lg mb-3">المقاسات</h3>
+            <h3 className="font-semibold text-lg mb-3" style={{ fontFamily: 'Calibri' }}>المقاسات</h3>
             <div className="flex gap-3 flex-wrap">
               {["XL", "L", "M", "S"].map((s) => (
                 <button
@@ -76,6 +76,7 @@ export default function ProductDetails() {
                     ? "bg-white text-black border-black"
                     : "border-gray-300 text-gray-500 hover:border-black hover:text-black"
                     }`}
+                  style={{ fontFamily: 'Calibri' }}
                 >
                   {s}
                 </button>
@@ -84,43 +85,48 @@ export default function ProductDetails() {
           </div>
 
           {/* Colors */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-lg mb-3">الالوان</h3>
-            <div className="flex gap-3">
+          <div className="mb-6" style={{ marginTop: '40px' }}>
+            <div className="flex items-center justify-between" style={{ width: '445px' }}>
+              <h3 className="font-semibold text-lg" style={{ fontFamily: 'Calibri', color: '#010127' }}>الالوان</h3>
+            </div>
+            <div className="flex gap-3" style={{ marginTop: '10px' }}>
               {[
-                { value: "black", class: "bg-black" },
-                { value: "gray", class: "bg-gray-500" },
-                { value: "navy", class: "bg-blue-900" },
-                { value: "maroon", class: "bg-red-900" },
+                { value: "red", color: "#590000" },
+                { value: "blue", color: "#010127" },
+                { value: "gray", color: "#81888E" },
+                { value: "black", color: "#030303" },
               ].map((c) => (
                 <button
                   key={c.value}
                   onClick={() => setColor(c.value)}
-                  className={`w-10 h-10 rounded-md ${c.class} transition ${color === c.value
+                  className={`w-10 h-10 rounded-md transition ${color === c.value
                     ? "ring-2 ring-offset-2 ring-black"
                     : ""
                     }`}
+                  style={{ backgroundColor: c.color }}
                 />
               ))}
             </div>
           </div>
 
           {/* Quantity */}
-          <div className="mb-8">
-            <h3 className="font-semibold text-lg mb-3">الكمية</h3>
-            <div className="flex items-center border-2 border-gray-300 rounded-full w-fit">
-              <button onClick={() => setQty(qty + 1)} className="text-2xl px-5 py-2">
-                <FiPlus />
-              </button>
-              <span className="font-semibold text-xl px-5">{qty}</span>
-              <button onClick={() => qty > 1 && setQty(qty - 1)} className="text-2xl px-5 py-2">
-                <FiMinus />
-              </button>
+          <div className="mb-8" style={{ marginTop: 'auto' }}>
+            <div className="flex items-center justify-between" style={{ width: '445px' }}>
+              <h3 className="font-semibold text-lg" style={{ fontFamily: 'Calibri' }}>الكمية</h3>
+              <div className="flex items-center border-2 border-gray-300 rounded-full w-fit">
+                <button onClick={() => setQty(qty + 1)} className="text-2xl px-5 py-2" style={{ fontFamily: 'Calibri' }}>
+                  <FiPlus />
+                </button>
+                <span className="font-semibold text-xl px-5" style={{ fontFamily: 'Calibri' }}>{qty}</span>
+                <button onClick={() => qty > 1 && setQty(qty - 1)} className="text-2xl px-5 py-2" style={{ fontFamily: 'Calibri' }}>
+                  <FiMinus />
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col gap-4" style={{ marginTop: 'auto', marginBottom: '0', marginLeft: '20px' }}>
+          <div className="flex flex-col gap-4" style={{ marginTop: 'auto', marginBottom: '0', marginLeft: '50px' }}>
             <button
               className="bg-black text-white font-bold text-lg hover:bg-gray-800 transition"
               style={{
@@ -128,7 +134,8 @@ export default function ProductDetails() {
                 height: '66px',
                 borderRadius: '50px',
                 borderWidth: '1px',
-                opacity: 1
+                opacity: 1,
+                fontFamily: 'Calibri'
               }}
             >
               اشتري الآن
@@ -140,7 +147,8 @@ export default function ProductDetails() {
                 height: '66px',
                 borderRadius: '50px',
                 borderWidth: '1px',
-                opacity: 1
+                opacity: 1,
+                fontFamily: 'Calibri'
               }}
             >
               أضف إلى السلة
@@ -149,7 +157,7 @@ export default function ProductDetails() {
         </div>
 
         {/* LEFT – IMAGES */}
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4" style={{ marginLeft: '90px', marginRight: '30px' }}>
           {/* MAIN IMAGE */}
           <div className="relative flex-1" style={{ width: '505px', height: '708px', transform: 'rotate(0deg)', opacity: 1, borderRadius: '5px' }}>
             <button
