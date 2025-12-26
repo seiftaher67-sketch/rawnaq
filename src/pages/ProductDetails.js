@@ -32,113 +32,50 @@ export default function ProductDetails() {
     product.image,
     product.image,
     product.image,
+    product.image,
   ];
 
   return (
     <div className="pt-32 pb-24 container mx-auto px-6" dir="rtl">
       {/* GRID LAYOUT */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-20 md:h-[600px]">
-
-        {/* LEFT – THUMBNAILS */}
-        <div className="md:col-span-1 flex flex-col md:h-[600px]">
-          <div className="flex flex-col gap-3 overflow-y-auto">
-            {thumbnails.map((img, index) => (
-              <button
-                key={index}
-                onClick={() => setMainImage(img)}
-                onMouseEnter={() => setHoveredThumbnail(index)}
-                onMouseLeave={() => setHoveredThumbnail(null)}
-                className={`relative w-20 h-20 rounded-lg overflow-hidden border-2 transition flex-shrink-0 ${mainImage === img
-                  ? "border-brand-gold"
-                  : "border-gray-light hover:border-gray-medium"
-                  }`}
-              >
-                <img
-                  src={img}
-                  alt={`Product view ${index + 1}`}
-                  className="w-full h-full object-cover transition-all duration-300"
-                  style={{ filter: hoveredThumbnail === index ? 'brightness(0.6)' : 'brightness(1)' }}
-                />
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* CENTER – MAIN IMAGE */}
-        <div className="md:col-span-5 flex flex-col md:h-[600px]">
-          <div className="relative w-full h-full min-h-[400px]">
-            <button
-              onClick={() => setIsFavorite(!isFavorite)}
-              className="absolute top-4 left-4 bg-white p-2 rounded-full shadow-lg z-10"
-            >
-              <FiHeart
-                className={`text-2xl transition ${isFavorite ? "text-red-500 fill-red-500" : "text-black"
-                  }`}
-              />
-            </button>
-            <img
-              src={mainImage}
-              className="w-full h-full object-cover rounded-xl shadow-md"
-              alt="product"
-            />
-          </div>
-        </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
         {/* RIGHT – PRODUCT INFO */}
-        <div className="md:col-span-5 flex flex-col justify-start">
-
+        <div className="flex flex-col" style={{ minHeight: '708px' }}>
           {/* Title */}
-          <h1
-            className="text-2xl font-bold mb-2 text-black"
-            style={{
-              fontFamily: 'Calibri',
-              fontWeight: 700,
-              fontStyle: 'Bold',
-              fontSize: '28px',
-              lineHeight: '100%',
-              letterSpacing: '0%'
-            }}
-          >
+          <h1 className="text-4xl font-bold mb-2 text-black">
             {product.name}
           </h1>
 
           {/* Rating */}
-          <div className="flex items-center gap-1 mb-3 justify-center">
-            <div className="text-[#C8A06A] text-xl" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px' }}>
+          <div className="flex items-center mb-4">
+            <div className="text-black text-2xl flex">
               {"★".repeat(product.rating)}
+              {"☆".repeat(5 - product.rating)}
             </div>
           </div>
 
           {/* Price */}
-          <div className="mb-4 pb-3">
-            <div className="flex items-center gap-2 justify-center">
-              <span className="text-base text-gray-500 line-through" style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '16px' }}>{product.originalPrice}</span>
-              <span className="text-2xl font-bold" style={{ color: '#8B1538', fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', lineHeight: '100%', letterSpacing: '0%' }}>{product.price}</span>
-            </div>
+          <div className="flex items-baseline gap-3 mb-6">
+            <span className="text-3xl font-bold text-red-700">{product.price} ريال</span>
+            <span className="text-xl text-gray-400 line-through">{product.originalPrice} ريال</span>
           </div>
 
           {/* Size Guide Link */}
-          <div className="mb-4">
-            <a href="#" className="text-gray-600 underline" style={{ fontFamily: 'Calibri', fontWeight: 400, fontSize: '16px' }}>جدول المقاسات</a>
-          </div>
+          <a href="#" className="text-gray-600 underline mb-6 block">جدول المقاسات</a>
 
-          {/* Sizes Label */}
-          <div className="mb-2">
-            <h3 className="font-semibold text-black" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px' }}>المقاسات</h3>
-          </div>
-
-          {/* Size */}
-          <div className="mb-4">
-            <div className="flex gap-2 flex-wrap">
+          {/* Sizes */}
+          <div className="mb-6">
+            <h3 className="font-semibold text-lg mb-3">المقاسات</h3>
+            <div className="flex gap-3 flex-wrap">
               {["XL", "L", "M", "S"].map((s) => (
                 <button
                   key={s}
                   onClick={() => setSize(s)}
-                  className={`px-5 py-2 rounded-full border-2 font-semibold transition ${size === s
-                    ? "bg-black text-white border-black"
-                    : "border-gray-400 text-black hover:border-black"
+                  className={`px-8 py-2 rounded-lg border-2 font-semibold transition text-center ${size === s
+                    ? "bg-white text-black border-black"
+                    : "border-gray-300 text-gray-500 hover:border-black hover:text-black"
                     }`}
-                  style={{ fontFamily: 'Calibri', fontWeight: 600, fontSize: '16px' }}
                 >
                   {s}
                 </button>
@@ -146,59 +83,116 @@ export default function ProductDetails() {
             </div>
           </div>
 
-          {/* Colors Label */}
-          <div className="mb-2">
-            <h3 className="font-semibold text-black" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px' }}>الألوان</h3>
-          </div>
-
           {/* Colors */}
-          <div className="mb-4">
-            <div className="flex gap-2">
+          <div className="mb-6">
+            <h3 className="font-semibold text-lg mb-3">الالوان</h3>
+            <div className="flex gap-3">
               {[
                 { value: "black", class: "bg-black" },
-                { value: "gray", class: "bg-gray-400" },
+                { value: "gray", class: "bg-gray-500" },
                 { value: "navy", class: "bg-blue-900" },
-                { value: "brown", class: "bg-red-900" },
+                { value: "maroon", class: "bg-red-900" },
               ].map((c) => (
                 <button
                   key={c.value}
                   onClick={() => setColor(c.value)}
-                  className={`w-14 h-14 rounded-full border-4 ${c.class} transition ${color === c.value
-                    ? "border-black"
-                    : "border-gray-300"
+                  className={`w-10 h-10 rounded-md ${c.class} transition ${color === c.value
+                    ? "ring-2 ring-offset-2 ring-black"
+                    : ""
                     }`}
                 />
               ))}
             </div>
           </div>
 
-          {/* Quantity Label */}
-          <div className="mb-2">
-            <h3 className="font-semibold text-black" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '20px' }}>الكمية</h3>
-          </div>
-
-          <div className="mb-5">
-            <div className="flex items-center gap-4 border-2 border-gray-300 rounded-full w-fit px-6 py-3">
-              <button onClick={() => qty > 1 && setQty(qty - 1)}>
-                <FiMinus className="text-xl" />
+          {/* Quantity */}
+          <div className="mb-8">
+            <h3 className="font-semibold text-lg mb-3">الكمية</h3>
+            <div className="flex items-center border-2 border-gray-300 rounded-full w-fit">
+              <button onClick={() => setQty(qty + 1)} className="text-2xl px-5 py-2">
+                <FiPlus />
               </button>
-              <span className="font-semibold" style={{ fontFamily: 'Calibri', fontWeight: 600, fontSize: '18px' }}>{qty}</span>
-              <button onClick={() => setQty(qty + 1)}>
-                <FiPlus className="text-xl" />
+              <span className="font-semibold text-xl px-5">{qty}</span>
+              <button onClick={() => qty > 1 && setQty(qty - 1)} className="text-2xl px-5 py-2">
+                <FiMinus />
               </button>
             </div>
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col gap-2 max-w-lg mx-auto mt-8">
-            <button className="w-full bg-black text-white py-3 px-12 rounded-full font-bold hover:bg-gray-900 transition transform hover:scale-105 hover:shadow-lg" style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
+          <div className="flex flex-col gap-4" style={{ marginTop: 'auto', marginBottom: '0', marginLeft: '20px' }}>
+            <button
+              className="bg-black text-white font-bold text-lg hover:bg-gray-800 transition"
+              style={{
+                width: '445px',
+                height: '66px',
+                borderRadius: '50px',
+                borderWidth: '1px',
+                opacity: 1
+              }}
+            >
               اشتري الآن
             </button>
-
-            <button className="w-full flex items-center justify-center gap-2 border-2 border-black py-3 px-12 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 hover:shadow-lg" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}>
-              <FiShoppingCart className="text-lg" />
+            <button
+              className="border-2 border-black text-black font-bold text-lg hover:bg-gray-100 transition"
+              style={{
+                width: '445px',
+                height: '66px',
+                borderRadius: '50px',
+                borderWidth: '1px',
+                opacity: 1
+              }}
+            >
               أضف إلى السلة
             </button>
+          </div>
+        </div>
+
+        {/* LEFT – IMAGES */}
+        <div className="flex flex-row gap-4">
+          {/* MAIN IMAGE */}
+          <div className="relative flex-1" style={{ width: '505px', height: '708px', transform: 'rotate(0deg)', opacity: 1, borderRadius: '5px' }}>
+            <button
+              onClick={() => setIsFavorite(!isFavorite)}
+              className="absolute top-4 left-4 bg-white p-3 rounded-full shadow-lg z-10"
+            >
+              <FiHeart
+                className={`text-2xl transition ${isFavorite ? "text-red-500 fill-red-500" : "text-gray-700"
+                  }`}
+              />
+            </button>
+            <img
+              src={mainImage}
+              className="w-full h-full object-cover"
+              alt="product"
+            />
+          </div>
+
+          {/* THUMBNAILS */}
+          <div className="flex flex-col gap-3 overflow-y-auto h-[708px] pl-2">
+            {thumbnails.map((img, index) => (
+              <button
+                key={index}
+                onClick={() => setMainImage(img)}
+                className={`relative w-24 overflow-hidden border-2 transition flex-shrink-0 ${mainImage === img
+                  ? "border-black"
+                  : "border-gray-200 hover:border-gray-400"
+                  }`}
+                style={{
+                  width: '96px',
+                  height: '132px',
+                  transform: 'rotate(0deg)',
+                  opacity: 1,
+                  borderRadius: '5px'
+                }}
+              >
+                <img
+                  src={img}
+                  alt={`Product view ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
           </div>
         </div>
       </div>
