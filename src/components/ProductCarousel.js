@@ -123,13 +123,13 @@ const ProductCarousel = () => {
                 {/* Info */}
                 <div className="p-4 flex flex-col">
                   <div className="flex justify-between mb-3">
-                    <h3 className="font-bold text-lg">{product.name}</h3>
-                    <div className="text-right">
-                      <p className="font-bold text-xl text-[#8B1538]">
-                        {product.price} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle' }} />
+                    <h3 style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>{product.name}</h3>
+                    <div className="text-right" style={{ marginRight: '8px', transform: 'translateX(-15px)' }}>
+                      <p className="font-bold text-xl text-[#8B1538]" style={{ display: 'flex', alignItems: 'center' }}>
+                        {product.price} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '1.25rem', height: '1.25rem', marginLeft: '2px' }} />
                       </p>
-                      <p className="text-sm line-through text-gray-400">
-                        {product.price + 50} <img src="/images/old ry.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', filter: 'grayscale(100%)' }} />
+                      <p className="text-sm line-through text-gray-400" style={{ display: 'flex', alignItems: 'center' }}>
+                        {product.price + 50} <img src="/images/old ry.jpeg" alt="ريال" style={{ width: '0.625rem', height: '0.625rem', marginLeft: '2px', filter: 'grayscale(100%)' }} />
                       </p>
                     </div>
                   </div>

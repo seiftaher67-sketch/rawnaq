@@ -75,14 +75,14 @@ export default function ProductCard({
       {/* Info */}
       <div className="p-4 flex flex-col flex-grow">
         <div className="flex justify-between mb-3 items-start">
-          <h3 className="font-calibri font-normal text-2xl leading-none tracking-normal w-2/3">{productData.name}</h3>
-          <div className="text-right">
-            <p className="font-bold text-xl text-[#8B1538] flex items-baseline justify-end">
+          <h3 className="font-calibri font-normal text-2xl leading-none tracking-normal">{productData.name}</h3>
+          <div className="text-center pr-4">
+            <p className="font-bold text-xl text-[#8B1538] flex items-baseline justify-center">
               {productData.price}
               <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
             </p>
             {productData.oldPrice && (
-              <p className="text-sm line-through text-gray-400 flex items-baseline justify-end">
+              <p className="text-sm line-through text-gray-400 flex items-baseline justify-center">
                 {productData.oldPrice}
                 <img src="/images/old ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px', filter: 'grayscale(100%)' }} />
               </p>

@@ -1,3 +1,3 @@
-- [x] Update font styles in Niqabs.js filter selects
-- [x] Update font styles in Tarhas.js filter selects
-- [x] Update font styles in Abayas.js filter selects to match exactly
+- [ ] Update ProductCard.jsx to replace "ريال" images with text in navy blue for current price and gray for old price, matching font sizes.
+- [ ] Update ProductCard.js similarly.
+- [ ] Test the changes to ensure proper alignment and styling.
