@@ -2,14 +2,14 @@ import ProductCard from "../components/ProductCard.jsx";
 
 export default function Tarhas() {
   const tarhasList = [
-    { id: 1, name: "طرحة شيفون ناعمة", price: 49, image: "/images/t11.jpg" },
-    { id: 2, name: "طرحة قطن ممتاز", price: 59, image: "/images/t2.jpg" },
-    { id: 3, name: "طرحة سوفت راقية", price: 45, image: "/images/t3.jpg" },
-    { id: 4, name: "طرحة خليجية فاخرة", price: 79, image: "/images/t11.jpg" },
-    { id: 5, name: "طرحة سوبر ديلاكس", price: 69, image: "/images/t11.jpg" },
-    { id: 6, name: "طرحة سادة يومية", price: 39, image: "/images/t2.jpg" },
-    { id: 7, name: "طرحة فاخرة", price: 89, image: "/images/t3.jpg" },
-    { id: 8, name: "طرحة عصرية", price: 55, image: "/images/t11.jpg" },
+    { id: 1, name: "طرحة شيفون ناعمة", price: 49, oldPrice: 59, image: "/images/t11.jpg" },
+    { id: 2, name: "طرحة قطن ممتاز", price: 59, oldPrice: 69, image: "/images/t2.jpg" },
+    { id: 3, name: "طرحة سوفت راقية", price: 45, oldPrice: 55, image: "/images/t3.jpg" },
+    { id: 4, name: "طرحة خليجية فاخرة", price: 79, oldPrice: 89, image: "/images/t11.jpg" },
+    { id: 5, name: "طرحة سوبر ديلاكس", price: 69, oldPrice: 79, image: "/images/t11.jpg" },
+    { id: 6, name: "طرحة سادة يومية", price: 39, oldPrice: 49, image: "/images/t2.jpg" },
+    { id: 7, name: "طرحة فاخرة", price: 89, oldPrice: 99, image: "/images/t3.jpg" },
+    { id: 8, name: "طرحة عصرية", price: 55, oldPrice: 65, image: "/images/t11.jpg" },
   ];
 
   return (

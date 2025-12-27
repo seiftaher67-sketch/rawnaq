@@ -40,12 +40,13 @@ export default function ProductDetails() {
             fontFamily: 'Calibri',
             fontWeight: 400,
             fontStyle: 'Regular',
-            fontSize: '72px',
+            fontSize: '60px',
             leadingTrim: 'NONE',
             lineHeight: '100%',
             letterSpacing: '0%',
             color: '#030303',
-            marginTop: '-10px'
+            marginTop: '-10px',
+            textAlign: 'right'
           }}>
             {product.name}
           </h1>

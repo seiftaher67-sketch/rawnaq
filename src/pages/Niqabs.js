@@ -2,14 +2,14 @@ import ProductCard from "../components/ProductCard.jsx";
 
 export default function Niqabs() {
   const niqabsList = [
-    { id: 1, name: "نقاب خليجي فاخر", price: 39, image: "/images/n1.jpg" },
-    { id: 2, name: "نقاب سوفت مريح", price: 49, image: "/images/n1.jpg" },
-    { id: 3, name: "نقاب قطني ناعم", price: 35, image: "/images/n1.jpg" },
-    { id: 4, name: "نقاب بفتحة للعين", price: 45, image: "/images/n1.jpg" },
-    { id: 5, name: "نقاب خفيف يومي", price: 29, image: "/images/n1.jpg" },
-    { id: 6, name: "نقاب كويتي ممتاز", price: 55, image: "/images/n1.jpg" },
-    { id: 7, name: "نقاب فاخر", price: 65, image: "/images/n1.jpg" },
-    { id: 8, name: "نقاب عصري", price: 42, image: "/images/n1.jpg" },
+    { id: 1, name: "نقاب خليجي فاخر", price: 39, oldPrice: 49, image: "/images/n1.jpg" },
+    { id: 2, name: "نقاب سوفت مريح", price: 49, oldPrice: 59, image: "/images/n1.jpg" },
+    { id: 3, name: "نقاب قطني ناعم", price: 35, oldPrice: 45, image: "/images/n1.jpg" },
+    { id: 4, name: "نقاب بفتحة للعين", price: 45, oldPrice: 55, image: "/images/n1.jpg" },
+    { id: 5, name: "نقاب خفيف يومي", price: 29, oldPrice: 39, image: "/images/n1.jpg" },
+    { id: 6, name: "نقاب كويتي ممتاز", price: 55, oldPrice: 65, image: "/images/n1.jpg" },
+    { id: 7, name: "نقاب فاخر", price: 65, oldPrice: 75, image: "/images/n1.jpg" },
+    { id: 8, name: "نقاب عصري", price: 42, oldPrice: 52, image: "/images/n1.jpg" },
   ];
 
   return (

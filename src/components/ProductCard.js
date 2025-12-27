@@ -64,9 +64,9 @@ const ProductCard = ({ product }) => {
             <p className="font-bold text-xl text-[#8B1538] flex items-baseline">
               {product.price} <span className="text-[#000080]" style={{ fontSize: 'inherit' }}>ريال</span>
             </p>
-            {product.price && ( // Assuming original price might not always be present
+            {product.oldPrice && (
               <p className="text-sm line-through text-gray-400 flex items-baseline">
-                {product.price + 50} <span className="text-gray-500" style={{ fontSize: 'inherit' }}>ريال</span>
+                {product.oldPrice} <span className="text-gray-500" style={{ fontSize: 'inherit' }}>ريال</span>
               </p>
             )}
           </div>
