@@ -27,7 +27,7 @@ export default function Tarhas() {
 
           {/* Sort */}
           <div className="relative w-full md:w-1/3">
-            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white">
+            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
               <option>الفرز: من السعر الأقل للأعلى</option>
               <option>الفرز: من الأعلى للأقل</option>
               <option>الأحدث</option>
@@ -39,7 +39,7 @@ export default function Tarhas() {
 
           {/* Size */}
           <div className="relative w-full md:w-1/3">
-            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white">
+            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
               <option>المقاس</option>
               <option>S</option>
               <option>M</option>
@@ -53,7 +53,7 @@ export default function Tarhas() {
 
           {/* Color */}
           <div className="relative w-full md:w-1/3">
-            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white">
+            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
               <option>اللون</option>
               <option>أسود</option>
               <option>بيج</option>

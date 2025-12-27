@@ -126,10 +126,10 @@ const ProductCarousel = () => {
                     <h3 className="font-bold text-lg">{product.name}</h3>
                     <div className="text-right">
                       <p className="font-bold text-xl text-[#8B1538]">
-                        {product.price} <img src="/images/ryal.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle' }} />
+                        {product.price} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle' }} />
                       </p>
                       <p className="text-sm line-through text-gray-400">
-                        {product.price + 50} <img src="/images/ryal.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle' }} />
+                        {product.price + 50} <img src="/images/old ry.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', filter: 'grayscale(100%)' }} />
                       </p>
                     </div>
                   </div>

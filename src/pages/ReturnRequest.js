@@ -223,7 +223,7 @@ export default function ReturnRequest() {
                                         minWidth: '100px',
                                         textAlign: 'left'
                                     }}>
-                                        {item.price} ريال
+                                        {item.price} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                                     </div>
                                 </div>
                             ))}

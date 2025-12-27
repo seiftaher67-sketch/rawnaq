@@ -180,11 +180,11 @@ const Cart = () => {
                     <div className="flex flex-col text-right">
                       {/* Current Price */}
                       <p className="font-bold text-xl" style={{ color: "#8B1538" }}>
-                        {product.price} <span className="text-sm">ريال</span>
+                        {product.price} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                       </p>
                       {/* Original Price - Strikethrough */}
                       <p className="text-sm" style={{ color: "#999999", textDecoration: "line-through" }}>
-                        {product.price + 50} <span className="text-xs">ريال</span>
+                        {product.price + 50} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                       </p>
                     </div>
                   </div>
@@ -239,21 +239,21 @@ const Cart = () => {
                   <span className="text-gray-700">المبلغ الإجمالي</span>
                   <span className="text-gray-700">
                     {subtotal}
-                    <span className="text-sm">ريال</span>
+                    <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                   </span>
                 </div>
                 <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
                   <span className="text-gray-700">مصاريف التوصيل</span>
                   <span className="text-gray-700">
                     {shipping}
-                    <span className="text-sm">ريال</span>
+                    <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                   </span>
                 </div>
                 <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
                   <span className="text-gray-800">المبلغ كامل</span>
                   <span className="text-gray-800">
                     {total}
-                    <img src="/images/ryal.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', marginLeft: '4px' }} />
+                    <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                   </span>
                 </div>
               </div>

@@ -26,14 +26,7 @@ export default function ProductDetails() {
     );
   }
 
-  const thumbnails = product.thumbnails || [
-    product.image,
-    product.image,
-    product.image,
-    product.image,
-    product.image,
-    product.image,
-  ];
+  const thumbnails = product.thumbnails || Array(10).fill(product.image);
 
   return (
     <div className="pt-32 pb-24 container mx-auto px-6" dir="rtl">
@@ -96,8 +89,8 @@ export default function ProductDetails() {
               lineHeight: '100%',
               letterSpacing: '0%',
               color: '#950000'
-            }}>{product.price} <span className="text-sm">ريال</span></span>
-            <span className="text-xl text-gray-400 line-through" style={{ fontFamily: 'Calibri' }}>{product.originalPrice} <span className="text-xs">ريال</span></span>
+            }}>{product.price} <img src="/images/ry.jpeg" alt="ريال" className="inline-block" style={{ width: '40px', height: '40px' }} /></span>
+            <span className="text-xl text-gray-400 line-through" style={{ fontFamily: 'Calibri' }}>{product.originalPrice} <img src="/images/ry.jpeg" alt="ريال" className="inline-block" style={{ width: '20px', height: '20px' }} /></span>
           </div>
 
           {/* Size Guide Link */}
@@ -247,10 +240,9 @@ export default function ProductDetails() {
               <button
                 key={index}
                 onClick={() => setMainImage(img)}
-                className={`relative w-24 overflow-hidden border-2 transition flex-shrink-0 ${mainImage === img
-                  ? "border-black"
-                  : "border-gray-200 hover:border-gray-400"
-                  }`}
+                onMouseEnter={() => setHoveredThumbnail(index)}
+                onMouseLeave={() => setHoveredThumbnail(null)}
+                className="relative w-24 overflow-hidden border-2 border-gray-200 transition flex-shrink-0"
                 style={{
                   width: '96px',
                   height: '132px',
@@ -262,7 +254,10 @@ export default function ProductDetails() {
                 <img
                   src={img}
                   alt={`Product view ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition"
+                  style={{
+                    filter: hoveredThumbnail === index ? 'brightness(0.8)' : 'none'
+                  }}
                 />
               </button>
             ))}

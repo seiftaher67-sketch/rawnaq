@@ -79,12 +79,12 @@ export default function ProductCard({
           <div className="text-right">
             <p className="font-bold text-xl text-[#8B1538] flex items-baseline justify-end">
               {productData.price}
-              <span className="font-calibri font-bold text-2xl leading-none tracking-normal mr-1"> ريال</span>
+              <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
             </p>
             {productData.oldPrice && (
               <p className="text-sm line-through text-gray-400 flex items-baseline justify-end">
                 {productData.oldPrice}
-                <span className="font-calibri font-bold text-base leading-none tracking-normal mr-1"> ريال</span>
+                <img src="/images/old ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px', filter: 'grayscale(100%)' }} />
               </p>
             )}
           </div>

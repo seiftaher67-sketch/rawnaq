@@ -21,7 +21,7 @@ export default function Abayas() {
 
           {/* Sort */}
           <div className="relative w-full md:w-1/3">
-            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
+            <select className="w-full appearance-none p-4 border border-gray-300 rounded-full text-black bg-white" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
               <option>الفرز: من السعر الأقل للأعلى</option>
               <option>الفرز: من الأعلى للأقل</option>
               <option>الأحدث</option>

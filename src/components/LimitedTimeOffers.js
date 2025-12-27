@@ -48,8 +48,8 @@ const LimitedTimeOffers = () => {
               <div className="flex justify-between items-center mb-3">
                 <h3 className="font-sans text-lg font-bold text-left opacity-60" style={{ color: '#666666' }}>الفرقة</h3>
                 <div className="flex flex-col text-right">
-                  <p className="font-bold text-xl" style={{ color: '#8B1538' }}>250 <span className="text-sm">ريال</span></p>
-                  <p className="text-sm" style={{ color: '#999999', textDecoration: 'line-through' }}>300 <span className="text-xs">ريال</span></p>
+                  <p className="font-bold text-xl" style={{ color: '#8B1538' }}>250 <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} /></p>
+                  <p className="text-sm" style={{ color: '#999999', textDecoration: 'line-through' }}>300 <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} /></p>
                 </div>
               </div>
               <div className="flex gap-2 mt-auto">
@@ -81,8 +81,8 @@ const LimitedTimeOffers = () => {
               <div className="flex justify-between items-center mb-3">
                 <h3 className="font-sans text-lg font-bold text-left opacity-60" style={{ color: '#666666' }}>عبارة كتان</h3>
                 <div className="flex flex-col text-right">
-                  <p className="font-bold text-xl" style={{ color: '#8B1538' }}>250 <span className="text-sm">ريال</span></p>
-                  <p className="text-sm" style={{ color: '#999999', textDecoration: 'line-through' }}>335 <span className="text-xs">ريال</span></p>
+                  <p className="font-bold text-xl" style={{ color: '#8B1538' }}>250 <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} /></p>
+                  <p className="text-sm" style={{ color: '#999999', textDecoration: 'line-through' }}>335 <img src="/images/old ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px', filter: 'grayscale(100%)' }} /></p>
                 </div>
               </div>
               <div className="flex gap-2 mt-auto">
@@ -114,8 +114,8 @@ const LimitedTimeOffers = () => {
               <div className="flex justify-between items-center mb-3">
                 <h3 className="font-sans text-lg font-bold text-left opacity-60" style={{ color: '#666666' }}>طرحة قطن</h3>
                 <div className="flex flex-col text-right">
-                  <p className="font-bold text-xl" style={{ color: '#8B1538' }}>250 <span className="text-sm">ريال</span></p>
-                  <p className="text-sm" style={{ color: '#999999', textDecoration: 'line-through' }}>300 <span className="text-xs">ريال</span></p>
+                  <p className="font-bold text-xl" style={{ color: '#8B1538' }}>250 <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} /></p>
+                  <p className="text-sm" style={{ color: '#999999', textDecoration: 'line-through' }}>300 <img src="/images/old ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px', filter: 'grayscale(100%)' }} /></p>
                 </div>
               </div>
               <div className="flex gap-2 mt-auto">
@@ -147,8 +147,8 @@ const LimitedTimeOffers = () => {
               <div className="flex justify-between items-center mb-3">
                 <h3 className="font-sans text-lg font-bold text-left opacity-60" style={{ color: '#666666' }}>عبارة كتان</h3>
                 <div className="flex flex-col text-right">
-                  <p className="font-bold text-xl" style={{ color: '#8B1538' }}>250 <span className="text-sm">ريال</span></p>
-                  <p className="text-sm" style={{ color: '#999999', textDecoration: 'line-through' }}>300 <span className="text-xs">ريال</span></p>
+                  <p className="font-bold text-xl" style={{ color: '#8B1538' }}>250 <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} /></p>
+                  <p className="text-sm" style={{ color: '#999999', textDecoration: 'line-through' }}>300 <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} /></p>
                 </div>
               </div>
               <div className="flex gap-2 mt-auto">

@@ -187,7 +187,7 @@ export default function TrackOrder() {
 
                                 </div>
                                 <div className="text-right">
-                                    <div style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>{it.price} ريال</div>
+                                    <div style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>{it.price} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} /></div>
                                 </div>
                             </div>
                         ))}
@@ -200,21 +200,21 @@ export default function TrackOrder() {
                             <span className="text-gray-700">المبلغ الإجمالي</span>
                             <span className="text-gray-700">
                                 {order.totals.subtotal}
-                                <span className="mr-1">ريال</span>
+                                <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                             </span>
                         </div>
                         <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
                             <span className="text-gray-700">مصاريف التوصيل</span>
                             <span className="text-gray-700">
                                 {order.totals.shipping}
-                                <span className="mr-1">ريال</span>
+                                <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                             </span>
                         </div>
                         <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
                             <span className="text-gray-800">المبلغ كامل</span>
                             <span className="text-gray-800">
                                 {order.totals.total}
-                                <span className="mr-1">ريال</span>
+                                <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                             </span>
                         </div>
                     </div>

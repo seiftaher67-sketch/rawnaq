@@ -64,12 +64,12 @@ export default function SimilarProducts({ products }) {
                 <div className="flex flex-col text-right">
                   {/* Current Price */}
                   <p className="font-bold text-xl" style={{ color: '#8B1538' }}>
-                    {p.price} <img src="/images/ryal.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle' }} />
+                    {p.price} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle' }} />
                   </p>
                   {/* Original Price - Strikethrough */}
                   {p.oldPrice && (
                     <p className="text-sm" style={{ color: '#999999', textDecoration: 'line-through' }}>
-                      {p.oldPrice} <img src="/images/ryal.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle' }} />
+                      {p.oldPrice} <img src="/images/old ry.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', filter: 'grayscale(100%)' }} />
                     </p>
                   )}
                 </div>

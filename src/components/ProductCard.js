@@ -63,12 +63,12 @@ const ProductCard = ({ product }) => {
           <div className="text-right">
             <p className="font-bold text-xl text-[#8B1538] flex items-baseline">
               {product.price}
-              <img src="/images/ryal.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', marginLeft: '4px' }} />
+              <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', marginLeft: '4px' }} />
             </p>
             {product.price && ( // Assuming original price might not always be present
               <p className="text-sm line-through text-gray-400 flex items-baseline">
                 {product.price + 50}
-                <img src="/images/ryal.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', marginLeft: '4px' }} />
+                <img src="/images/old ry.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', marginLeft: '4px', filter: 'grayscale(100%)' }} />
               </p>
             )}
           </div>
