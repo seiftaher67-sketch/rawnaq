@@ -1,8 +1,11 @@
-# TODO: Make all ProductCard usages consistent like Tarhas page
-
-- [x] Update src/pages/Niqabs.js to use product={product}
-- [x] Update src/pages/Offers.js to use product={product}
-- [x] Update src/pages/Abayas.js to use product={product}
-- [x] Update src/pages/MyOrders.js to use product={product}
-- [x] Update src/pages/Favorites.js to use product={product} (already consistent)
-- [x] Update src/pages/OrderHistoryPage.js to use product={product}
+- [x] Replace filled star rating (★) with ng.png image in ProductDetails.js
+- [x] Keep empty stars (☆) as text
+- [x] Test the page to ensure image displays correctly
+- [x] Replace "ريال" with ryal.jpeg image in ProductDetails.js
+- [x] Replace "ريال" with ryal.jpeg image in Cart.js
+- [x] Replace "ريال" with ryal.jpeg image in SimilarProducts.js
+- [x] Replace "ريال" with ryal.jpeg image in ProductCarousel.js
+- [ ] Replace "ريال" with ryal.jpeg image in ProductCard.js
+- [ ] Replace "ريال" with ryal.jpeg image in LimitedTimeOffers.js
+- [ ] Replace "ريال" with ryal.jpeg image in TrackOrder.js
+- [ ] Replace "ريال" with ryal.jpeg image in ReturnRequest.js

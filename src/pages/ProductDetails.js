@@ -43,32 +43,85 @@ export default function ProductDetails() {
         {/* RIGHT – PRODUCT INFO */}
         <div className="flex flex-col" style={{ minHeight: '708px', marginRight: '240px' }}>
           {/* Title */}
-          <h1 className="text-4xl font-bold mb-2 text-black" style={{ fontFamily: 'Calibri' }}>
+          <h1 className="mb-2" style={{
+            fontFamily: 'Calibri',
+            fontWeight: 400,
+            fontStyle: 'Regular',
+            fontSize: '72px',
+            leadingTrim: 'NONE',
+            lineHeight: '100%',
+            letterSpacing: '0%',
+            color: '#030303',
+            marginTop: '-10px'
+          }}>
             {product.name}
           </h1>
 
           {/* Rating */}
-          <div className="flex items-center mb-4">
-            <div className="text-black text-2xl flex" style={{ fontFamily: 'Calibri' }}>
-              {"★".repeat(product.rating)}
-              {"☆".repeat(5 - product.rating)}
+          <div className="flex items-center mb-4" style={{ marginTop: '10px' }}>
+            <div className="flex" style={{ gap: '4px' }}>
+              {Array.from({ length: 5 }, (_, i) => i < product.rating ? 'filled' : 'empty').map((type, index) => (
+                type === 'filled' ? (
+                  <img key={index} src="/images/ng.png" alt="star" style={{
+                    width: '28px',
+                    height: '27px',
+                    display: 'inline-block'
+                  }} />
+                ) : (
+                  <span key={index} style={{
+                    width: '28px',
+                    height: '27px',
+                    color: '#030303',
+                    fontFamily: 'Calibri',
+                    fontSize: '22px',
+                    display: 'inline-block',
+                    textAlign: 'center',
+                    lineHeight: '27px'
+                  }}>
+                    ☆
+                  </span>
+                )
+              ))}
             </div>
           </div>
 
           {/* Price */}
           <div className="flex items-baseline gap-3 mb-6">
-            <span className="text-3xl font-bold text-red-700" style={{ fontFamily: 'Calibri' }}>{product.price} ريال</span>
-            <span className="text-xl text-gray-400 line-through" style={{ fontFamily: 'Calibri' }}>{product.originalPrice} ريال</span>
+            <span style={{
+              fontFamily: 'Calibri',
+              fontWeight: 700,
+              fontStyle: 'Bold',
+              fontSize: '40px',
+              leadingTrim: 'NONE',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+              color: '#950000'
+            }}>{product.price} <span className="text-sm">ريال</span></span>
+            <span className="text-xl text-gray-400 line-through" style={{ fontFamily: 'Calibri' }}>{product.originalPrice} <span className="text-xs">ريال</span></span>
           </div>
 
           {/* Size Guide Link */}
-          <a href="#" className="text-gray-600 underline mb-6 block" style={{ fontFamily: 'Calibri' }}>جدول المقاسات</a>
+          <a href="#" className="text-gray-600 underline mb-6 block" style={{
+            fontFamily: 'Calibri',
+            fontWeight: 400,
+            fontStyle: 'normal',
+            fontSize: '32px',
+            leadingTrim: 'none',
+            lineHeight: '100%',
+            letterSpacing: '0%',
+            textAlign: 'right',
+            textDecoration: 'underline',
+            textDecorationStyle: 'solid',
+            textDecorationOffset: '14%',
+            textDecorationThickness: '4%',
+            textDecorationSkipInk: 'auto'
+          }}>جدول المقاسات</a>
 
           {/* Sizes */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-lg mb-3" style={{ fontFamily: 'Calibri' }}>المقاسات</h3>
+          <div className="mb-6" style={{ marginTop: '10px' }}>
+            <h3 className="font-semibold text-lg mb-3" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '40px', leadingTrim: 'none', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>المقاسات</h3>
             <div className="flex gap-3 flex-wrap">
-              {["XL", "L", "M", "S"].map((s) => (
+              {["S", "M", "L", "XL"].map((s) => (
                 <button
                   key={s}
                   onClick={() => setSize(s)}
@@ -76,7 +129,21 @@ export default function ProductDetails() {
                     ? "bg-white text-black border-black"
                     : "border-gray-300 text-gray-500 hover:border-black hover:text-black"
                     }`}
-                  style={{ fontFamily: 'Calibri' }}
+                  style={{
+                    fontFamily: 'Calibri',
+                    fontWeight: 400,
+                    fontStyle: 'normal',
+                    fontSize: '32px',
+                    leadingTrim: 'none',
+                    lineHeight: '100%',
+                    letterSpacing: '0%',
+                    width: '99px',
+                    height: '48px',
+                    borderRadius: '25px',
+                    borderWidth: '0.5px',
+                    opacity: 1,
+                    transform: 'rotate(0deg)'
+                  }}
                 >
                   {s}
                 </button>
@@ -84,10 +151,24 @@ export default function ProductDetails() {
             </div>
           </div>
 
-          {/* Colors */}
-          <div className="mb-6" style={{ marginTop: '40px' }}>
-            <div className="flex items-center justify-between" style={{ width: '445px' }}>
-              <h3 className="font-semibold text-lg" style={{ fontFamily: 'Calibri', color: '#010127' }}>الالوان</h3>
+          <div className="flex items-center justify-between gap-4" style={{ width: '445px' }}>
+            <div className="mb-6" style={{ marginTop: '10px' }}>
+              <h3 className="font-semibold text-lg" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '40px', leadingTrim: 'none', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>الكمية</h3>
+            </div>
+            <div className="flex items-center border-2 border-gray-300 rounded-full w-fit" style={{ marginTop: '10px' }}>
+              <button onClick={() => setQty(qty + 1)} className="text-2xl px-5 py-2" style={{ fontFamily: 'Calibri' }}>
+                <FiPlus />
+              </button>
+              <span className="font-semibold text-xl px-5" style={{ fontFamily: 'Calibri' }}>{qty}</span>
+              <button onClick={() => qty > 1 && setQty(qty - 1)} className="text-2xl px-5 py-2" style={{ fontFamily: 'Calibri' }}>
+                <FiMinus />
+              </button>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between" style={{ width: '445px' }}>
+            <div className="mb-6" style={{ marginTop: '10px' }}>
+              <h3 className="font-semibold text-lg" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '40px', leadingTrim: 'none', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right', color: '#010127' }}>الالوان</h3>
             </div>
             <div className="flex gap-3" style={{ marginTop: '10px' }}>
               {[
@@ -109,24 +190,8 @@ export default function ProductDetails() {
             </div>
           </div>
 
-          {/* Quantity */}
-          <div className="mb-8" style={{ marginTop: 'auto' }}>
-            <div className="flex items-center justify-between" style={{ width: '445px' }}>
-              <h3 className="font-semibold text-lg" style={{ fontFamily: 'Calibri' }}>الكمية</h3>
-              <div className="flex items-center border-2 border-gray-300 rounded-full w-fit">
-                <button onClick={() => setQty(qty + 1)} className="text-2xl px-5 py-2" style={{ fontFamily: 'Calibri' }}>
-                  <FiPlus />
-                </button>
-                <span className="font-semibold text-xl px-5" style={{ fontFamily: 'Calibri' }}>{qty}</span>
-                <button onClick={() => qty > 1 && setQty(qty - 1)} className="text-2xl px-5 py-2" style={{ fontFamily: 'Calibri' }}>
-                  <FiMinus />
-                </button>
-              </div>
-            </div>
-          </div>
-
           {/* Buttons */}
-          <div className="flex flex-col gap-4" style={{ marginTop: 'auto', marginBottom: '0', marginLeft: '50px' }}>
+          <div className="flex flex-col gap-4" style={{ marginTop: '30px', marginBottom: '0', marginLeft: '50px' }}>
             <button
               className="bg-black text-white font-bold text-lg hover:bg-gray-800 transition"
               style={{

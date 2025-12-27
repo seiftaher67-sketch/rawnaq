@@ -239,21 +239,21 @@ const Cart = () => {
                   <span className="text-gray-700">المبلغ الإجمالي</span>
                   <span className="text-gray-700">
                     {subtotal}
-                    <span className="mr-1">ريال</span>
+                    <span className="text-sm">ريال</span>
                   </span>
                 </div>
                 <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
                   <span className="text-gray-700">مصاريف التوصيل</span>
                   <span className="text-gray-700">
                     {shipping}
-                    <span className="mr-1">ريال</span>
+                    <span className="text-sm">ريال</span>
                   </span>
                 </div>
                 <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
                   <span className="text-gray-800">المبلغ كامل</span>
                   <span className="text-gray-800">
                     {total}
-                    <span className="mr-1">ريال</span>
+                    <img src="/images/ryal.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', marginLeft: '4px' }} />
                   </span>
                 </div>
               </div>

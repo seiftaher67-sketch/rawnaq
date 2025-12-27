@@ -63,12 +63,12 @@ const ProductCard = ({ product }) => {
           <div className="text-right">
             <p className="font-bold text-xl text-[#8B1538] flex items-baseline">
               {product.price}
-              <span className="font-calibri font-bold text-2xl leading-none tracking-normal mr-1"> ريال</span>
+              <img src="/images/ryal.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', marginLeft: '4px' }} />
             </p>
             {product.price && ( // Assuming original price might not always be present
               <p className="text-sm line-through text-gray-400 flex items-baseline">
                 {product.price + 50}
-                <span className="font-calibri font-bold text-2xl leading-none tracking-normal mr-1"> ريال</span>
+                <img src="/images/ryal.jpeg" alt="ريال" style={{ width: '20px', height: '10px', verticalAlign: 'middle', marginLeft: '4px' }} />
               </p>
             )}
           </div>
