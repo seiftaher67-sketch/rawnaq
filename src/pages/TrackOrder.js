@@ -187,32 +187,32 @@ export default function TrackOrder() {
 
                                 </div>
                                 <div className="text-right">
-                                    <div style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>{it.price} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} /></div>
+                                    <div style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', display: 'inline-flex', alignItems: 'center', marginLeft: '10px' }}>{it.price} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} /></div>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="bg-gray-100 rounded-xl border border-gray-300 p-8 shadow-sm mb-12 text-right">
+                <div className="bg-gray-100 rounded-xl border border-gray-300 p-8 flex flex-col justify-center">
                     <div className="space-y-4 text-right">
                         <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
                             <span className="text-gray-700">المبلغ الإجمالي</span>
-                            <span className="text-gray-700">
+                            <span className="text-gray-700" style={{ display: 'inline-flex', alignItems: 'center', fontWeight: 600 }}>
                                 {order.totals.subtotal}
                                 <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                             </span>
                         </div>
                         <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
                             <span className="text-gray-700">مصاريف التوصيل</span>
-                            <span className="text-gray-700">
+                            <span className="text-gray-700" style={{ display: 'inline-flex', alignItems: 'center', fontWeight: 600 }}>
                                 {order.totals.shipping}
                                 <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                             </span>
                         </div>
                         <div className="flex justify-between items-center" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
                             <span className="text-gray-800">المبلغ كامل</span>
-                            <span className="text-gray-800">
+                            <span className="text-gray-800" style={{ display: 'inline-flex', alignItems: 'center', fontWeight: 600 }}>
                                 {order.totals.total}
                                 <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                             </span>
@@ -220,7 +220,7 @@ export default function TrackOrder() {
                     </div>
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center" style={{ marginTop: '20px' }}>
                     <button
                         onClick={() => navigate('/return-request')}
                         className="bg-blue-300 hover:bg-blue-400 text-white py-4 px-56 rounded-full transition"

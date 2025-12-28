@@ -43,8 +43,12 @@ export default function OrderHistoryPage() {
     },
   ];
 
+  const subtotal = orders.reduce((sum, o) => sum + parseFloat(o.priceNew.trim()), 0);
+  const shipping = 20;
+  const total = subtotal + shipping;
+
   return (
-    <div className="pt-32 pb-24 container mx-auto px-6" dir="rtl">
+    <div className="pt-36 pb-20 bg-white" dir="rtl">
 
       <h1 style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '64px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }} className="text-[#0F0F0F] mb-12">
         سجل طلباتي

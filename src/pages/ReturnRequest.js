@@ -214,14 +214,17 @@ export default function ReturnRequest() {
                                     </div>
                                     <div style={{
                                         fontFamily: 'Calibri',
-                                        fontWeight: 700,
-                                        fontStyle: 'Bold',
+                                        fontWeight: 400,
+                                        fontStyle: 'Regular',
                                         fontSize: '32px',
                                         lineHeight: '100%',
                                         letterSpacing: '0%',
                                         color: '#000000',
                                         minWidth: '100px',
-                                        textAlign: 'left'
+                                        textAlign: 'left',
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        marginRight: '35px'
                                     }}>
                                         {item.price} <img src="/images/ry.jpeg" alt="ريال" style={{ width: '20px', height: '20px', verticalAlign: 'middle', marginLeft: '4px' }} />
                                     </div>

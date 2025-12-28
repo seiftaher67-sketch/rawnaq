@@ -31,17 +31,16 @@ export default function Favorites() {
   return (
     <>
       <div className="pt-36 pb-20 container mx-auto px-10">
-        <h1 className="text-center text-[#0F0F0F] mb-12" style={{fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '64px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center'}}>
+        <h1 className="text-center text-[#0F0F0F] mb-12" style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'Regular', fontSize: '64px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
           المفضلة
         </h1>
 
         {favoritesData.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+          <div className="flex flex-wrap gap-6 justify-center">
             {favoritesData.map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}
-                variant="default" // or any other variant that fits
               />
             ))}
           </div>
