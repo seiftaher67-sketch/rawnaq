@@ -91,7 +91,7 @@ export default function ProductDetails() {
               letterSpacing: '0%',
               color: '#950000'
             }}>{product.price} <img src="/images/ry.jpeg" alt="ريال" className="inline-block" style={{ width: '40px', height: '40px' }} /></span>
-            <span className="text-xl text-gray-400 line-through" style={{ fontFamily: 'Calibri' }}>{product.originalPrice} <img src="/images/ry.jpeg" alt="ريال" className="inline-block" style={{ width: '20px', height: '20px' }} /></span>
+            <span className="text-xl text-gray-400" style={{ fontFamily: 'Calibri', textDecoration: 'line-through' }}>{product.oldPrice || product.originalPrice} <img src="/images/old ry.jpeg" alt="ريال" className="inline-block" style={{ width: '20px', height: '20px' }} /></span>
           </div>
 
           {/* Size Guide Link */}

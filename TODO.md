@@ -1,4 +1,3 @@
-- [ ] Update the review comment font in Testimonials.js
-- [ ] Swap image and name order in customer info
-- [ ] Update account name font in Testimonials.js
-- [ ] Test the changes by running the app
+- [x] Update the image source in ProductDetails.js for the original price from "/images/ry.jpeg" to "/images/old ry.jpeg"
+- [x] Display the old price next to the "old ry.jpeg" image with line-through in the purchase details
+- [x] Handle both oldPrice and originalPrice properties in product data
