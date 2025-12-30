@@ -66,23 +66,36 @@ const Testimonials = () => {
 
                 {/* Star Rating */}
                 <div className="mb-4 group-hover:brightness-75 transition-all duration-300" style={{ display: 'flex', justifyContent: 'center', transform: 'rotate(0deg)', opacity: 1, position: 'relative', top: '10px', left: '27px', gap: '2px' }}>
-                  {[...Array(testimonial.rating)].map((_, index) => (
-                    <FaStar key={index} className="text-yellow-600" size={12} />
+                  {[...Array(5)].map((_, index) => (
+                    <img
+                      key={index}
+                      src="/images/ngmaa.png"
+                      alt="Rating"
+                      style={{
+                        width: '17.122604370117188px',
+                        height: '16.353347778320312px',
+                        transform: 'rotate(0deg)',
+                        opacity: 1,
+                        position: 'relative',
+                        top: '3.58px',
+                        left: '3.44px'
+                      }}
+                    />
                   ))}
                 </div>
 
                 {/* Customer Info */}
-                <div className="flex items-center gap-3 justify-end">
-                  <div>
-                    <h4 style={{ fontFamily: 'Amiri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
-                      {testimonial.name}
-                    </h4>
-                  </div>
+                <div className="flex items-center gap-3 justify-start mt-6">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="w-12 h-12 rounded-full object-cover flex-shrink-0"
                   />
+                  <div>
+                    <h4 style={{ fontFamily: 'Amiri', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>
+                      {testimonial.name}
+                    </h4>
+                  </div>
                 </div>
               </div>
             ))}
