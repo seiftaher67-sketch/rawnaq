@@ -1,7 +1,4 @@
-# TODO: Adjust Price Positioning in Return Request Page
-
-## Steps to Complete
-- [x] Remove justify-between from the product item container to group elements closer together
-- [x] Move the price display inside the product details div (text-right flex-1), after the quantity information
-- [x] Adjust price styling: place currency image before price number, set textAlign to 'right', remove minWidth and unnecessary margins for RTL alignment
-- [x] Test the page layout to ensure price is positioned inward as intended
+- [ ] Update the review comment font in Testimonials.js
+- [ ] Swap image and name order in customer info
+- [ ] Update account name font in Testimonials.js
+- [ ] Test the changes by running the app

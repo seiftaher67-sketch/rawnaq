@@ -118,9 +118,9 @@ export default function ProductDetails() {
               {["S", "M", "L", "XL"].map((s) => (
                 <button
                   key={s}
-                  onClick={() => setSize(s)}
+                  onClick={() => { console.log('Size selected:', s); setSize(s); }}
                   className={`px-8 py-2 rounded-lg border-2 font-semibold transition text-center ${size === s
-                    ? "bg-white text-black border-black"
+                    ? "bg-black text-white border-black"
                     : "border-gray-300 text-gray-500 hover:border-black hover:text-black"
                     }`}
                   style={{
@@ -173,9 +173,9 @@ export default function ProductDetails() {
               ].map((c) => (
                 <button
                   key={c.value}
-                  onClick={() => setColor(c.value)}
+                  onClick={() => { console.log('Color selected:', c.value); setColor(c.value); }}
                   className={`w-10 h-10 rounded-md transition ${color === c.value
-                    ? "ring-2 ring-offset-2 ring-black"
+                    ? "ring-2 ring-offset-2 ring-black border-2 border-white"
                     : ""
                     }`}
                   style={{ backgroundColor: c.color }}
@@ -267,7 +267,7 @@ export default function ProductDetails() {
       </div>
 
       {/* DESCRIPTION (same as page 48) */}
-      <div className="max-w-3xl mx-auto border-t pt-16 border-gray-200" style={{ marginRight: '30px' }}>
+      <div className="border-t pt-16 border-gray-200" style={{ marginRight: '240px', marginLeft: '30px' }}>
         <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'Calibri', fontWeight: 700, fontSize: '40px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>تفاصيل المنتج</h2>
 
         <p className="mb-6" style={{
@@ -299,7 +299,7 @@ export default function ProductDetails() {
       </div>
 
       {/* SIZES SECTION */}
-      <div className="max-w-3xl ml-auto mt-20 border-t pt-16 border-gray-200" style={{ marginRight: '30px' }}>
+      <div className="mt-10 border-t pt-16 border-gray-200" style={{ marginRight: '240px', marginLeft: '30px' }}>
         <p style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '40px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>تفصيل حسب المقاس</p>
         <br></br>
         <p style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '32px', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>أدخلي مقاساتك واحصلي على عباءة مصممة خصيصًا لك , يرجى إدخال المقاسات بالسنتيمتر</p>
@@ -390,7 +390,8 @@ export default function ProductDetails() {
                     borderWidth: '1px',
                     border: '1px solid #d1d5db',
                     fontFamily: 'Calibri',
-                    fontSize: '16px'
+                    fontSize: '16px',
+                    outline: 'none'
                   }}
                 />
               </div>
@@ -411,7 +412,8 @@ export default function ProductDetails() {
                     borderWidth: '1px',
                     border: '1px solid #d1d5db',
                     fontFamily: 'Calibri',
-                    fontSize: '16px'
+                    fontSize: '16px',
+                    outline: 'none'
                   }}
                 />
               </div>
@@ -434,7 +436,8 @@ export default function ProductDetails() {
                     borderWidth: '1px',
                     border: '1px solid #d1d5db',
                     fontFamily: 'Calibri',
-                    fontSize: '16px'
+                    fontSize: '16px',
+                    outline: 'none'
                   }}
                 />
               </div>
@@ -455,7 +458,8 @@ export default function ProductDetails() {
                     borderWidth: '1px',
                     border: '1px solid #d1d5db',
                     fontFamily: 'Calibri',
-                    fontSize: '16px'
+                    fontSize: '16px',
+                    outline: 'none'
                   }}
                 />
               </div>
@@ -557,11 +561,11 @@ export default function ProductDetails() {
 
       </div>
       {/* CUSTOM NOTES SECTION */}
-      <div className="max-w-3xl mx-auto mt-8" style={{ marginRight: '30px' }}>
+      <div className="mt-8" style={{ marginRight: '240px', marginLeft: '30px' }}>
         <p className="mb-1" style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>ملاحظات اضافيه</p>
         <textarea
           placeholder="هل لديك أي طلبات خاصة؟ (طول إضافي، اتساع أكبر، تعديل معين…)"
-          className="w-[1216px] h-32 p-4 border border-gray-300 rounded-lg text-right focus:shadow-none"
+          className="w-[1216px] h-32 p-4 border border-gray-300 rounded-lg text-right"
           style={{ fontFamily: 'Calibri', fontSize: '16px', boxShadow: 'none', resize: 'none', outline: 'none' }}
         />
         <button

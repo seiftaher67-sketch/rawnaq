@@ -96,7 +96,7 @@ export const products = [
     image: "/images/a2.jpg",
     thumbnails: ["/images/a2.jpg", "/images/a2.jpg", "/images/a2.jpg", "/images/a2.jpg", "/images/a2.jpg"],
     rating: 5,
-    description: "عباية مطرزة سعودية فاخرة ومريحة للمناسبات الخاصة.",
+    description: "",
     features: [
       "خامة قماش فاخر عالي الجودة",
       "تطريز يدوي بالذهب والفضة",
