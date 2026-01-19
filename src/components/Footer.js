@@ -35,10 +35,15 @@ const Footer = () => {
           <div className="-ml-8">
             <h3 style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'bold', fontSize: '32px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }} className="mb-6">تواصل معنا</h3>
             <div className="space-y-2 text-sm font-semibold">
-              <p style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}><FiMapPin className="inline mr-2" size={16} /> ش الأمير نواف بن عبدالعزيز - مرکز مزاين</p>
-              <p style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}>✉️ atlascompany@gmail.com</p>
-              <p style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}><FiPhone className="inline mr-2 text-white" size={16} />  6551235523 96+</p>
+              <a    style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}><FiMapPin className="inline mr-2" size={16} /> ش الأمير نواف بن عبدالعزيز - مرکز مزاين</a>
+              <br></br>
+              <br></br>
+              <a   href= "mailto: atlascompany@gmail.com"  style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right'}}>✉️ atlascompany@gmail.com</a>
+               <br></br>
+               <br></br>
+              <a href='tel: 6551235523 96+' style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'right' }}><FiPhone className="inline mr-2 text-white" size={16} />  6551235523 96+</a>
             </div>
+
           </div>
 
           {/* Left Column - مواقع التواصل و طرق الدفع */}

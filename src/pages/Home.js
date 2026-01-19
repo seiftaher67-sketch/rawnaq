@@ -50,41 +50,60 @@ const Home = () => {
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             {/* Card 1 - Left (Wider) - صورة المرأة في الصحراء */}
             <div
-              className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-300 w-full h-[26rem] sm:h-[32rem] md:h-[38rem] md:w-[55%]"
+              className="relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 w-full h-[26rem] sm:h-[32rem] md:h-[38rem] md:w-[55%] cursor-pointer"
               onClick={() => handleCardClick(1)}
             >
               <img
                 src={im1}
                 alt="عرض خاص 1"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover cursor-pointer"
+                onClick={() => handleCardClick(1)}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" style={{ pointerEvents: 'none' }} />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white px-6">
+                <div className="text-center text-white px-6" onClick={(e) => e.stopPropagation()}>
                   <p className="text-base sm:text-lg font-semibold mb-1 leading-tight italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0' }}>تألقى الآن بخصم خاص</p>
+                  <br></br>
                   <p className="text-7xl sm:text-8xl md:text-9xl lg:text-[5.5rem] font-extrabold mb-2 italic" style={{ textShadow: '4px 4px 10px rgba(0,0,0,0.85)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '64px', lineHeight: '50px', letterSpacing: '0%', color: '#FFD700', leadingTrim: 'NONE' }}>30%</p>
                   <p className="text-sm sm:text-base leading-relaxed italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0' }}>خصومات موسمية على العبايات الفاخرة</p>
+                  <button
+                    onClick={() => handleCardClick(1)}
+                    className="mt-4 bg-black text-white py-2 px-6 rounded-full font-bold hover:bg-gray-800 transition"
+                    style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}
+                  >
+                    اشتري الآن
+                  </button>
                 </div>
               </div>
             </div>
 
             {/* Card 2 - Right (Narrower) - صورة قريبة */}
             <div
-              className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-300 w-full h-[26rem] sm:h-[32rem] md:h-[38rem] md:w-[40%]"
+              className="relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 w-full h-[26rem] sm:h-[32rem] md:h-[38rem] md:w-[40%] cursor-pointer"
               onClick={() => handleCardClick(2)}
             >
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F7c4121e5f8af449fab8ea450fd7ca0fa%2Fe597cd5b1c2f4efab93435c4e88e1130?format=webp&width=1200"
                 alt="عرض خاص 2"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover cursor-pointer"
+                onClick={() => handleCardClick(2)}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" style={{ pointerEvents: 'none' }} />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white px-6 max-w-xs sm:max-w-sm">
+                <div className="text-center text-white px-6 max-w-xs sm:max-w-sm" onClick={(e) => e.stopPropagation()}>
                   <p className="text-base sm:text-lg font-semibold mb-1 leading-tight italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0' }}>عرض الموسم</p>
+                  <br></br>
                   <p className="text-base sm:text-lg font-semibold mb-2 leading-tight italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Amiri', fontWeight: 700, fontStyle: 'normal', fontSize: '32px', lineHeight: '1', letterSpacing: '0' }}>اختاري التفصيلة التي تليق بك</p>
                   <br></br>
-                  <p className="text-xs sm:text-sm leading-relaxed italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Calibri', fontWeight: 300, fontStyle: 'normal', fontSize: '14px', lineHeight: '1', letterSpacing: '0', textAlign: 'center', width: '300px', height: '44px', transform: 'rotate(0deg)', opacity: 1, color: '#f0f0f0' }}>تسوقي الآن من تشكيلتنا التي تجمع بين اللمسة<br />العصرية والأناقة الكلاسيكية</p>
+                  <h2 className="text-xs sm:text-sm leading-relaxed italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Calibri', fontWeight: 600, fontStyle: 'normal', fontSize: '16px', lineHeight: '1', letterSpacing: '0', textAlign: 'center', width: '300px', height: '44px', transform: 'rotate(0deg)', opacity: 1, color: '#f0f0f0' }}>تسوقي الآن من تشكيلتنا التي تجمع بين اللمسة</h2>
+                  <h2 className="text-xs sm:text-sm leading-relaxed italic" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Calibri', fontWeight: 600, fontStyle: 'normal', fontSize: '16px', lineHeight: '1', letterSpacing: '0', textAlign: 'center', width: '300px', height: '44px', transform: 'rotate(0deg)', opacity: 1, color: '#f0f0f0' }}>        العصرية ولاناقة الكلاسيكية </h2>
+                  <button
+                    onClick={() => handleCardClick(2)}
+                    className="mt-4 bg-black text-white py-2 px-6 rounded-full font-bold hover:bg-gray-800 transition"
+                    style={{ fontFamily: 'Calibri', fontWeight: 700, fontStyle: 'Bold', fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }}
+                  >
+                    اشتري الآن
+                  </button>
                 </div>
               </div>
             </div>

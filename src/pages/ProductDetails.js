@@ -133,7 +133,7 @@ export default function ProductDetails() {
                     letterSpacing: '0%',
                     width: '99px',
                     height: '48px',
-                    borderRadius: '25px',
+                    borderRadius: '5px',
                     borderWidth: '0.5px',
                     opacity: 1,
                     transform: 'rotate(0deg)'
@@ -232,6 +232,7 @@ export default function ProductDetails() {
               src={mainImage}
               className="w-full h-full object-cover"
               alt="product"
+              style={{ borderRadius: '5px' }}
             />
           </div>
 
@@ -257,7 +258,8 @@ export default function ProductDetails() {
                   alt={`Product view ${index + 1}`}
                   className="w-full h-full object-cover transition"
                   style={{
-                    filter: hoveredThumbnail === index ? 'brightness(0.8)' : 'none'
+                    filter: hoveredThumbnail === index ? 'brightness(0.8)' : 'none',
+                    borderRadius: '5px'
                   }}
                 />
               </button>
@@ -310,7 +312,7 @@ export default function ProductDetails() {
           gap: '10px',
           angle: '0deg',
           opacity: 1,
-          borderRadius: '16px',
+          borderRadius: '5px',
           padding: '10px',
           border: '2px solid #950000',
           backgroundColor: '#950000'
@@ -580,6 +582,8 @@ export default function ProductDetails() {
         >
           تأكيد الطلب
         </button>
+        <br></br>
+       
         <p style={{
           fontFamily: 'Calibri',
           fontWeight: 400,

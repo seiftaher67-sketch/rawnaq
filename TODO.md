@@ -1,3 +1,2 @@
-- [x] Update the image source in ProductDetails.js for the original price from "/images/ry.jpeg" to "/images/old ry.jpeg"
-- [x] Display the old price next to the "old ry.jpeg" image with line-through in the purchase details
-- [x] Handle both oldPrice and originalPrice properties in product data
+- [x] Add "تسوقي الآن" button after the promotional text in the second card of the Promotional Section in Home.js
+- [x] Make card images in Home.js promotional section clickable to navigate to product details by moving onClick to outer card div

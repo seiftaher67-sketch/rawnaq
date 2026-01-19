@@ -42,7 +42,8 @@ export default function ProductCard({
         <img
           src={productData.image}
           alt={productData.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover cursor-pointer"
+          onClick={() => navigate(`/product/${productData.id}`)}
         />
 
         <button
@@ -69,7 +70,7 @@ export default function ProductCard({
       {/* Product Info */}
       <div className="p-4 flex flex-col">
         {/* Name and Price Row */}
-        <div className="flex justify-between items-center mb-3">
+        <div className="flex justify-between items-baseline mb-3">
           {/* Product Name - Left */}
           <h3 style={{ fontFamily: 'Calibri', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%' }}>
             {productData.name}

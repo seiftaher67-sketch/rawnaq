@@ -98,7 +98,8 @@ const ProductCarousel = () => {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover cursor-pointer"
+                    onClick={() => navigate(`/product/${product.id}`)}
                   />
 
                   <button

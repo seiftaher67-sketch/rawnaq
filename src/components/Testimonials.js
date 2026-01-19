@@ -60,7 +60,7 @@ const Testimonials = () => {
                 className="bg-white rounded-2xl p-6 border border-gray-light transition-all duration-300 hover:border-gray-medium hover:shadow-md group group-hover:text-gray-800"
               >
                 {/* Review Text */}
-                <p style={{ fontFamily: 'Amiri', fontWeight: 400, fontStyle: 'Regular', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '100%', letterSpacing: '0%', textAlign: 'center' }}>
+                <p style={{ fontFamily: 'Amiri', fontWeight: 400, fontStyle: 'Regular', fontSize: '16px', leadingTrim: 'NONE', lineHeight: '1.5', letterSpacing: '0%', textAlign: 'center' }}>
                   {testimonial.text}
                 </p>
 

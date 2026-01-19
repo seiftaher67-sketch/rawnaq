@@ -32,7 +32,8 @@ const ProductCard = ({ product }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain cursor-pointer"
+          onClick={() => navigate(`/product/${product.id}`)}
         />
 
         <button
