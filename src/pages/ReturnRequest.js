@@ -260,7 +260,7 @@ export default function ReturnRequest() {
                                 <span style={{
                                     fontFamily: 'Cairo',
                                     fontWeight: 500,
-                                    fontSize: '18px',
+                                    fontSize: '25px',
                                     color: '#000000',
                                     lineHeight: '100%'
                                 }}>تم استلام منتج خاطئ</span>
@@ -278,7 +278,7 @@ export default function ReturnRequest() {
                                 <span style={{
                                     fontFamily: 'Cairo',
                                     fontWeight: 500,
-                                    fontSize: '18px',
+                                    fontSize: '25px',
                                     color: '#000000',
                                     lineHeight: '100%'
                                 }}>المنتج به عيب</span>
@@ -296,7 +296,7 @@ export default function ReturnRequest() {
                                 <span style={{
                                     fontFamily: 'Cairo',
                                     fontWeight: 500,
-                                    fontSize: '18px',
+                                    fontSize: '25px',
                                     color: '#000000',
                                     lineHeight: '100%'
                                 }}>لا يطابق الوصف</span>
@@ -314,7 +314,7 @@ export default function ReturnRequest() {
                                 <span style={{
                                     fontFamily: 'Cairo',
                                     fontWeight: 500,
-                                    fontSize: '18px',
+                                    fontSize: '25px',
                                     color: '#000000',
                                     lineHeight: '100%'
                                 }}>المقاس غير مناسب</span>
@@ -332,7 +332,7 @@ export default function ReturnRequest() {
                                 <span style={{
                                     fontFamily: 'Cairo',
                                     fontWeight: 500,
-                                    fontSize: '18px',
+                                    fontSize: '25px',
                                     color: '#000000',
                                     lineHeight: '100%'
                                 }}>أخرى</span>

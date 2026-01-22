@@ -74,12 +74,12 @@ export default function TrackOrder() {
                 >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                         <div style={{ textAlign: 'right', flex: '0 0 48%', marginRight: '20px' }}>
-                            <div style={{ paddingTop: '20px' ,  marginRight:'50px', fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>رقم الطلب</div>
+                            <div style={{ paddingTop: '20px', marginRight: '50px', fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>رقم الطلب</div>
                             <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', marginTop: '8px' }}>{order.number}</div>
                         </div>
 
-                        <div  style={{ marginRight:'-100px' , textAlign: 'right', flex: '0 0 26%' ,paddingTop: '20px' }}>
-                            <div style={{ marginRight:'13px', fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>تاريخ الطلب</div>
+                        <div style={{ marginRight: '-100px', textAlign: 'right', flex: '0 0 26%', paddingTop: '20px' }}>
+                            <div style={{ marginRight: '13px', fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>تاريخ الطلب</div>
                             <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', marginTop: '8px' }}>{order.date}</div>
                         </div>
 
