@@ -74,16 +74,16 @@ export default function TrackOrder() {
                 >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                         <div style={{ textAlign: 'right', flex: '0 0 48%', marginRight: '20px' }}>
-                            <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>رقم الطلب</div>
+                            <div style={{ paddingTop: '20px' ,  marginRight:'50px', fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>رقم الطلب</div>
                             <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', marginTop: '8px' }}>{order.number}</div>
                         </div>
 
-                        <div style={{ textAlign: 'right', flex: '0 0 26%' }}>
-                            <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>تاريخ الطلب</div>
+                        <div  style={{  textAlign: 'right', flex: '0 0 26%' ,paddingTop: '20px' }}>
+                            <div style={{ marginRight:'13px', fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>تاريخ الطلب</div>
                             <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', marginTop: '8px' }}>{order.date}</div>
                         </div>
 
-                        <div style={{ textAlign: 'center', flex: '0 0 26%' }}>
+                        <div style={{ paddingTop: '20px', textAlign: 'center', flex: '0 0 26%' }}>
                             <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>الحالة الحالية</div>
                             <div style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#0B1220', padding: '8px 14px', borderRadius: '999px', marginTop: '8px' }}>
                                 <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#22c55e', display: 'inline-block', marginInlineEnd: 10 }}></span>
