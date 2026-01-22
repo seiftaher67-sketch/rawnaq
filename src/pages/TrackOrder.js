@@ -78,7 +78,7 @@ export default function TrackOrder() {
                             <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', marginTop: '8px' }}>{order.number}</div>
                         </div>
 
-                        <div  style={{  textAlign: 'right', flex: '0 0 26%' ,paddingTop: '20px' }}>
+                        <div  style={{ marginRight:'-100px' , textAlign: 'right', flex: '0 0 26%' ,paddingTop: '20px' }}>
                             <div style={{ marginRight:'13px', fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', color: '#000000' }}>تاريخ الطلب</div>
                             <div style={{ fontFamily: 'Cairo', fontWeight: 600, fontStyle: 'SemiBold', fontSize: '24px', leadingTrim: 'NONE', lineHeight: '24px', letterSpacing: '0px', marginTop: '8px' }}>{order.date}</div>
                         </div>
